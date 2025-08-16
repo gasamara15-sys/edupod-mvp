@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2a52be",
-  "description": "영어 듣기, 단어장, 문법 퀴즈까지 한 번에 배우는 맞춤형 영어 학습 서비스.",
+  "description": "영어 뉴스 기반 맞춤형 학습: 초등, 중등, 고등 영어 듣기, 단어, 문법, 퀴즈까지 한 번에!",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
