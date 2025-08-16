@@ -1,55 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduPod - 영어 뉴스 학습</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; text-align:center; }
-    header { background:#4CAF50; color:white; padding:1.5rem; font-size:1.5rem; }
-    section { padding:2rem; }
-    h1 { font-size:2rem; }
-    .btn {
-      display:inline-block; margin-top:2rem; padding:1rem 2rem;
-      background:#4CAF50; color:white; text-decoration:none; border-radius:8px;
-      font-size:1.2rem;
+  <!-- 기본 SEO -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduPod - 초·중·고 맞춤형 영어 뉴스 학습</title>
+  <meta name="description" content="초등부터 수능까지 실제 뉴스로 배우는 영어 학습. 번역·단어장·문법 퀴즈까지 한 번에. 매주 업데이트!">
+  <meta name="keywords" content="영어 뉴스, 영어 듣기, 초등 영어, 중학 영어, 고등 영어, 수능 영어, 영단어, 문법 퀴즈, EduPod">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://edupod.kr/">
+
+  <!-- 성능 최적화(선택) -->
+  <link rel="preconnect" href="https://edupod.kr" crossorigin>
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="//edupod.kr">
+
+  <!-- 파비콘/OG 이미지(파일 준비되면 교체) -->
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EduPod - 초·중·고 맞춤형 영어 뉴스 학습">
+  <meta property="og:description" content="레벨별 영어 뉴스, 번역·단어장·문법까지 한 번에. 지금 무료로 시작하세요.">
+  <meta property="og:url" content="https://edupod.kr/">
+  <meta property="og:image" content="https://edupod.kr/og-image.png">
+  <meta property="og:site_name" content="EduPod">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EduPod - 초·중·고 맞춤형 영어 뉴스 학습">
+  <meta name="twitter:description" content="실제 뉴스 기반 레벨별 영어 학습. 초·중·고/수능까지 커버.">
+  <meta name="twitter:image" content="https://edupod.kr/og-image.png">
+
+  <!-- 구조화 데이터(JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "EduPod",
+    "url": "https://edupod.kr/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "EduPod",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://edupod.kr/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://edupod.kr/news.html?id={query}",
+      "query-input": "required name=query"
     }
-    .features { display:flex; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
-    .feature { width:250px; margin:1rem; padding:1rem; border:1px solid #ddd; border-radius:10px; }
-    footer { background:#f2f2f2; padding:1rem; margin-top:2rem; }
+  }
+  </script>
+
+  <!-- 사이트맵 안내 -->
+  <link rel="sitemap" type="application/xml" href="https://edupod.kr/sitemap.xml">
+
+  <!-- 스타일(가벼운 인라인) -->
+  <style>
+    :root{--brand:#111827;--accent:#4f46e5;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--brand);font-family:system-ui,-apple-system,Sego UI,Roboto,'Noto Sans KR',Arial,sans-serif}
+    header{padding:18px 20px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+    .wrap{max-width:980px;margin:0 auto;padding:20px}
+    .hero{padding:36px 0;text-align:center}
+    .hero h1{margin:0 0 8px;font-size:clamp(24px,4vw,36px);line-height:1.2}
+    .hero p{margin:0;color:var(--muted)}
+    .cta{display:inline-block;margin-top:20px;padding:12px 18px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:700}
+    .grid{display:grid;gap:16px;margin-top:28px}
+    @media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 6px}
+    .pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:#fff}
+    footer{margin-top:28px;padding:16px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+    .latest{margin-top:30px}
+    .latest a{color:var(--accent);text-decoration:none}
+    .sr-only{position:absolute;left:-9999px}
   </style>
 </head>
 <body>
-  <header>
-    EduPod - 맞춤형 영어 뉴스 학습
+  <a class="sr-only" href="#main">본문 바로가기</a>
+
+  <header role="banner" aria-label="사이트 헤더">
+    <div class="wrap" style="display:flex;align-items:center;gap:12px">
+      <img src="/logo.png" alt="EduPod 로고" width="28" height="28" loading="lazy">
+      <strong>EduPod</strong>
+      <span class="pill" aria-label="서비스 설명">초·중·고 맞춤형 영어 뉴스</span>
+    </div>
   </header>
 
-  <section>
-    <h1>초등부터 수능까지!<br>레벨별 영어 뉴스 학습</h1>
-    <p>실제 뉴스를 바탕으로 한 학습 콘텐츠.<br>단어, 해설, 문법까지 한눈에!</p>
-    <a href="news.html" class="btn">학습 시작하기</a>
-  </section>
+  <main id="main" class="wrap" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">초등부터 수능까지,<br>뉴스로 배우는 영어</h1>
+      <p>레벨별 기사 + 번역 + 단어장 + 문법 퀴즈. 매주 업데이트!</p>
+      <!-- 최신 글로 이동(Manifest 방식: news.html?id=latest) -->
+      <a class="cta" href="/news.html?id=latest" aria-label="최신 학습 콘텐츠로 이동">학습 시작하기</a>
+    </section>
 
-  <section>
-    <h2>왜 EduPod일까요?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>레벨별 학습</h3>
-        <p>초등, 중등, 고등 수준별 맞춤 기사 제공</p>
+    <section aria-labelledby="feat-title">
+      <h2 id="feat-title" class="sr-only">주요 기능</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>레벨별 맞춤</h3>
+          <p>초등(저/고), 중학, 고등(수능)로 구성하여 난이도 조절.</p>
+        </article>
+        <article class="card">
+          <h3>번역·단어장</h3>
+          <p>한 줄 번역과 핵심 단어 예문으로 빠르게 이해.</p>
+        </article>
+        <article class="card">
+          <h3>문법·퀴즈</h3>
+          <p>수능 대비 문법 포인트와 즉시 피드백 퀴즈.</p>
+        </article>
       </div>
-      <div class="feature">
-        <h3>번역 & 단어장</h3>
-        <p>영어 기사와 번역, 핵심 단어 정리</p>
-      </div>
-      <div class="feature">
-        <h3>문법 퀴즈</h3>
-        <p>수능 대비 문법 퀴즈로 실력 강화</p>
-      </div>
+    </section>
+
+    <!-- 최신 3개 미리보기(있으면 노출, 없으면 자동 숨김) -->
+    <section class="latest" aria-labelledby="latest-title">
+      <h2 id="latest-title">최신 콘텐츠</h2>
+      <div id="latestList" class="grid" style="grid-template-columns:1fr 1fr 1fr"></div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      © 2025 EduPod · <a href="/sitemap.xml">Sitemap</a> · <a href="/robots.txt">Robots</a> · 문의: <a href="mailto:hello@edupod.kr">hello@edupod.kr</a>
     </div>
-  </section>
-
-  <footer>
-    © 2025 EduPod | Contact: edupod@example.com
   </footer>
+
+  <!-- 최신 목록 위젯: /manifest.json 있으면 3개 노출 -->
+  <script>
+  (async function(){
+    try{
+      const res = await fetch('/manifest.json', {cache:'no-store'});
+      if(!res.ok) throw 0;
+      const mani = await res.json();
+      const items = [...(mani.items||[])].sort((a,b)=> (b.date||'').localeCompare(a.date)).slice(0,3);
+      const box = document.getElementById('latestList');
+      if(!items.length){ document.querySelector('.latest').style.display='none'; return; }
+      box.innerHTML = items.map(x => `
+        <article class="card">
+          <h3>${x.title}</h3>
+          <p class="muted">${x.date||''}</p>
+          <a href="/news.html?id=${x.id}" aria-label="${x.title}로 이동">바로 보기 →</a>
+        </article>
+      `).join('');
+    }catch(e){
+      document.querySelector('.latest').style.display='none';
+    }
+  })();
+  </script>
 </body>
 </html>
