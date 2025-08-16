@@ -1,36 +1,111 @@
 <script>
-(async function(){
-  const res = await fetch('/news.json', {cache:'no-store'});
+(async function () {
+  const res = await fetch('/news.json', { cache: 'no-store' });
   const data = await res.json();
+
   const list = document.getElementById('newsList');
   const q = document.getElementById('q');
   const cat = document.getElementById('cat');
 
-  let items = data.items;
+  // 1) 데이터 준비
+  let items = Array.isArray(data.items) ? data.items : [];
 
-  function render(rows){
-    list.innerHTML = rows.map(x => `
+  // (옵션) 날짜 내림차순 정렬 보장
+  items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  // id → item 빠른 검색용
+  const byId = new Map(
+    items.map(x => [String(x.id || ''), x])
+  );
+
+  // link 파일명(확장자 제외)로도 찾아볼 수 있게 준비
+  function basenameId(link = '') {
+    try {
+      const p = new URL(link, location.origin).pathname;
+      const base = p.split('/').pop() || '';
+      return base.replace(/\.html?$/i, '');
+    } catch {
+      return '';
+    }
+  }
+  const byFileId = new Map(
+    items.map(x => [basenameId(x.link), x])
+  );
+
+  // 2) URL 파라미터 처리 (?id=latest 또는 ?id=특정아이디)
+  const params = new URLSearchParams(location.search);
+  const idParam = params.get('id');
+
+  if (idParam) {
+    if (idParam === 'latest') {
+      const first = items[0];
+      if (first && first.link) {
+        location.href = first.link;
+        return;
+      }
+    } else {
+      // id 필드 우선, 없으면 파일명 기반으로 찾기
+      const target =
+        byId.get(idParam) ||
+        byFileId.get(idParam);
+
+      if (target && target.link) {
+        location.href = target.link;
+        return;
+      }
+    }
+    // 못 찾으면 그냥 목록 렌더링으로 진행
+  }
+
+  // 3) 카테고리 옵션 채우기 (중복 제거)
+  if (cat) {
+    const cats = new Set();
+    items.forEach(x => (x.categories || []).forEach(c => cats.add(c)));
+    // 기본 "전체" 옵션 유지 후 추가
+    [...cats].sort().forEach(cn => {
+      const opt = document.createElement('option');
+      opt.value = cn;
+      opt.textContent = cn;
+      cat.appendChild(opt);
+    });
+  }
+
+  // 4) 렌더 함수
+  function render(rows) {
+    if (!rows.length) {
+      list.innerHTML = `<li>검색 결과가 없습니다.</li>`;
+      return;
+    }
+    list.innerHTML = rows
+      .map(
+        x => `
       <li>
         <a href="${x.link}">
           <strong>${x.title}</strong>
         </a>
-        <div>${x.date} · ${x.categories.join(', ')}</div>
+        <div>${x.date || ''} · ${(x.categories || []).join(', ')}</div>
         <p>${x.summary || ''}</p>
-      </li>`).join('');
+      </li>`
+      )
+      .join('');
   }
 
-  function apply(){
-    const kw = (q.value||'').toLowerCase();
-    const c = cat.value;
-    let rows = items.filter(x =>
-      (!c || x.categories.includes(c)) &&
-      (x.title.toLowerCase().includes(kw) || (x.summary||'').toLowerCase().includes(kw))
-    );
+  function apply() {
+    const kw = (q?.value || '').toLowerCase();
+    const c = cat?.value || '';
+    let rows = items.filter(x => {
+      const inCat = !c || (x.categories || []).includes(c);
+      const hay = (x.title || '') + ' ' + (x.summary || '');
+      const inKw = hay.toLowerCase().includes(kw);
+      return inCat && inKw;
+    });
     render(rows);
   }
 
-  q.addEventListener('input', apply);
-  cat.addEventListener('change', apply);
+  q && q.addEventListener('input', apply);
+  cat && cat.addEventListener('change', apply);
+
+  // 초기 렌더
   render(items);
 })();
 </script>
