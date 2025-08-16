@@ -1,0 +1,21 @@
+{
+  "name": "EduPod - 초·중·고 맞춤형 영어 뉴스 학습",
+  "short_name": "EduPod",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2a52be",
+  "description": "영어 듣기, 단어장, 문법 퀴즈까지 한 번에 배우는 맞춤형 영어 학습 서비스.",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
