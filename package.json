@@ -7,3 +7,15 @@
   },
   "engines": { "node": ">=18" }
 }
+{
+  "items": [
+    {
+      "id": "2025-08-15-liberation-day",
+      "date": "2025-08-15",
+      "title": "Liberation Day at 80: Reflecting on the Past",
+      "categories": ["History","Museum"],
+      "summary": "Seoul Museum of History hosts a commemorative exhibition.",
+      "link": "/news/2025-08-15-liberation-day.html"
+    }
+  ]
+}
