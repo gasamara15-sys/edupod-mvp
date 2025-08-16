@@ -1,0 +1,32 @@
+name: Generate news.json
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "public/news/**.html"
+      - "scripts/update-news.mjs"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Generate news.json
+        run: node scripts/update-news.mjs
+
+      - name: Commit & push news.json
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "public/news.json"
+          message: "chore: update news.json (auto)"
