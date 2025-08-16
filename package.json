@@ -1,11 +1,12 @@
 {
   "name": "edupod-mvp",
+  "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "node scripts/update-news.mjs"
+    "build": "echo 'no build step'",
+    "start": "serve public"
   },
-  "engines": { "node": ">=18" }
+  "dependencies": {}
 }
 {
   "items": [
