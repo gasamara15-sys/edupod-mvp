@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "2025-08-15-liberation-day",
+      "date": "2025-08-15",
+      "title": "Liberation Day at 80: Reflecting on the Past",
+      "categories": ["History", "Museum"],
+      "summary": "Seoul Museum of History hosts a commemorative exhibition.",
+      "link": "/news/2025-08-15-liberation-day.html"
+    },
+    {
+      "id": "2025-08-16-holiday-debate",
+      "date": "2025-08-16",
+      "title": "Will Oct 10 Become a Holiday? Government Says No Review",
+      "categories": ["Policy", "Economy"],
+      "summary": "정부는 10월 10일 임시공휴일 지정을 검토하지 않는다고 밝히며, 해외여행 증가와 생산·수출 둔화를 우려했습니다.",
+      "link": "/news/2025-08-16-holiday-debate.html"
+    }
+  ]
+}
