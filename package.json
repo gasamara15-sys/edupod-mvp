@@ -1,0 +1,9 @@
+{
+  "name": "edupod-mvp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/update-news.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
