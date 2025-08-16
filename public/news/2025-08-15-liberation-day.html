@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- ★ 뉴스 메타(자동 수집용) -->
+  <title>Liberation Day at 80: Reflecting on the Past, Envisioning the Future</title>
+  <meta name="category" content="History,Education">
+  <meta name="description" content="광복 80주년을 맞아 서울역사박물관 전시 ‘우리의 광복절’을 통해 과거의 기억과 미래의 의미를 함께 살펴봅니다. 초/중/고(수능) 레벨별 기사·단어·퀴즈 제공.">
+  <!-- (선택) 참고 메타 -->
+  <meta property="article:published_time" content="2025-08-15">
+
+  <title>영어 뉴스 듣기 MVP (초/중/고 + 문법)</title>
+  <style>
+    :root { --border:#e5e7eb; --muted:#6b7280; --accent:#eef2ff; --active:#fff4cc; }
+    html,body{margin:0;padding:0;background:#fafafa}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', Arial, sans-serif; color:#111827}
+    header{padding:16px 20px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+    h1{font-size:18px;margin:0}
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--accent)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .sent{padding:6px 8px;border-radius:8px;margin:3px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .sent.done{color:#6b7280}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .small{font-size:12px;color:var(--muted)}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .headline{font-weight:700}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .tag{font-size:11px;padding:2px 6px;border-radius:999px;background:#eef2ff;border:1px solid #c7d2fe;margin-left:6px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      영어 뉴스 듣기 MVP
+      <span class="meta">— 초/중/고 + 3단계 속도 <span class="tag">edupod.kr</span></span>
+      <!-- ★ 발행일 표시 -->
+      <span class="pill" style="margin-left:8px">Date: 2025-08-15</span>
+    </h1>
+  </header>
+
+  <main>
+    <div class="row">
+      <div class="card" style="flex:1 1 100%">
+        <div class="level-tabs" role="tablist">
+          <button role="tab" id="tab-low" aria-selected="true">초등 저학년 (A1–A2)</button>
+          <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+          <button role="tab" id="tab-mid" aria-selected="false">중학생 (A2–B1)</button>
+          <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+        </div>
+        <div class="controls">
+          <label class="small">음성:</label>
+          <select id="voiceSelect" aria-label="Voice"></select>
+          <span class="small">속도 프리셋:</span>
+          <button class="preset" data-rate="0.8">처음 듣기</button>
+          <button class="preset" data-rate="1.0">보통</button>
+          <button class="preset" data-rate="1.15">빠르게</button>
+          <span class="small">세부 속도</span>
+          <input id="rate" type="range" min="0.6" max="1.4" step="0.05" value="1.0" />
+          <span class="small" id="rateLabel">1.00×</span>
+        </div>
+        <div class="controls">
+          <button id="playAll" class="primary">전체 재생</button>
+          <button id="pauseBtn">일시정지</button>
+          <button id="resumeBtn">재개</button>
+          <button id="stopBtn">정지</button>
+          <span class="small">문장 클릭: 해당 문장만 반복</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" id="articleCard">
+        <div class="meta">
+          <span class="pill" id="topicPill">History</span>
+          <span class="pill" id="cefrPill">A1</span>
+          <span class="pill">Published: 2025-08-15</span>
+        </div>
+        <div class="headline" id="headline">Our Liberation Day</div>
+        <p class="small" id="dek">Seoul Museum of History holds a special show.</p>
+        <div id="sentences"></div>
+        <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+        <div class="quiz">
+          <h3>퀴즈</h3>
+          <ol id="quizList"></ol>
+        </div>
+
+        <div class="grammar" id="grammarBox" style="display:none">
+          <h3 style="margin:0 0 6px">문법 포인트 (고등/수능)</h3>
+          <ol id="grammarList"></ol>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 6px">단어장</h2>
+        <ul id="vocab"></ul>
+        <p class="small">레벨에 맞게 빈출/핵심 어휘 위주로 구성했습니다.</p>
+      </div>
+    </div>
+  </main>
+
+<script>
+// --- Content DATA (통일 주제: Liberation Day / 발행: 2025-08-15) ---
+const DATA = {
+  // 초등 저학년
+  low: {
+    topic: "History",
+    cefr: "A1–A2",
+    headline: "Our Liberation Day",
+    dek: "A special show at the museum.",
+    sents: [
+      "On August 15, 1945, Korea became free from Japan.",
+      "This day is called Liberation Day.",
+      "This year is the 80th year since that day.",
+      "The Seoul Museum of History has a special show.",
+      "It is called 'Our Liberation Day.'",
+      "The show tells how people remember this day.",
+      "It also asks what this day means for our future."
+    ],
+    vocab: [
+      ["free","자유로운","Korea became free in 1945."],
+      ["day","날","Today is a happy day."],
+      ["museum","박물관","We go to the museum."],
+      ["show","전시","The show is about history."],
+      ["remember","기억하다","We remember this day."],
+      ["future","미래","Think about the future."]
+    ],
+    quiz: [
+      {q:"When did Korea become free?", options:["1945-08-15","1919-03-01","1950-06-25"], answer:0},
+      {q:"What is the show called?", options:["Our Happy Day","Our Liberation Day","Our Museum Day"], answer:1},
+      {q:"T/F: The show only talks about the past.", tf:true, stmt:"The show only talks about the past.", answer:false}
+    ]
+  },
+
+  // 초등 고학년
+  high: {
+    topic: "History",
+    cefr: "A2–B1",
+    headline: "Why We Remember Liberation Day",
+    dek: "An exhibition helps us think about past and future.",
+    sents: [
+      "On August 15, 1945, Korea regained freedom from Japan.",
+      "We call this day Liberation Day.",
+      "This year is the 80th anniversary of that important day.",
+      "The Seoul Museum of History is holding an exhibition named 'Our Liberation Day.'",
+      "It shows how people have remembered this day over time.",
+      "It also asks visitors what the day means for our future."
+    ],
+    vocab: [
+      ["regain","되찾다","We regained our freedom."],
+      ["anniversary","기념일","It is the 80th anniversary."],
+      ["exhibition","전시회","The exhibition opened today."],
+      ["visitor","방문객","Many visitors came to the museum."],
+      ["meaning","의미","What is the meaning of this day?"],
+      ["over time","시간이 지나면서","Traditions change over time."]
+    ],
+    quiz: [
+      {q:"What does the museum hold?", options:["A concert","An exhibition","A game"], answer:1},
+      {q:"T/F: Liberation Day is 80 years old this year.", tf:true, stmt:"It is the 80th anniversary this year.", answer:true},
+      {q:"What question does the exhibition ask?", options:["What to eat","What it means for our future","How many books to read"], answer:1}
+    ]
+  },
+
+  // 중학생
+  mid: {
+    topic: "History",
+    cefr: "A2–B1",
+    headline: "Remembering Liberation Day: A Special Exhibition",
+    dek: "The exhibit connects memory with the future.",
+    sents: [
+      "On August 15, 1945, Korea regained its freedom from Japan.",
+      "This day is called Liberation Day in Korea.",
+      "This year marks the 80th anniversary of that day.",
+      "To honor it, the Seoul Museum of History hosts an exhibition called 'Our Liberation Day.'",
+      "The exhibition shows how people have remembered Liberation Day over time.",
+      "It also asks visitors to think about what the day means for our future."
+    ],
+    vocab: [
+      ["honor","기리다","We honor heroes on special days."],
+      ["host","개최하다","The museum hosts an exhibition."],
+      ["remember","기억하다","Families remember the day in many ways."],
+      ["anniversary","기념일","The 80th anniversary is important."],
+      ["future","미래","We plan for the future."],
+      ["freedom","자유","People value freedom highly."]
+    ],
+    quiz: [
+      {q:"Why is the museum holding an exhibition?", options:["To sell books","To honor Liberation Day","To build a new hall"], answer:1},
+      {q:"T/F: The exhibition asks about the future meaning of the day.", tf:true, stmt:"The exhibition asks about the future meaning.", answer:true},
+      {q:"Which word best fits? The exhibition ______ how people have remembered the day.", options:["forgets","shows","hides"], answer:1}
+    ]
+  },
+
+  // 고등/수능 + 문법
+  hs: {
+    topic: "History",
+    cefr: "B2–C1",
+    headline: "Liberation Day at 80: Reflecting on the Past, Envisioning the Future",
+    dek: "The exhibit frames the day as a dialogue between past and future.",
+    sents: [
+      "On August 15, 1945, Korea achieved liberation from 35 years of Japanese colonial rule.",
+      "This historic date, known as Liberation Day, marks the restoration of national sovereignty.",
+      "In commemoration of the 80th anniversary, the Seoul Museum of History is hosting an exhibition titled 'Our Liberation Day.'",
+      "The exhibition traces how Liberation Day has been remembered and interpreted over the decades.",
+      "It encourages visitors to contemplate the contemporary relevance of liberation and its implications for the nation's future.",
+      "Rather than viewing the day merely as a historical milestone, the exhibit frames it as an ongoing dialogue between past and future."
+    ],
+    vocab: [
+      ["sovereignty","주권","The treaty recognized national sovereignty."],
+      ["commemoration","기념","A ceremony was held in commemoration of the event."],
+      ["interpret","해석하다","Scholars interpret the data differently."],
+      ["relevance","관련성","The topic has strong contemporary relevance."],
+      ["implication","함의","The decision carries serious implications."],
+      ["milestone","이정표","It was a milestone in modern history."]
+    ],
+    quiz: [
+      {q:"What does Liberation Day mark according to the article?", options:["A new museum","Restoration of sovereignty","Start of colonial rule"], answer:1},
+      {q:"T/F: The exhibit treats Liberation Day only as a past event.", tf:true, stmt:"The exhibit treats it only as a past event.", answer:false},
+      {q:"Which is closest in meaning to 'ongoing'?", options:["temporary","continuing","invisible"], answer:1}
+    ],
+    grammar: [
+      {
+        en: "On August 15, 1945, Korea achieved liberation from 35 years of Japanese colonial rule.",
+        ko: "1945년 8월 15일, 한국은 35년간의 일본 식민 지배에서 해방을 이뤘다.",
+        point: "전치사 from + 기간 / 과거시제",
+        q: "(___) liberation from 35 years of rule, Korea celebrated its independence.",
+        options: ["Achieve","Achieved","Achieving"],
+        answer: 2
+      },
+      {
+        en: "This historic date, known as Liberation Day, marks the restoration of national sovereignty.",
+        ko: "광복절로 알려진 이 역사적인 날은 국가 주권 회복을 의미한다.",
+        point: "분사구 known as ~ (동격) / 현재시제",
+        q: "The historic date, (___) as Liberation Day, marks the restoration of sovereignty.",
+        options: ["know","knowing","known"],
+        answer: 2
+      },
+      {
+        en: "The exhibition traces how Liberation Day has been remembered and interpreted over the decades.",
+        ko: "전시는 수십 년 동안 광복절이 어떻게 기억되고 해석되어 왔는지를 추적한다.",
+        point: "간접의문문 how + S + V / 현재완료수동",
+        q: "The exhibition traces how Liberation Day (___) remembered over the decades.",
+        options: ["has been","have been","was"],
+        answer: 0
+      },
+      {
+        en: "It encourages visitors to contemplate the contemporary relevance of liberation and its implications for the nation's future.",
+        ko: "관람객들에게 해방의 현대적 의미와 미래에 대한 함의를 숙고하게 한다.",
+        point: "encourage + 목적어 + to부정사",
+        q: "It encourages visitors (___) the meaning of liberation.",
+        options: ["contemplate","to contemplate","contemplating"],
+        answer: 1
+      },
+      {
+        en: "Rather than viewing the day merely as a historical milestone, the exhibit frames it as an ongoing dialogue between past and future.",
+        ko: "이 날을 단순한 역사적 이정표로 보는 대신, 과거와 미래의 지속적 대화로 제시한다.",
+        point: "Rather than + 동명사 / frame A as B",
+        q: "Rather than (___) the day as a holiday, the exhibit frames it as a dialogue.",
+        options: ["see","seeing","saw"],
+        answer: 1
+      }
+    ]
+  }
+};
+
+// --- DOM/재생 로직은 기존대로 ---
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+let LEVEL = 'low';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+// --- Voice setup ---
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${v.name} (${v.lang})` + (v.default ? ' • default' : '');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v => /en-US/i.test(v.lang) && /Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred >= 0 ? preferred : 0);
+}
+window.speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+// --- UI binding ---
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click', () => {
+    const r = parseFloat(btn.dataset.rate);
+    rateRange.value = r;
+    rateLabel.textContent = r.toFixed(2) + '×';
+  });
+});
+rateRange.addEventListener('input', () => {
+  rateLabel.textContent = parseFloat(rateRange.value).toFixed(2) + '×';
+});
+
+levelTabs.low.addEventListener('click', () => switchLevel('low'));
+levelTabs.high.addEventListener('click', () => switchLevel('high'));
+levelTabs.mid.addEventListener('click', () => switchLevel('mid'));
+levelTabs.hs.addEventListener('click', () => switchLevel('hs'));
+
+playAllBtn.addEventListener('click', () => startPlayAll());
+pauseBtn.addEventListener('click', () => speechSynthesis.pause());
+resumeBtn.addEventListener('click', () => speechSynthesis.resume());
+stopBtn.addEventListener('click', stopAll);
+
+// --- Renderers ---
+function switchLevel(lv){
+  LEVEL = lv;
+  for (const k of Object.keys(levelTabs)) {
+    levelTabs[k].setAttribute('aria-selected', k===lv ? 'true':'false');
+  }
+  const d = DATA[lv];
+  topicPill.textContent = d.topic;
+  cefrPill.textContent = d.cefr;
+  headlineEl.textContent = d.headline;
+  dekEl.textContent = d.dek;
+
+  // sentences
+  sentencesEl.innerHTML = '';
+  d.sents.forEach((s, i)=>{
+    const div = document.createElement('div');
+    div.className = 'sent';
+    div.dataset.idx = i;
+    div.textContent = s;
+    div.addEventListener('click', () => playSentence(i, true));
+    sentencesEl.appendChild(div);
+  });
+
+  // vocab
+  vocabEl.innerHTML = '';
+  d.vocab.forEach(([en, ko, ex])=>{
+    const li = document.createElement('li');
+    li.innerHTML = `<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // quiz
+  quizList.innerHTML = '';
+  d.quiz.forEach((q,i)=>{
+    const li = document.createElement('li');
+    if(q.tf){
+      li.innerHTML = `<div>${q.stmt}</div>
+        <div class="controls">
+          <button data-q="${i}" data-a="true">True</button>
+          <button data-q="${i}" data-a="false">False</button>
+          <span class="small" id="qfb-${i}"></span>
+        </div>`;
+    } else {
+      const opts = q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const qidx = parseInt(e.target.dataset.q,10);
+      const ansRaw = e.target.dataset.a;
+      const dataQ = DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf
+        ? (String(dataQ.answer) === ansRaw)
+        : (dataQ.answer === parseInt(ansRaw,10));
+      const fb = document.getElementById('qfb-'+qidx);
+      fb.textContent = correct ? '정답!' : '다시 생각해봐요';
+    });
+  });
+
+  // grammar (only hs)
+  if (d.grammar){
+    grammarBox.style.display = '';
+    grammarList.innerHTML = '';
+    d.grammar.forEach((g, i)=>{
+      const li = document.createElement('li');
+      const opts = g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const gidx = parseInt(e.target.dataset.g,10);
+        const ans = parseInt(e.target.dataset.a,10);
+        const cor = DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent = (ans===cor) ? '정답!' : '다시 시도해보세요';
+      });
+    });
+  } else {
+    grammarBox.style.display = 'none';
+    grammarList.innerHTML = '';
+  }
+
+  stopAll();
+}
+switchLevel('low');
+
+// --- Playback helpers ---
+function getSelectedVoice(){
+  const idx = parseInt(voiceSelect.value || '0', 10);
+  return VOICES[idx] || null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el, j)=>{
+    el.classList.toggle('active', j===i);
+    el.classList.toggle('done', j<i && PLAYING_ALL);
+  });
+}
+function clearMarks(){
+  sentencesEl.querySelectorAll('.sent').forEach((el)=>{
+    el.classList.remove('active','done');
+  });
+}
+function stopAll(){
+  PLAYING_ALL = false;
+  CURRENT_INDEX = -1;
+  speechSynthesis.cancel();
+  clearMarks();
+}
+function playSentence(i, repeat=false){
+  stopAll();
+  const d = DATA[LEVEL];
+  const text = d.sents[i];
+  CURRENT_INDEX = i;
+  markActive(i);
+  const u = new SpeechSynthesisUtterance(text);
+  const v = getSelectedVoice();
+  if (v) u.voice = v;
+  u.lang = (v && v.lang) || 'en-US';
+  u.rate = parseFloat(rateRange.value);
+  u.pitch = 1.0;
+  u.onend = () => {
+    if(repeat){
+      setTimeout(()=> playSentence(i, true), 250);
+    } else {
+      CURRENT_INDEX = -1;
+      clearMarks();
+    }
+  };
+  speechSynthesis.speak(u);
+}
+function startPlayAll(){
+  stopAll();
+  PLAYING_ALL = true;
+  const d = DATA[LEVEL];
+  let i = 0;
+  const next = ()=>{
+    if(!PLAYING_ALL) return;
+    if(i >= d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX = i;
+    markActive(i);
+    const u = new SpeechSynthesisUtterance(d.sents[i]);
+    const v = getSelectedVoice();
+    if (v) u.voice = v;
+    u.lang = (v && v.lang) || 'en-US';
+    u.rate = parseFloat(rateRange.value);
+    u.pitch = 1.0;
+    u.onend = ()=>{ setTimeout(()=>{ i++; next(); }, 250); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+// Keyboard shortcuts
+window.addEventListener('keydown', (e)=>{
+  if(e.code === 'Space'){ e.preventDefault(); if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause(); else speechSynthesis.resume(); }
+  if(e.code === 'Digit1'){ switchLevel('low'); }
+  if(e.code === 'Digit2'){ switchLevel('high'); }
+  if(e.code === 'Digit3'){ switchLevel('mid'); }
+  if(e.code === 'Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
