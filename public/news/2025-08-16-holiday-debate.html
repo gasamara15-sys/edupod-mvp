@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="ko">
 <head>
+  // 안전한 TTS 접근자
+const synth = (typeof window !== 'undefined' && 'speechSynthesis' in window)
+  ? window.speechSynthesis
+  : null;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Will Oct 10 Become a Holiday? | EduPod 뉴스</title>
@@ -399,8 +403,17 @@ function loadVoices(){
   const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
   voiceSelect.value = String(preferred>=0?preferred:0);
 }
-speechSynthesis.onvoiceschanged = loadVoices;
-if (speechSynthesis.getVoices().length) loadVoices();
+if (synth) {
+   synth.onvoiceschanged = loadVoices;
+   if (synth.getVoices().length) loadVoices();
+ } else {
+   // TTS 미지원: 목소리 콤보/재생 버튼 비활성화
+   document.getElementById('voiceSelect')?.setAttribute('disabled', 'true');
+   document.getElementById('playAll')?.setAttribute('disabled', 'true');
+   document.getElementById('pauseBtn')?.setAttribute('disabled', 'true');
+   document.getElementById('resumeBtn')?.setAttribute('disabled', 'true');
+   document.getElementById('stopBtn')?.setAttribute('disabled', 'true');
+}
 
 document.querySelectorAll('.preset').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -416,8 +429,8 @@ levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
 levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
 
 playAllBtn.addEventListener('click',()=>startPlayAll());
-pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
-resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+pauseBtn.addEventListener('click', () => synth && synth.pause());
+resumeBtn.addEventListener('click', () => synth && synth.resume());
 stopBtn.addEventListener('click',stopAll);
 
 function switchLevel(lv){
@@ -519,7 +532,7 @@ function clearMarks(){
   sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));
 }
 function stopAll(){
-  PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks();
+  PLAYING_ALL = false; CURRENT_INDEX = -1; if (synth) synth.cancel(); clearMarks();
 }
 function playSentence(i,repeat=false){
   stopAll();
@@ -529,7 +542,7 @@ function playSentence(i,repeat=false){
   const v=getSelectedVoice(); if(v) u.voice=v;
   u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
   u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
-  speechSynthesis.speak(u);
+  if (synth) synth.speak(u);
 }
 function startPlayAll(){
   stopAll(); PLAYING_ALL=true;
@@ -542,12 +555,15 @@ function startPlayAll(){
     const v=getSelectedVoice(); if(v) u.voice=v;
     u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
     u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 250); };
-    speechSynthesis.speak(u);
+    if (synth) synth.speak(u);
   };
   next();
 }
 window.addEventListener('keydown',(e)=>{
-  if(e.code==='Space'){ e.preventDefault(); if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause(); else speechSynthesis.resume(); }
+  if(e.code==='Space' && synth){ 
+    e.preventDefault(); 
+    if(synth.speaking && !synth.paused) synth.pause(); else synth.resume(); 
+  }
   if(e.code==='Digit1'){ switchLevel('low'); }
   if(e.code==='Digit2'){ switchLevel('high'); }
   if(e.code==='Digit3'){ switchLevel('mid'); }
@@ -555,12 +571,5 @@ window.addEventListener('keydown',(e)=>{
 });
 </script>
   <script src="/scripts/player.js"></script>
-<script>
-  // 안전하게 DOM 준비 후 실행
-  window.addEventListener("load", () => {
-    initTTS();  // 오디오 엔진 초기화
-    bindControls(); // 버튼 이벤트 바인딩
-  });
-</script>
 </body>
 </html>
