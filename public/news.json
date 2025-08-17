@@ -1,18 +1,7 @@
 {
-  "generatedAt": "2025-08-17T13:32:43.097Z",
-  "count": 3,
+  "generatedAt": "2025-08-17T13:36:31.254Z",
+  "count": 2,
   "items": [
-    {
-      "id": "test",
-      "date": "2025-08-17",
-      "title": "Liberation Day at 80: Reflecting on the Past, Envisioning the Future",
-      "categories": [
-        "History",
-        "Education"
-      ],
-      "summary": "광복 80주년을 맞아 서울역사박물관 전시 ‘우리의 광복절’을 통해 과거의 기억과 미래의 의미를 함께 살펴봅니다. 초/중/고(수능) 레벨별 기사·단어·퀴즈 제공.",
-      "link": "/news/test.html"
-    },
     {
       "id": "2025-08-16-holiday-debate",
       "date": "2025-08-16",
