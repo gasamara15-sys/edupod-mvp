@@ -525,5 +525,13 @@ window.addEventListener('keydown', (e)=>{
   if(e.code === 'Digit4'){ switchLevel('hs'); }
 });
 </script>
+  <script src="/scripts/player.js"></script>
+<script>
+  // 안전하게 DOM 준비 후 실행
+  window.addEventListener("load", () => {
+    initTTS();  // 오디오 엔진 초기화
+    bindControls(); // 버튼 이벤트 바인딩
+  });
+</script>
 </body>
 </html>
