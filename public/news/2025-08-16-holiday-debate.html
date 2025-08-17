@@ -49,6 +49,117 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "svtn5vtbri");
 </script>
+  <script>
+(function(){
+  const ua = (navigator.userAgent || '').toLowerCase();
+  const inApp =
+    /kakaotalk|naver\(inapp|line\/|fbav|instagram|instagramsp|twitter|telegram|whatsapp/i
+      .test(navigator.userAgent || '');
+
+  if (inApp) {
+    document.documentElement.classList.add('in-app');
+    const bar = document.createElement('div');
+    bar.innerHTML = `
+      <div style="position:fixed;left:0;right:0;bottom:0;z-index:9999;
+        background:#111;color:#fff;padding:10px 12px;font-size:14px;
+        display:flex;gap:8px;align-items:center;justify-content:space-between;">
+        <span>인앱 브라우저입니다. 음성/버튼 문제 시 기본 브라우저로 열어주세요.</span>
+        <a href="${location.href}" target="_blank" rel="noopener"
+           style="background:#22c55e;color:#111;padding:6px 10px;border-radius:8px;
+                  text-decoration:none;font-weight:700;">브라우저로 열기</a>
+      </div>`;
+    window.addEventListener('load', () => document.body.appendChild(bar));
+  }
+})();
+</script>
+<style>
+.in-app body { padding-bottom: 80px; }
+header { z-index: 1000 !important; }
+</style>
+  <script>
+const HAS_TTS =
+  'speechSynthesis' in window &&
+  'SpeechSynthesisUtterance' in window &&
+  typeof window.speechSynthesis?.getVoices === 'function';
+
+function disableTTSUI() {
+  ['voiceSelect','rate','playAll','pauseBtn','resumeBtn','stopBtn'].forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) el.disabled = true;
+  });
+  const note = document.createElement('div');
+  note.className = 'small';
+  note.style.color = '#ef4444';
+  note.style.margin = '8px 0';
+  note.textContent = '이 브라우저에서는 음성 합성이 제한될 수 있습니다. 기본 브라우저에서 다시 시도해 주세요.';
+  document.querySelector('.controls')?.appendChild(note);
+}
+
+function guardTTSOr(fn){ return (...args)=>{ if(!HAS_TTS) return; return fn(...args); }; }
+
+// 인앱/웹뷰에서 음성목록이 늦게 뜨는 문제 보완
+async function loadVoicesWithRetry(maxTry = 15) {
+  return new Promise(resolve => {
+    let tries = 0;
+    const tick = () => {
+      const voices = window.speechSynthesis?.getVoices?.() || [];
+      if (voices.length || tries >= maxTry) return resolve(voices);
+      tries++; setTimeout(tick, 300);
+    };
+    try { window.speechSynthesis?.cancel(); } catch(e){}
+    tick();
+  });
+}
+
+async function initTTS() {
+  if (!HAS_TTS) { disableTTSUI(); return; }
+  const voices = await loadVoicesWithRetry();
+  if (!voices.length) { disableTTSUI(); return; }
+
+  const voiceSelect = document.getElementById('voiceSelect');
+  if (voiceSelect) {
+    voiceSelect.innerHTML = '';
+    voices.filter(v => v.lang?.startsWith('en')).forEach((v,i)=>{
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = `${v.name} (${v.lang})${v.default?' • default':''}`;
+      voiceSelect.appendChild(opt);
+    });
+  }
+
+  // 사용자 첫 클릭에서 한번 더 보장
+  document.body.addEventListener('click', () => loadVoicesWithRetry(), { once:true });
+}
+
+window.addEventListener('load', initTTS);
+
+// playSentence / startPlayAll 같은 곳에서는 이렇게 감싸 호출
+// const playSentenceSafe = guardTTSOr(playSentence);
+// const startPlayAllSafe = guardTTSOr(startPlayAll);
+</script>
+  <style>
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+.controls button { touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+@media (max-width:480px){
+  .controls button { padding:10px 14px; font-size:15px; }
+  .sent { padding:8px 10px; font-size:16px; }
+}
+</style>
+
+<!-- 버튼들에 type="button" 명시 -->
+<button type="button" id="playAll" class="primary">전체 재생</button>
+<button type="button" id="pauseBtn">일시정지</button>
+<button type="button" id="resumeBtn">재개</button>
+<button type="button" id="stopBtn">정지</button>
+  <button type="button" id="ttsKick" style="display:none">음성 테스트</button>
+<script>
+document.getElementById('ttsKick')?.addEventListener('click', ()=>{
+  if(!HAS_TTS) return;
+  const u = new SpeechSynthesisUtterance('Hello');
+  speechSynthesis.speak(u);
+});
+</script>
 </head>
 <body>
 <header>
