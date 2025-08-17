@@ -155,7 +155,7 @@
       </div>
 
       <div class="grammar" id="grammarBox" style="display:none">
-        <h3 style="margin:0 0 6px">문법 포인트 (고등/수능)</h3>
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트 (고등/수능)</h3>
         <ol id="grammarList"></ol>
       </div>
     </div>
@@ -246,6 +246,33 @@ const DATA = {
       {q:"What does the government think longer breaks do?", options:["Keep demand at home","Channel demand overseas","Reduce travel"], answer:1},
       {q:"T/F: Local tourism spending rose in January.", tf:true, stmt:"Local tourism spending rose in January.", answer:false},
       {q:"Which is NOT mentioned as an effect?", options:["Exports slowed","Production slowed","Food prices surged"], answer:2}
+    ],
+    // ✅ 중학생 문법 추가
+    grammar: [
+      {
+        en: "Designating Oct 10 would create up to ten consecutive days off.",
+        ko: "10월 10일을 공휴일로 지정하면 최장 열흘 연휴가 된다.",
+        point: "가정/결과 표현: would + 동사원형",
+        q: "Designating Oct 10 (___) create up to ten consecutive days off.",
+        options: ["will", "would", "was"],
+        answer: 1
+      },
+      {
+        en: "It argues that longer breaks channel demand overseas rather than at home.",
+        ko: "연휴가 길어지면 수요가 국내보다 해외로 이동한다고 설명한다.",
+        point: "비교/대조: rather than (~라기보다)",
+        q: "… demand overseas (___) at home.",
+        options: ["instead", "rather than", "because of"],
+        answer: 1
+      },
+      {
+        en: "In January, outbound travelers hit a record high, yet local tourism spending fell year-on-year.",
+        ko: "1월에는 해외 출국이 최고치를 찍었지만 국내 관광 지출은 전년 대비 감소했다.",
+        point: "대조 접속사: yet = but",
+        q: "Outbound travelers hit a record high, (___) local tourism spending fell.",
+        options: ["and", "yet", "so"],
+        answer: 1
+      }
     ]
   },
 
@@ -321,6 +348,7 @@ const headlineEl = document.getElementById('headline');
 const dekEl = document.getElementById('dek');
 const grammarBox = document.getElementById('grammarBox');
 const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
 
 const playAllBtn = document.getElementById('playAll');
 const pauseBtn = document.getElementById('pauseBtn');
@@ -440,9 +468,17 @@ function switchLevel(lv){
     });
   });
 
-  // 문법(고등/수능만)
+  // 문법(레벨별 표시)
   if(d.grammar){
     grammarBox.style.display='';
+    const titleMap = {
+      low: "문법 포인트 (초등 저학년)",
+      high: "문법 포인트 (초등 고학년)",
+      mid: "문법 포인트 (중학생)",
+      hs:  "문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+
     grammarList.innerHTML='';
     d.grammar.forEach((g,i)=>{
       const li=document.createElement('li');
