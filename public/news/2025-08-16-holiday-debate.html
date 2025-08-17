@@ -9,11 +9,18 @@
   <link rel="icon" href="/favicon.ico" />
   <link rel="canonical" href="https://www.edupod.kr/news/2025-08-16-holiday-debate.html" />
   <style>
-    :root{--border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc}
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --red:#ef4444; --red-600:#dc2626; --red-bg:#fff5f5;
+    }
     html,body{margin:0;padding:0;background:#fafafa}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:#111827}
-    header{padding:16px 20px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
-    h1{font-size:18px;margin:0}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:#111827}
+    .nav a:hover{background:#f8fafc}
+
     main{padding:20px;max-width:980px;margin:0 auto}
     .row{display:flex;gap:16px;flex-wrap:wrap}
     .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
@@ -28,6 +35,9 @@
     .sent.active{background:var(--active);border-color:#fcd34d}
     .en{display:block}
     .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    /* 한국어 전체 숨김 토글용 */
+    .ko.hidden{display:none !important;}
+
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
     .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
@@ -40,19 +50,46 @@
     .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
     .headline{font-weight:700}
     .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+
+    /* 아이콘 재생 버튼 */
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--red);border-radius:14px;background:#fff;color:var(--red);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--red-bg);border-color:var(--red-600);color:var(--red-600)}
+    .icon-btn:disabled{opacity:.5}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+    .divider{width:1px;height:28px;background:var(--border);margin:0 2px}
   </style>
   <!-- Microsoft Clarity -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "svtn5vtbri");
-</script>
+    })(window, document, "clarity", "script", "svtn5vtbri");
+  </script>
 </head>
 <body>
 <header>
   <h1>EduPod 뉴스 <span class="meta">— 2025-08-16 · <span class="pill">Policy</span> <span class="pill">Economy</span></span></h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 10.5L12 3l9 7.5"></path><path d="M5 10v9h14v-9"></path>
+      </svg>
+      홈으로
+    </a>
+    <a href="/news/" id="newsListLink" title="뉴스 리스트">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 6h12M4 6h.01M8 12h12M4 12h.01M8 18h12M4 18h.01"></path>
+      </svg>
+      뉴스 리스트
+    </a>
+  </nav>
 </header>
 
 <main>
@@ -64,8 +101,27 @@
         <button role="tab" id="tab-mid" aria-selected="false">중학생 (A2–B1)</button>
         <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
       </div>
+
+      <!-- 재생 아이콘 버튼(속도바 위) -->
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <!-- 보이스/속도 컨트롤 -->
       <div class="controls">
-        <label class="small">음성:</label>
+        <label class="small" for="voiceSelect">음성:</label>
         <select id="voiceSelect" aria-label="Voice"></select>
         <span class="small">속도 프리셋:</span>
         <button class="preset" data-rate="0.85">처음 듣기</button>
@@ -75,13 +131,6 @@
         <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
         <span class="small" id="rateLabel">1.00×</span>
       </div>
-      <div class="controls">
-        <button id="playAll" class="primary">전체 재생</button>
-        <button id="pauseBtn">일시정지</button>
-        <button id="resumeBtn">재개</button>
-        <button id="stopBtn">정지</button>
-        <span class="small">문장 클릭: 해당 문장만 반복</span>
-      </div>
     </div>
   </div>
 
@@ -90,6 +139,12 @@
       <div class="meta"><span class="pill" id="topicPill">Policy</span> <span class="pill" id="cefrPill">A1</span></div>
       <div class="headline" id="headline">Will Oct 10 Become a Holiday?</div>
       <p class="small" id="dek">Government says it is not considering it due to limited domestic demand effects.</p>
+
+      <!-- 한국어 전체 토글 버튼(레벨 공통 적용) -->
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
 
       <div id="sentences"></div>
       <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
@@ -201,7 +256,7 @@ const DATA = {
     dek: "Officials cite substitution effects toward outbound travel and a drag from fewer working days.",
     sents: [
       {en:"Public expectations for a ten-day stretch intensified, hinging on a potential Oct 10 holiday.", ko:"10월 10일 임시공휴일 지정 가능성에 기대를 걸며 열흘 연휴 기대가 커졌습니다."},
-      {en:"Yet authorities stated they are not weighing such a designation.", ko:"그러나 당국은 그런 지정은 검토하지 않는다고 밝혔습니다."},
+      {en:"Yet authorities stated they are not weighing such a designation.", ko:"그러나 당국은 그런 지정을 검토하지 않는다고 밝혔습니다."},
       {en:"They argue that prolonged breaks substitute domestic consumption with outbound travel.", ko:"연휴가 길어지면 내수 소비가 해외여행으로 대체된다고 주장합니다."},
       {en:"Evidence from January shows record outbound flows alongside weaker local tourism spending.", ko:"1월 자료에서도 해외 출국이 기록적이었고 국내 관광 지출은 약세였습니다."},
       {en:"Moreover, fewer working days curtailed output and exports, undermining short-term momentum.", ko:"게다가 조업일수 감소는 생산과 수출을 제약해 단기 모멘텀을 약화시켰습니다."},
@@ -272,11 +327,16 @@ const pauseBtn = document.getElementById('pauseBtn');
 const resumeBtn = document.getElementById('resumeBtn');
 const stopBtn = document.getElementById('stopBtn');
 
+// 한국어 전체 토글 상태
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
 let LEVEL = 'low';
 let VOICES = [];
 let CURRENT_INDEX = -1;
 let PLAYING_ALL = false;
 
+// 음성 목록 로딩
 function loadVoices(){
   VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
   voiceSelect.innerHTML = '';
@@ -308,6 +368,21 @@ playAllBtn.addEventListener('click',()=>startPlayAll());
 pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
 resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
 stopBtn.addEventListener('click',stopAll);
+
+// 한국어 전체 토글 버튼
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => {
+    if (hideAllKo) el.classList.add('hidden');
+    else el.classList.remove('hidden');
+  });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
 
 function switchLevel(lv){
   LEVEL=lv;
@@ -389,6 +464,9 @@ function switchLevel(lv){
     grammarBox.style.display='none';
     grammarList.innerHTML='';
   }
+
+  // 현재 한국어 숨김 상태 유지 적용
+  applyAllKoVisibility();
 
   stopAll();
 }
