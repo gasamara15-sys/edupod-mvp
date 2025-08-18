@@ -7,7 +7,9 @@
   <meta name="category" content="Charity, K-pop, Global" />
   <meta name="description" content="블랙핑크 리사가 플리마켓 수익금을 굿네이버스에 기부해 니제르 콜로 지역의 식수·위생 사업(태양광 시스템, 물탱크, 식수대 설치)을 지원합니다. 약 6,800명의 아동과 주민에게 깨끗한 물을!" />
   <link rel="icon" href="/favicon.ico" />
+  <!-- 파일명과 정확히 일치하도록 canonical -->
   <link rel="canonical" href="https://www.edupod.kr/news/2025-08-19-lisa-niger-donation.html" />
+
   <!-- OG/Twitter -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="EduPod">
@@ -47,7 +49,8 @@
     .sent.active{background:var(--active);border-color:#fcd34d}
     .en{display:block}
     .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
-    .ko.hidden{display:none !important;}
+    .ko.hidden{display:none!important}
+
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
     .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
@@ -72,11 +75,37 @@
     .icon-btn:disabled{opacity:.5}
     .icon-btn svg{width:26px;height:26px;display:block}
     .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+
+    /* 인앱 배너 */
+    .inapp-banner{position:sticky;top:0;z-index:1000;background:#111;color:#fff;padding:10px 12px;display:none}
+    .inapp-actions{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+    .inapp-actions a,.inapp-actions button{appearance:none;border:0;border-radius:8px;padding:8px 10px;background:#fff;color:#111;font-weight:600;text-decoration:none}
+    .hint{font-size:12px;color:#d1d5db;margin-top:6px}
   </style>
 </head>
 <body>
+
+  <!-- 인앱 안내 배너 -->
+  <div id="inappBanner" class="inapp-banner" role="alert" aria-live="polite">
+    <div>
+      <b>카카오/인앱 브라우저에서는 일부 기능이 제한될 수 있어요.</b><br>
+      아래 버튼으로 외부 브라우저에서 열어주세요.
+      <div class="hint">iOS 사파리에서는 ‘새 탭’(또는 공유 ▸ <b>Safari에서 열기</b>)로 열립니다.</div>
+    </div>
+    <div class="inapp-actions">
+      <a id="openChrome" href="#" rel="noopener">Chrome으로 열기</a>
+      <button id="openSafari">Safari로 열기</button>
+    </div>
+  </div>
+
 <header>
-  <h1>EduPod 뉴스 <span class="meta">— 2025-08-18 · <span class="pill">Charity</span> <span class="pill">K-pop</span> <span class="pill">Global</span></span></h1>
+  <h1>EduPod 뉴스
+    <span class="meta">— 2025-08-19 ·
+      <span class="pill">Charity</span>
+      <span class="pill">K-pop</span>
+      <span class="pill">Global</span>
+    </span>
+  </h1>
   <nav class="nav" aria-label="주요 이동">
     <a href="/" title="홈으로">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -84,7 +113,7 @@
       </svg>
       홈으로
     </a>
-    <a href="/news.html" title="뉴스 리스트">
+    <a href="/news.html" title="뉴스 리스트" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M8 6h12M4 6h.01M8 12h12M4 12h.01M8 18h12M4 18h.01"></path>
       </svg>
@@ -170,9 +199,51 @@
 </main>
 
 <script>
-// === 콘텐츠 데이터 (영/한 문장 페어) ===
+/* ---------- 인앱 감지 & 외부열기 (카카오/인스타/페북/네이버) ---------- */
+(function(){
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const isKakao = /KAKAOTALK/i.test(ua);
+  const isInstagram = /Instagram/i.test(ua);
+  const isFB = /FBAN|FBAV|Facebook/i.test(ua);
+  const isNaver = /NAVER\(inapp/i.test(ua);
+  const isInapp = isKakao || isInstagram || isFB || isNaver;
+  if(!isInapp) return;
+
+  const banner = document.getElementById('inappBanner');
+  if (banner) banner.style.display = 'block';
+
+  const url = location.href.replace(/#.*$/, '');
+
+  // ANDROID: Chrome intent
+  const chromeIntent = 'intent://' + url.replace(/^https?:\/\//,'')
+    + '#Intent;scheme=' + (location.protocol.replace(':',''))
+    + ';package=com.android.chrome;end';
+
+  const chromeA = document.getElementById('openChrome');
+  if (chromeA) {
+    chromeA.href = chromeIntent;
+    chromeA.addEventListener('click', function(e){
+      e.preventDefault();
+      location.href = chromeIntent;
+      // 실패 시 플레이스토어 유도 옵션
+      // setTimeout(()=>location.href='https://play.google.com/store/apps/details?id=com.android.chrome', 1200);
+    });
+  }
+
+  // iOS: Safari (새 탭/SFSafariView) 열기 + 안내 문구
+  const safariBtn = document.getElementById('openSafari');
+  if (safariBtn) {
+    safariBtn.addEventListener('click', ()=>{
+      // 인앱 WKWebView에서 _blank는 SFSafariViewController로 열립니다.
+      window.open(url, '_blank', 'noopener');
+      // 열리지 않는 환경을 대비한 안내
+      alert('열리지 않으면 오른쪽 상단 ••• 또는 공유 버튼 ▸ "Safari에서 열기"를 눌러주세요.');
+    });
+  }
+})();
+
+/* ---------- 콘텐츠 데이터 (Lisa 기사) ---------- */
 const DATA = {
-  // 초등 저학년 (간단 요약)
   low: {
     topic: "Charity",
     cefr: "A1–A2",
@@ -198,7 +269,6 @@ const DATA = {
     ]
   },
 
-  // 초등 고학년
   high: {
     topic: "Charity",
     cefr: "A2–B1",
@@ -224,7 +294,6 @@ const DATA = {
     ]
   },
 
-  // 중학생
   mid: {
     topic: "Charity",
     cefr: "A2–B1",
@@ -259,34 +328,12 @@ const DATA = {
       {q:"Where was the flea market held?", options:["Seoul","Paris","Bangkok"], answer:0}
     ],
     grammar: [
-      {
-        en:"The funds will support the Kolo area in Niger.",
-        ko:"기금은 니제르 콜로 지역을 지원할 것입니다.",
-        point:"미래 시제: will + 동사원형",
-        q:"The funds (___) support the Kolo area.",
-        options:["will","would","was"],
-        answer:0
-      },
-      {
-        en:"Plans include solar power systems, water tanks, and taps.",
-        ko:"계획에는 태양광 시스템, 물탱크, 식수대가 포함됩니다.",
-        point:"등위 열거: A, B, and C",
-        q:"Plans include solar power systems, water tanks, (___) taps.",
-        options:["or","and","but"],
-        answer:1
-      },
-      {
-        en:"Many families will benefit from the project.",
-        ko:"많은 가정이 이 사업의 혜택을 받을 것입니다.",
-        point:"자동사 benefit from ~ (~로부터 혜택을 받다)",
-        q:"Families will benefit (___) clean water.",
-        options:["of","from","by"],
-        answer:1
-      }
+      { en:"The funds will support the Kolo area in Niger.", ko:"기금은 니제르 콜로 지역을 지원할 것입니다.", point:"미래 시제: will + 동사원형", q:"The funds (___) support the Kolo area.", options:["will","would","was"], answer:0 },
+      { en:"Plans include solar power systems, water tanks, and taps.", ko:"계획에는 태양광 시스템, 물탱크, 식수대가 포함됩니다.", point:"등위 열거: A, B, and C", q:"Plans include solar power systems, water tanks, (___) taps.", options:["or","and","but"], answer:1 },
+      { en:"Many families will benefit from the project.", ko:"많은 가정이 이 사업의 혜택을 받을 것입니다.", point:"benefit from ~", q:"Families will benefit (___) clean water.", options:["of","from","by"], answer:1 }
     ]
   },
 
-  // 고등/수능
   hs: {
     topic: "Charity",
     cefr: "B2–C1",
@@ -326,89 +373,49 @@ const DATA = {
       {q:"Which organization announced the donation?", options:["Good Neighbors","WHO","UNESCO"], answer:0}
     ],
     grammar: [
-      {
-        en:"The funds are earmarked for Niger’s Kolo area.",
-        ko:"기금은 니제르 콜로 지역에 배정되어 있다.",
-        point:"수동태 + 전치사 for (~을 위해 배정되다)",
-        q:"The funds are earmarked (___) clean-water facilities.",
-        options:["to","for","at"],
-        answer:1
-      },
-      {
-        en:"The project aims to deliver safe, reliable water.",
-        ko:"이 사업은 안전하고 안정적인 식수를 제공하는 것을 목표로 한다.",
-        point:"aim to + 동사원형",
-        q:"The project aims (___) improve access to water.",
-        options:["to","for","at"],
-        answer:0
-      },
-      {
-        en:"Partnerships with credible NGOs help ensure impact.",
-        ko:"신뢰할 수 있는 NGO와의 파트너십은 효과를 보장하는 데 도움이 된다.",
-        point:"help + 동사원형",
-        q:"Partnerships (___) ensure field impact.",
-        options:["help","helps","helping"],
-        answer:0
-      }
+      { en:"The funds are earmarked for Niger’s Kolo area.", ko:"기금은 니제르 콜로 지역에 배정되어 있다.", point:"수동태 + 전치사 for", q:"The funds are earmarked (___) clean-water facilities.", options:["to","for","at"], answer:1 },
+      { en:"The project aims to deliver safe, reliable water.", ko:"이 사업은 안전하고 안정적인 식수를 제공하는 것을 목표로 한다.", point:"aim to + 동사원형", q:"The project aims (___) improve access to water.", options:["to","for","at"], answer:0 },
+      { en:"Partnerships with credible NGOs help ensure impact.", ko:"신뢰할 수 있는 NGO와의 파트너십은 효과를 보장하는 데 도움이 된다.", point:"help + 동사원형", q:"Partnerships (___) ensure field impact.", options:["help","helps","helping"], answer:0 }
     ]
   }
 };
 
-// === 공통 렌더/음성 재생 ===
-const levelTabs = {
-  low: document.getElementById('tab-low'),
-  high: document.getElementById('tab-high'),
-  mid: document.getElementById('tab-mid'),
-  hs: document.getElementById('tab-hs')
-};
-const voiceSelect = document.getElementById('voiceSelect');
-const rateRange = document.getElementById('rate');
-const rateLabel = document.getElementById('rateLabel');
-const sentencesEl = document.getElementById('sentences');
-const quizList = document.getElementById('quizList');
-const vocabEl = document.getElementById('vocab');
-const topicPill = document.getElementById('topicPill');
-const cefrPill = document.getElementById('cefrPill');
-const headlineEl = document.getElementById('headline');
-const dekEl = document.getElementById('dek');
-const grammarBox = document.getElementById('grammarBox');
-const grammarList = document.getElementById('grammarList');
-const grammarTitle = document.getElementById('grammarTitle');
+/* ---------- 공통 렌더/음성 재생 ---------- */
+const levelTabs={low:document.getElementById('tab-low'),high:document.getElementById('tab-high'),mid:document.getElementById('tab-mid'),hs:document.getElementById('tab-hs')};
+const voiceSelect=document.getElementById('voiceSelect');
+const rateRange=document.getElementById('rate');
+const rateLabel=document.getElementById('rateLabel');
+const sentencesEl=document.getElementById('sentences');
+const quizList=document.getElementById('quizList');
+const vocabEl=document.getElementById('vocab');
+const topicPill=document.getElementById('topicPill');
+const cefrPill=document.getElementById('cefrPill');
+const headlineEl=document.getElementById('headline');
+const dekEl=document.getElementById('dek');
+const grammarBox=document.getElementById('grammarBox');
+const grammarList=document.getElementById('grammarList');
+const grammarTitle=document.getElementById('grammarTitle');
 
-const playAllBtn = document.getElementById('playAll');
-const pauseBtn = document.getElementById('pauseBtn');
-const resumeBtn = document.getElementById('resumeBtn');
-const stopBtn = document.getElementById('stopBtn');
+const playAllBtn=document.getElementById('playAll');
+const pauseBtn=document.getElementById('pauseBtn');
+const resumeBtn=document.getElementById('resumeBtn');
+const stopBtn=document.getElementById('stopBtn');
 
-// 한국어 전체 토글 상태
-const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
-let hideAllKo = false;
+const toggleAllKoBtn=document.getElementById('toggleAllKoBtn');
+let hideAllKo=false, LEVEL='mid', VOICES=[], CURRENT_INDEX=-1, PLAYING_ALL=false;
 
-let LEVEL = 'mid';
-let VOICES = [];
-let CURRENT_INDEX = -1;
-let PLAYING_ALL = false;
-
-// 음성 목록 로딩
 function loadVoices(){
-  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
-  voiceSelect.innerHTML = '';
-  VOICES.forEach((v,i)=>{
-    const opt=document.createElement('option');
-    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
-    voiceSelect.appendChild(opt);
-  });
-  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
-  voiceSelect.value = String(preferred>=0?preferred:0);
+  VOICES=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.startsWith('en'));
+  voiceSelect.innerHTML='';
+  VOICES.forEach((v,i)=>{const opt=document.createElement('option');opt.value=i;opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');voiceSelect.appendChild(opt);});
+  const preferred=VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value=String(preferred>=0?preferred:0);
 }
-speechSynthesis.onvoiceschanged = loadVoices;
-if (speechSynthesis.getVoices().length) loadVoices();
+speechSynthesis.onvoiceschanged=loadVoices;
+if(speechSynthesis.getVoices().length) loadVoices();
 
 document.querySelectorAll('.preset').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const r=parseFloat(btn.dataset.rate);
-    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
-  });
+  btn.addEventListener('click',()=>{const r=parseFloat(btn.dataset.rate);rateRange.value=r;rateLabel.textContent=r.toFixed(2)+'×';});
 });
 rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
 
@@ -422,160 +429,66 @@ pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
 resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
 stopBtn.addEventListener('click',stopAll);
 
-// 한국어 전체 토글 버튼
-toggleAllKoBtn.addEventListener('click', () => {
-  hideAllKo = !hideAllKo;
-  applyAllKoVisibility();
-});
+toggleAllKoBtn.addEventListener('click',()=>{hideAllKo=!hideAllKo;applyAllKoVisibility();});
 function applyAllKoVisibility(){
-  const kos = document.querySelectorAll('#sentences .ko');
-  kos.forEach(el => {
-    if (hideAllKo) el.classList.add('hidden');
-    else el.classList.remove('hidden');
-  });
-  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+  document.querySelectorAll('#sentences .ko').forEach(el=> hideAllKo?el.classList.add('hidden'):el.classList.remove('hidden'));
+  toggleAllKoBtn.textContent=hideAllKo?'한국어 보이기':'한국어 가리기';
 }
 
 function switchLevel(lv){
-  LEVEL=lv;
-  for(const k of Object.keys(levelTabs)){
-    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
-  }
-  const d=DATA[lv];
-  topicPill.textContent=d.topic;
-  cefrPill.textContent=d.cefr;
-  headlineEl.textContent=d.headline;
-  dekEl.textContent=d.dek;
+  LEVEL=lv; for(const k of Object.keys(levelTabs)){levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');}
+  const d=DATA[lv]; topicPill.textContent=d.topic; cefrPill.textContent=d.cefr; headlineEl.textContent=d.headline; dekEl.textContent=d.dek;
 
-  // 문장 렌더 (영문 + 한글)
   sentencesEl.innerHTML='';
-  d.sents.forEach((o,i)=>{
-    const div=document.createElement('div');
-    div.className='sent'; div.dataset.idx=i;
-    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
-    div.addEventListener('click',()=>playSentence(i,true));
-    sentencesEl.appendChild(div);
-  });
+  d.sents.forEach((o,i)=>{const div=document.createElement('div');div.className='sent';div.dataset.idx=i;div.innerHTML=`<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;div.addEventListener('click',()=>playSentence(i,true));sentencesEl.appendChild(div);});
 
-  // 단어장
   vocabEl.innerHTML='';
-  d.vocab.forEach(([en,ko,ex])=>{
-    const li=document.createElement('li');
-    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
-    vocabEl.appendChild(li);
-  });
+  d.vocab.forEach(([en,ko,ex])=>{const li=document.createElement('li');li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;vocabEl.appendChild(li);});
 
-  // 퀴즈
   quizList.innerHTML='';
-  d.quiz.forEach((q,i)=>{
-    const li=document.createElement('li');
-    if(q.tf){
-      li.innerHTML=`<div>${q.stmt}</div>
-      <div class="controls">
-        <button data-q="${i}" data-a="true">True</button>
-        <button data-q="${i}" data-a="false">False</button>
-        <span class="small" id="qfb-${i}"></span>
-      </div>`;
-    }else{
-      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
-      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
-    }
-    quizList.appendChild(li);
-  });
-  quizList.querySelectorAll('button').forEach(b=>{
-    b.addEventListener('click',(e)=>{
-      const qidx=parseInt(e.target.dataset.q,10);
-      const ansRaw=e.target.dataset.a;
-      const dataQ=DATA[LEVEL].quiz[qidx];
-      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
-      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
-    });
-  });
+  d.quiz.forEach((q,i)=>{const li=document.createElement('li');if(q.tf){li.innerHTML=`<div>${q.stmt}</div><div class="controls"><button data-q="${i}" data-a="true">True</button><button data-q="${i}" data-a="false">False</button><span class="small" id="qfb-${i}"></span></div>`;}else{const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;}quizList.appendChild(li);});
+  quizList.querySelectorAll('button').forEach(b=>b.addEventListener('click',e=>{const qidx=parseInt(e.target.dataset.q,10);const ansRaw=e.target.dataset.a;const dataQ=DATA[LEVEL].quiz[qidx];const correct=dataQ.tf?(String(dataQ.answer)===ansRaw):(dataQ.answer===parseInt(ansRaw,10));document.getElementById('qfb-'+qidx).textContent=correct?'정답!':'다시 생각해봐요';}));
 
-  // 문법(레벨별 표시)
   if(d.grammar){
-    grammarBox.style.display='';
-    const titleMap = {
-      low: "문법 포인트 (초등 저학년)",
-      high: "문법 포인트 (초등 고학년)",
-      mid: "문법 포인트 (중학생)",
-      hs:  "문법 포인트 (고등/수능)"
-    };
-    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
-    grammarList.innerHTML='';
-    d.grammar.forEach((g,i)=>{
-      const li=document.createElement('li');
-      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
-      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
-                      <div class="controls"><span class="small">${g.q}</span></div>
-                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
-      grammarList.appendChild(li);
-    });
-    grammarList.querySelectorAll('button').forEach(btn=>{
-      btn.addEventListener('click',(e)=>{
-        const gidx=parseInt(e.target.dataset.g,10);
-        const ans=parseInt(e.target.dataset.a,10);
-        const cor=DATA[LEVEL].grammar[gidx].answer;
-        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
-      });
-    });
-  }else{
-    grammarBox.style.display='none';
-    grammarList.innerHTML='';
-  }
+    grammarBox.style.display=''; const titleMap={low:"문법 포인트 (초등 저학년)",high:"문법 포인트 (초등 고학년)",mid:"문법 포인트 (중학생)",hs:"문법 포인트 (고등/수능)"}; grammarTitle.textContent=titleMap[LEVEL]||"문법 포인트";
+    grammarList.innerHTML=''; d.grammar.forEach((g,i)=>{const li=document.createElement('li');const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');li.innerHTML=`<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div><div class="controls"><span class="small">${g.q}</span></div><div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;grammarList.appendChild(li);});
+    grammarList.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',e=>{const gidx=parseInt(e.target.dataset.g,10);const ans=parseInt(e.target.dataset.a,10);const cor=DATA[LEVEL].grammar[gidx].answer;document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';}));
+  }else{ grammarBox.style.display='none'; grammarList.innerHTML=''; }
 
-  // 현재 한국어 숨김 상태 유지 적용
-  applyAllKoVisibility();
-  stopAll();
+  applyAllKoVisibility(); stopAll();
 }
 // 기본 레벨
 switchLevel('mid');
 
-// 음성 재생
-function getSelectedVoice(){
-  const idx=parseInt(voiceSelect.value||'0',10);
-  return VOICES[idx]||null;
-}
-function markActive(i){
-  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{
-    el.classList.toggle('active',j===i);
-  });
-}
-function clearMarks(){
-  sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));
-}
-function stopAll(){
-  PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks();
-}
+function getSelectedVoice(){const idx=parseInt(voiceSelect.value||'0',10);return VOICES[idx]||null;}
+function markActive(i){sentencesEl.querySelectorAll('.sent').forEach((el,j)=>el.classList.toggle('active',j===i));}
+function clearMarks(){sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));}
+function stopAll(){PLAYING_ALL=false;CURRENT_INDEX=-1;speechSynthesis.cancel();clearMarks();}
 function playSentence(i,repeat=false){
-  stopAll();
-  const d=DATA[LEVEL]; const text=d.sents[i].en;
-  CURRENT_INDEX=i; markActive(i);
-  const u=new SpeechSynthesisUtterance(text);
-  const v=getSelectedVoice(); if(v) u.voice=v;
+  stopAll(); const d=DATA[LEVEL]; const text=d.sents[i].en; CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text); const v=getSelectedVoice(); if(v) u.voice=v;
   u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
   u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
   speechSynthesis.speak(u);
 }
 function startPlayAll(){
-  stopAll(); PLAYING_ALL=true;
-  const d=DATA[LEVEL]; let i=0;
-  const next=()=>{
-    if(!PLAYING_ALL) return;
-    if(i>=d.sents.length){ stopAll(); return; }
+  stopAll(); PLAYING_ALL=true; const d=DATA[LEVEL]; let i=0;
+  const next=()=>{ if(!PLAYING_ALL) return; if(i>=d.sents.length){ stopAll(); return; }
     CURRENT_INDEX=i; markActive(i);
-    const u=new SpeechSynthesisUtterance(d.sents[i].en);
-    const v=getSelectedVoice(); if(v) u.voice=v;
+    const u=new SpeechSynthesisUtterance(d.sents[i].en); const v=getSelectedVoice(); if(v) u.voice=v;
     u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
     u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 250); };
     speechSynthesis.speak(u);
   };
   next();
 }
-playAllBtn.addEventListener('click', startPlayAll);
-pauseBtn.addEventListener('click', ()=>speechSynthesis.pause());
-resumeBtn.addEventListener('click', ()=>speechSynthesis.resume());
-stopBtn.addEventListener('click', stopAll);
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){ e.preventDefault(); if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause(); else speechSynthesis.resume(); }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
 </script>
 </body>
 </html>
