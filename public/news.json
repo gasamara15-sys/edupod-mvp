@@ -1,29 +1,38 @@
 {
-  "generatedAt": "2025-08-18T00:00:00.000Z",
+  "generatedAt": "2025-08-18T08:31:28.924Z",
   "count": 3,
   "items": [
     {
-      "id": "2025-08-18-Debate Over Monday Holiday System and Economic Impact.html",
+      "id": "2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact",
       "date": "2025-08-18",
       "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": ["Policy", "Economy"],
-      "summary": "요일제(월요일 고정) 공휴일 도입 시 소비·생산 유발 등 경제 효과와 근로자 복지 개선이 기대된다는 연구 결과가 나왔습니다.",
-      "link": "/news/2025-08-18-monday-holiday-debate.html"
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "link": "/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html"
     },
     {
       "id": "2025-08-16-holiday-debate",
       "date": "2025-08-16",
       "title": "Will Oct 10 Become a Holiday? | EduPod 뉴스",
-      "categories": ["Policy", "Economy"],
-      "summary": "정부는 10월 10일 임시공휴일 지정을 검토하지 않는다고 밝혔습니다.",
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "정부는 10월 10일 임시공휴일 지정을 ",
       "link": "/news/2025-08-16-holiday-debate.html"
     },
     {
       "id": "2025-08-15-liberation-day",
       "date": "2025-08-15",
       "title": "Liberation Day at 80: Reflecting on the Past, Envisioning the Future",
-      "categories": ["History", "Education"],
-      "summary": "광복 80주년 기념 전시 ‘우리의 광복절’. 초/중/고 레벨별 기사·단어·퀴즈 제공.",
+      "categories": [
+        "History",
+        "Education"
+      ],
+      "summary": "광복 80주년을 맞아 서울역사박물관 전시 ‘우리의 광복절’을 통해 과거의 기억과 미래의 의미를 함께 살펴봅니다. 초/중/고(수능) 레벨별 기사·단어·퀴즈 제공.",
       "link": "/news/2025-08-15-liberation-day.html"
     }
   ]
