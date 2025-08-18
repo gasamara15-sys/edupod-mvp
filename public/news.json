@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2025-08-19T00:00:00.000Z",
+  "generatedAt": "2025-08-18T13:19:35.935Z",
   "count": 5,
   "items": [
     {
       "id": "2025-08-19-lisa-niger-donation",
       "date": "2025-08-19",
       "title": "Lisa Donates to Clean Water in Niger | EduPod 뉴스",
-      "categories": ["Charity", "K-pop", "Global"],
+      "categories": [
+        "Charity",
+        "K-pop",
+        "Global"
+      ],
       "summary": "블랙핑크 리사가 플리마켓 수익금을 굿네이버스에 기부해 니제르 콜로 지역의 식수·위생 사업(태양광 시스템, 물탱크, 식수대 설치)을 지원합니다. 약 6,800명의 아동과 주민에게 깨끗한 물을!",
       "link": "/news/2025-08-19-lisa-niger-donation.html"
     },
@@ -14,15 +18,32 @@
       "id": "2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact",
       "date": "2025-08-18",
       "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": ["Policy", "Economy"],
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
       "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
       "link": "/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html"
+    },
+    {
+      "id": "2025-8-18-test",
+      "date": "2025-08-18",
+      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "link": "/news/2025-8-18-test.html"
     },
     {
       "id": "2025-08-16-holiday-debate",
       "date": "2025-08-16",
       "title": "Will Oct 10 Become a Holiday? | EduPod 뉴스",
-      "categories": ["Policy", "Economy"],
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
       "summary": "정부는 10월 10일 임시공휴일 지정을 ",
       "link": "/news/2025-08-16-holiday-debate.html"
     },
@@ -30,7 +51,10 @@
       "id": "2025-08-15-liberation-day",
       "date": "2025-08-15",
       "title": "Liberation Day at 80: Reflecting on the Past, Envisioning the Future",
-      "categories": ["History", "Education"],
+      "categories": [
+        "History",
+        "Education"
+      ],
       "summary": "광복 80주년을 맞아 서울역사박물관 전시 ‘우리의 광복절’을 통해 과거의 기억과 미래의 의미를 함께 살펴봅니다. 초/중/고(수능) 레벨별 기사·단어·퀴즈 제공.",
       "link": "/news/2025-08-15-liberation-day.html"
     }
