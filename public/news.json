@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T08:31:28.924Z",
-  "count": 3,
+  "generatedAt": "2025-08-18T08:44:16.942Z",
+  "count": 4,
   "items": [
     {
       "id": "2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact",
@@ -12,6 +12,17 @@
       ],
       "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
       "link": "/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html"
+    },
+    {
+      "id": "2025-8-18-test",
+      "date": "2025-08-18",
+      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "link": "/news/2025-8-18-test.html"
     },
     {
       "id": "2025-08-16-holiday-debate",
