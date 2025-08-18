@@ -7,7 +7,15 @@
   <meta name="category" content="Policy, Economy" />
   <meta name="description" content="요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다." />
   <link rel="icon" href="/favicon.ico" />
+  <!-- 파일명과 정확히 일치하도록 canonical(대소문자 포함) -->
   <link rel="canonical" href="https://www.edupod.kr/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html" />
+
+  <!-- (선택) 캐시 및 혼합콘텐츠 방지 보정 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <style>
     :root{
       --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
@@ -35,7 +43,7 @@
     .sent.active{background:var(--active);border-color:#fcd34d}
     .en{display:block}
     .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
-    .ko.hidden{display:none !important;}
+    .ko.hidden{display:none!important}
 
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
@@ -61,10 +69,14 @@
     .icon-btn:disabled{opacity:.5}
     .icon-btn svg{width:26px;height:26px;display:block}
     .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
-    .divider{width:1px;height:28px;background:var(--border);margin:0 2px}
+
+    /* 인앱 배너 */
+    .inapp-banner{position:sticky;top:0;z-index:1000;background:#111;color:#fff;padding:10px 12px;display:none}
+    .inapp-actions{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+    .inapp-actions a,.inapp-actions button{appearance:none;border:0;border-radius:8px;padding:8px 10px;background:#fff;color:#111;font-weight:600;text-decoration:none}
   </style>
 
-  <!-- (선택) Microsoft Clarity 등 트래킹 스크립트를 쓰신다면 유지하세요
+  <!-- (선택) Microsoft Clarity
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -75,6 +87,16 @@
   -->
 </head>
 <body>
+
+  <!-- 인앱 안내 배너 -->
+  <div id="inappBanner" class="inapp-banner" role="alert" aria-live="polite">
+    <div><b>카카오/인앱 브라우저에서는 일부 기능이 제한될 수 있어요.</b><br>아래 버튼으로 외부 브라우저에서 열어주세요.</div>
+    <div class="inapp-actions">
+      <a id="openChrome" href="#" rel="noopener">Chrome으로 열기</a>
+      <button id="openSafari">Safari로 열기</button>
+    </div>
+  </div>
+
 <header>
   <h1>EduPod 뉴스 <span class="meta">— 2025-08-18 · <span class="pill">Policy</span> <span class="pill">Economy</span></span></h1>
   <nav class="nav" aria-label="주요 이동">
@@ -84,7 +106,8 @@
       </svg>
       홈으로
     </a>
-    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">
+    <!-- /news.html/ → /news.html 로 수정 -->
+    <a href="/news.html" id="newsListLink" title="뉴스 리스트" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M8 6h12M4 6h.01M8 12h12M4 12h.01M8 18h12M4 18h.01"></path>
       </svg>
@@ -170,247 +193,79 @@
 </main>
 
 <script>
-// === 콘텐츠 데이터 (영/한 문장 페어) ===
-const DATA = {
-  // 선택: 초등 레벨도 유지 (간단 요약)
-  low: {
-    topic: "Policy",
-    cefr: "A1–A2",
-    headline: "Monday Holidays: More Rest for Families?",
-    dek: "Some holidays may move to Monday for steady long weekends.",
-    sents: [
-      {en:"A study looked at moving some holidays to Monday.", ko:"일부 공휴일을 월요일로 옮기는 방안을 연구했습니다."},
-      {en:"This gives a steady three-day weekend.", ko:"이렇게 하면 항상 3일 연휴가 생깁니다."},
-      {en:"Spending could go up by over 2 trillion won.", ko:"소비가 2조 원 넘게 늘 수 있습니다."},
-      {en:"Local trips may increase more than overseas trips.", ko:"해외보다 국내 여행이 더 늘어날 수 있습니다."},
-      {en:"Korea already has a substitute holiday rule.", ko:"한국에는 대체 공휴일 제도가 있습니다."},
-      {en:"The final plan needs social agreement.", ko:"최종 결정에는 사회적 합의가 필요합니다."}
-    ],
-    vocab: [
-      ["long weekend","연휴","Families enjoy a long weekend."],
-      ["move to Monday","월요일로 옮기다","Some holidays may move to Monday."],
-      ["spending","소비 지출","Spending could increase."]
-    ],
-    quiz: [
-      {q:"Why move holidays to Monday?", options:["To have steady long weekends","To add more exams","To cancel holidays"], answer:0},
-      {q:"T/F: Korea already has substitute holidays.", tf:true, stmt:"Korea already has substitute holidays.", answer:true},
-      {q:"What is expected to increase?", options:["Domestic trips","Homework","Rain"], answer:0}
-    ]
-  },
+/* ---------- 인앱 감지 & 외부열기 ---------- */
+(function(){
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const isKakao = /KAKAOTALK/i.test(ua);
+  const isInstagram = /Instagram/i.test(ua);
+  const isFB = /FBAN|FBAV|Facebook/i.test(ua);
+  const isNaver = /NAVER\(inapp/i.test(ua);
+  const isInapp = isKakao || isInstagram || isFB || isNaver;
+  if(!isInapp) return;
 
-  high: {
-    topic: "Policy",
-    cefr: "A2–B1",
-    headline: "Fixing Holidays on Monday May Boost the Economy",
-    dek: "Research predicts higher spending and easier planning.",
-    sents: [
-      {en:"The plan fixes some holidays to Monday, not a date.", ko:"일부 공휴일을 날짜가 아닌 월요일로 고정하는 방안입니다."},
-      {en:"Example: Children’s Day could be the second Monday of May.", ko:"예: 어린이날을 5월 둘째 주 월요일로 정할 수 있습니다."},
-      {en:"A study expects about 2.1 trillion won more spending.", ko:"연구는 약 2.1조 원의 소비 증가를 예상합니다."},
-      {en:"Production and value added could also rise.", ko:"생산과 부가가치도 늘 수 있습니다."},
-      {en:"Three-day weekends help people plan domestic trips.", ko:"3일 연휴는 국내 여행 계획에 도움 됩니다."},
-      {en:"The final decision needs social agreement.", ko:"최종 결정은 사회적 합의가 필요합니다."}
-    ],
-    vocab: [
-      ["predictable","예측 가능한","Predictable breaks help families plan."],
-      ["value added","부가가치","Value added may rise with travel."],
-      ["domestic travel","국내 여행","Domestic travel often grows on short breaks."]
-    ],
-    quiz: [
-      {q:"What changes under the plan?", options:["Holidays fixed to Monday","More school days","No weekends"], answer:0},
-      {q:"T/F: The study only looks at costs.", tf:true, stmt:"The study only looks at costs.", answer:false},
-      {q:"Which travel grows with 3-day weekends?", options:["Domestic","Space","Polar"], answer:0}
-    ]
-  },
+  const banner = document.getElementById('inappBanner');
+  if (banner) banner.style.display = 'block';
 
-  // ✅ 중학생: 15줄
-  mid: {
-    topic: "Policy",
-    cefr: "A2–B1",
-    headline: "Korea Weighs Monday Holidays for Predictable Breaks",
-    dek: "Study says steady three-day weekends can boost spending and jobs.",
-    sents: [
-      {en:"A new study for the government examined 'Monday holidays'.", ko:"정부 의뢰 연구가 '월요일 공휴일'을 살폈습니다."},
-      {en:"This means fixing some holidays to Monday, not a date.", ko:"일부 공휴일을 날짜가 아니라 월요일로 고정한다는 뜻입니다."},
-      {en:"For example, Children’s Day could be the second Monday of May.", ko:"예를 들어 어린이날을 5월 둘째 주 월요일로 정할 수 있습니다."},
-      {en:"The study says consumer spending could rise by 2.1039 trillion won.", ko:"소비 지출은 2조1039억 원 늘 수 있다고 합니다."},
-      {en:"Production effects could reach 3.7954 trillion won.", ko:"생산 유발액은 3조7954억 원에 달할 수 있습니다."},
-      {en:"Value added may be about 1.6957 trillion won.", ko:"부가가치 유발액은 약 1조6957억 원입니다."},
-      {en:"About 8,416 jobs could be created.", ko:"고용 유발 인원은 약 8,416명입니다."},
-      {en:"Card spending rose 10% during long weekends.", ko:"긴 연휴 기간 카드 소비는 10% 늘었습니다."},
-      {en:"Local festivals had 15.9% more visitors.", ko:"지역 축제 방문은 15.9% 증가했습니다."},
-      {en:"Suicide rates also went down during longer breaks.", ko:"긴 연휴에는 자살률도 낮아졌습니다."},
-      {en:"But the production figure does not subtract lost output from a day off.", ko:"다만 생산 유발액은 쉬는 날의 생산 감소를 뺀 값은 아닙니다."},
-      {en:"Korea already uses a substitute holiday system from 2021.", ko:"한국은 2021년부터 대체 공휴일제를 시행 중입니다."},
-      {en:"It adds a day off when a holiday overlaps weekends or another holiday.", ko:"공휴일이 주말이나 다른 공휴일과 겹치면 다음 날 쉽니다."},
-      {en:"Monday holidays would give steady three-day weekends and more domestic trips.", ko:"월요일 공휴일은 꾸준한 3일 연휴를 만들어 국내 여행을 늘립니다."},
-      {en:"The final decision needs social agreement led by the personnel ministry.", ko:"최종 결정은 인사혁신처의 사회적 합의가 필요합니다."}
-    ],
-    vocab: [
-      ["weekday-fixed holiday","요일제 공휴일","A weekday-fixed holiday is set by day, not date."],
-      ["value added","부가가치","Value added can rise with travel and services."],
-      ["substitute holiday","대체 공휴일","A day off added when holidays overlap."],
-      ["predictable","예측 가능한","Predictable breaks help people plan."]
-    ],
-    quiz: [
-      {q:"What does 'Monday holiday' mean?", options:["Fixed by date","Fixed on Monday","Only for schools"], answer:1},
-      {q:"T/F: Jobs could increase under the plan.", tf:true, stmt:"Jobs could increase under the plan.", answer:true},
-      {q:"Which number is card spending growth?", options:["10%","5%","25%"], answer:0}
-    ],
-    grammar: [
-      {
-        en:"The study says consumer spending could rise by 2.1039 trillion won.",
-        ko:"연구는 소비 지출이 2조1039억 원 늘 수 있다고 말합니다.",
-        point:"조동사 could + 동사원형 (가능성·추정)",
-        q:"Consumer spending (___) rise by about 2.1 trillion won.",
-        options:["can","could","must"],
-        answer:1
-      },
-      {
-        en:"This means fixing some holidays to Monday, not a date.",
-        ko:"이는 일부 공휴일을 날짜가 아니라 월요일로 고정한다는 뜻입니다.",
-        point:"대조 표현: not A but B",
-        q:"Fix holidays (___) Monday, not a date.",
-        options:["for","to","on"],
-        answer:1
-      },
-      {
-        en:"It adds a day off when a holiday overlaps weekends.",
-        ko:"공휴일이 주말과 겹치면 하루를 더 쉽니다.",
-        point:"조건 부사절 when + 주어 + 동사 (일반현재)",
-        q:"We get a day off (___) a holiday overlaps a weekend.",
-        options:["when","because","although"],
-        answer:0
-      }
-    ]
-  },
+  const url = location.href;
+  const chromeIntent = 'intent://' + url.replace(/^https?:\/\//,'') +
+    '#Intent;scheme=' + (location.protocol.replace(':','')) +
+    ';package=com.android.chrome;end';
 
-  // ✅ 고등/수능: 20~25줄 (여기선 23줄)
-  hs: {
-    topic: "Policy",
-    cefr: "B2–C1",
-    headline: "Weekday-Fixed Holidays: Economic Gains and Policy Trade-offs",
-    dek: "A government-commissioned study projects trillions in spending and output from Monday holidays.",
-    sents: [
-      {en:"A study commissioned by the Ministry of Economy and Finance examined weekday-fixed holidays in Korea.", ko:"기획재정부 의뢰 연구가 한국의 요일제 공휴일 도입 효과를 분석했습니다."},
-      {en:"Under this scheme, certain holidays would be designated by weekday—typically Monday—rather than by calendar date.", ko:"이 제도에서는 특정 공휴일을 날짜가 아니라 보통 월요일 같은 요일로 지정합니다."},
-      {en:"Candidates include Children’s Day, Memorial Day, and Hangeul Day.", ko:"어린이날, 현충일, 한글날 등이 대상 후보로 거론됩니다."},
-      {en:"The model estimates additional consumer spending of 2,103.9 billion won.", ko:"소비지출 증가액은 2조1039억 원으로 추산됩니다."},
-      {en:"It projects production inducement of 3,795.4 billion won.", ko:"생산유발액은 3조7954억 원입니다."},
-      {en:"Value-added inducement is put at roughly 1,695.7 billion won.", ko:"부가가치유발액은 약 1조6957억 원입니다."},
-      {en:"Employment inducement totals an estimated 8,416 people.", ko:"고용유발인원은 8,416명으로 추정됩니다."},
-      {en:"The study also observes a 10% rise in credit-card outlays during long weekends.", ko:"긴 연휴 동안 신용카드 소비는 10% 증가했습니다."},
-      {en:"Regional festivals recorded a 15.9% increase in attendance.", ko:"지역 축제는 15.9%의 관람객 증가를 보였습니다."},
-      {en:"Suicide rates declined around extended breaks, a salient public-health correlation.", ko:"장기 연휴 기간에는 자살률이 감소하는 상관도 확인됐습니다."},
-      {en:"However, the production figure aggregates sectoral gains and does not net out output lost from the additional day off.", ko:"다만 생산유발액은 숙박·외식업 등 증가분을 합산한 값이며, 쉬는 날로 인한 생산 감소를 차감하지는 않습니다."},
-      {en:"Korea already mitigates overlap issues with a substitute-holiday law enacted in 2021.", ko:"한국은 2021년에 대체공휴일제를 도입해 겹침 문제를 완화하고 있습니다."},
-      {en:"If a holiday coincides with a weekend or another holiday, the next weekday becomes a day off—for instance, May 6 after Buddha’s Birthday overlapped Children’s Day.", ko:"공휴일이 주말·다른 공휴일과 겹치면 다음 평일을 쉬며, 부처님오신날과 어린이날이 겹친 뒤 5월 6일이 쉬었던 사례가 있습니다."},
-      {en:"Yet substitute holidays depend on overlaps and thus weaken predictability.", ko:"그러나 대체공휴일은 겹쳐야만 발생하기에 예측성이 낮습니다."},
-      {en:"Weekday-fixed holidays would secure stable Sat–Mon three-day weekends, enabling planned domestic travel.", ko:"요일제는 토~월의 안정적 3일 연휴를 보장해 계획적 국내여행을 촉진합니다."},
-      {en:"Combining Monday holidays with the current system yields larger gains: +5,088.6 billion won in spending,", ko:"월요일 공휴일을 현 제도와 병행하면 소비지출 5조0886억 원,"},
-      {en:"about 8,940.1 billion won in production inducement,", ko:"생산유발액 8조9401억 원,"},
-      {en:"and roughly 4,118.8 billion won in value-added inducement.", ko:"부가가치유발액 4조1188억 원 증가가 추정됩니다."},
-      {en:"International precedents include the U.S. 'Monday Holiday Law' (1971) and Japan’s 'Happy Monday' (2000).", ko:"해외 사례로는 미국의 'Monday Holiday Law'(1971)와 일본의 '해피먼데이'(2000)가 있습니다."},
-      {en:"Post-adoption evaluations in Japan report economic effects of ¥266.0–¥549.4 billion.", ko:"일본은 도입 이후 2660억~5494억 엔의 경제 효과가 있었다고 평가합니다."},
-      {en:"Challenges remain, notably labor-cost burdens at firms with fewer than five employees that fall outside the holiday law.", ko:"다만 5인 미만 사업장의 인건비 부담 등 과제가 제기됩니다."},
-      {en:"Proponents argue the reform enhances universal welfare by guaranteeing predictable rest, rather than simply adding holidays.", ko:"찬성 측은 단순히 휴일을 늘리기보다 예측 가능한 휴식을 보장해 보편 복지를 높인다고 봅니다."},
-      {en:"An MOEF official said the study aimed to raise the issue and build consensus; the Ministry of Personnel Management would decide following social deliberation.", ko:"기재부는 이슈 제기와 공감대 형성을 위한 용역이라고 밝혔고, 도입 여부는 인사혁신처가 사회적 합의로 결정할 사안입니다."}
-    ],
-    vocab: [
-      ["weekday-fixed holiday","요일제 공휴일","A holiday designated by weekday rather than date."],
-      ["production inducement","생산유발액","Estimated gains in total output."],
-      ["value-added inducement","부가가치유발액","Estimated gains in value added."],
-      ["predictability","예측 가능성","Predictability enables planned rest and travel."]
-    ],
-    quiz: [
-      {q:"Which statement is TRUE about the production figure?", options:["It nets out lost output","It excludes services","It aggregates gains without netting losses"], answer:2},
-      {q:"T/F: Japan and the U.S. already use weekday-fixed holidays.", tf:true, stmt:"Japan and the U.S. already use weekday-fixed holidays.", answer:true},
-      {q:"Which group faces a cited implementation challenge?", options:["Large exporters","Firms with <5 employees","Public schools"], answer:1}
-    ],
-    grammar: [
-      {
-        en:"Certain holidays would be designated by weekday rather than by date.",
-        ko:"일부 공휴일은 날짜가 아니라 요일로 지정될 것이다.",
-        point:"비교/대조: rather than (~라기보다)",
-        q:"Designated by weekday (___) by date.",
-        options:["instead","rather than","because of"],
-        answer:1
-      },
-      {
-        en:"The production figure does not net out output lost from the day off.",
-        ko:"생산유발액은 쉬는 날의 생산 감소를 차감하지 않는다.",
-        point:"부정 조동사: does not + 동사원형",
-        q:"The production figure (___) net out lost output.",
-        options:["does","does not","did"],
-        answer:1
-      },
-      {
-        en:"Weekday-fixed holidays would secure stable three-day weekends.",
-        ko:"요일제 공휴일은 안정적인 3일 연휴를 보장할 것이다.",
-        point:"가정/추정: would + 동사원형",
-        q:"They (___) secure stable three-day weekends.",
-        options:["will","would","were"],
-        answer:1
-      }
-    ]
+  const chromeA = document.getElementById('openChrome');
+  if (chromeA) {
+    chromeA.href = chromeIntent;
+    chromeA.addEventListener('click', function(e){
+      e.preventDefault();
+      location.href = chromeIntent;
+      // 실패 시 플레이스토어로 보낼 수도 있음
+      // setTimeout(()=>location.href='https://play.google.com/store/apps/details?id=com.android.chrome', 1200);
+    });
   }
+  const safariBtn = document.getElementById('openSafari');
+  if (safariBtn) safariBtn.addEventListener('click', ()=> window.open(url, '_blank', 'noopener'));
+})();
+
+/* ---------- 콘텐츠 데이터 ---------- */
+const DATA = { /* (당신이 보낸 DATA 그대로) */ 
+  low:{topic:"Policy",cefr:"A1–A2",headline:"Monday Holidays: More Rest for Families?",dek:"Some holidays may move to Monday for steady long weekends.",sents:[{en:"A study looked at moving some holidays to Monday.",ko:"일부 공휴일을 월요일로 옮기는 방안을 연구했습니다."},{en:"This gives a steady three-day weekend.",ko:"이렇게 하면 항상 3일 연휴가 생깁니다."},{en:"Spending could go up by over 2 trillion won.",ko:"소비가 2조 원 넘게 늘 수 있습니다."},{en:"Local trips may increase more than overseas trips.",ko:"해외보다 국내 여행이 더 늘어날 수 있습니다."},{en:"Korea already has a substitute holiday rule.",ko:"한국에는 대체 공휴일 제도가 있습니다."},{en:"The final plan needs social agreement.",ko:"최종 결정에는 사회적 합의가 필요합니다."}],vocab:[["long weekend","연휴","Families enjoy a long weekend."],["move to Monday","월요일로 옮기다","Some holidays may move to Monday."],["spending","소비 지출","Spending could increase."]],quiz:[{q:"Why move holidays to Monday?",options:["To have steady long weekends","To add more exams","To cancel holidays"],answer:0},{q:"T/F: Korea already has substitute holidays.",tf:true,stmt:"Korea already has substitute holidays.",answer:true},{q:"What is expected to increase?",options:["Domestic trips","Homework","Rain"],answer:0}]},
+  high:{topic:"Policy",cefr:"A2–B1",headline:"Fixing Holidays on Monday May Boost the Economy",dek:"Research predicts higher spending and easier planning.",sents:[{en:"The plan fixes some holidays to Monday, not a date.",ko:"일부 공휴일을 날짜가 아닌 월요일로 고정하는 방안입니다."},{en:"Example: Children’s Day could be the second Monday of May.",ko:"예: 어린이날을 5월 둘째 주 월요일로 정할 수 있습니다."},{en:"A study expects about 2.1 trillion won more spending.",ko:"연구는 약 2.1조 원의 소비 증가를 예상합니다."},{en:"Production and value added could also rise.",ko:"생산과 부가가치도 늘 수 있습니다."},{en:"Three-day weekends help people plan domestic trips.",ko:"3일 연휴는 국내 여행 계획에 도움 됩니다."},{en:"The final decision needs social agreement.",ko:"최종 결정은 사회적 합의가 필요합니다."}],vocab:[["predictable","예측 가능한","Predictable breaks help families plan."],["value added","부가가치","Value added may rise with travel."],["domestic travel","국내 여행","Domestic travel often grows on short breaks."]],quiz:[{q:"What changes under the plan?",options:["Holidays fixed to Monday","More school days","No weekends"],answer:0},{q:"T/F: The study only looks at costs.",tf:true,stmt:"The study only looks at costs.",answer:false},{q:"Which travel grows with 3-day weekends?",options:["Domestic","Space","Polar"],answer:0}]},
+  mid:{topic:"Policy",cefr:"A2–B1",headline:"Korea Weighs Monday Holidays for Predictable Breaks",dek:"Study says steady three-day weekends can boost spending and jobs.",sents:[{en:"A new study for the government examined 'Monday holidays'.",ko:"정부 의뢰 연구가 '월요일 공휴일'을 살폈습니다."},{en:"This means fixing some holidays to Monday, not a date.",ko:"일부 공휴일을 날짜가 아니라 월요일로 고정한다는 뜻입니다."},{en:"For example, Children’s Day could be the second Monday of May.",ko:"예를 들어 어린이날을 5월 둘째 주 월요일로 정할 수 있습니다."},{en:"The study says consumer spending could rise by 2.1039 trillion won.",ko:"소비 지출은 2조1039억 원 늘 수 있다고 합니다."},{en:"Production effects could reach 3.7954 trillion won.",ko:"생산 유발액은 3조7954억 원에 달할 수 있습니다."},{en:"Value added may be about 1.6957 trillion won.",ko:"부가가치 유발액은 약 1조6957억 원입니다."},{en:"About 8,416 jobs could be created.",ko:"고용 유발 인원은 약 8,416명입니다."},{en:"Card spending rose 10% during long weekends.",ko:"긴 연휴 기간 카드 소비는 10% 늘었습니다."},{en:"Local festivals had 15.9% more visitors.",ko:"지역 축제 방문은 15.9% 증가했습니다."},{en:"Suicide rates also went down during longer breaks.",ko:"긴 연휴에는 자살률도 낮아졌습니다."},{en:"But the production figure does not subtract lost output from a day off.",ko:"다만 생산 유발액은 쉬는 날의 생산 감소를 뺀 값은 아닙니다."},{en:"Korea already uses a substitute holiday system from 2021.",ko:"한국은 2021년부터 대체 공휴일제를 시행 중입니다."},{en:"It adds a day off when a holiday overlaps weekends or another holiday.",ko:"공휴일이 주말이나 다른 공휴일과 겹치면 다음 날 쉽니다."},{en:"Monday holidays would give steady three-day weekends and more domestic trips.",ko:"월요일 공휴일은 꾸준한 3일 연휴를 만들어 국내 여행을 늘립니다."},{en:"The final decision needs social agreement led by the personnel ministry.",ko:"최종 결정은 인사혁신처의 사회적 합의가 필요합니다."}],vocab:[["weekday-fixed holiday","요일제 공휴일","A weekday-fixed holiday is set by day, not date."],["value added","부가가치","Value added can rise with travel and services."],["substitute holiday","대체 공휴일","A day off added when holidays overlap."],["predictable","예측 가능한","Predictable breaks help people plan."]],quiz:[{q:"What does 'Monday holiday' mean?",options:["Fixed by date","Fixed on Monday","Only for schools"],answer:1},{q:"T/F: Jobs could increase under the plan.",tf:true,stmt:"Jobs could increase under the plan.",answer:true},{q:"Which number is card spending growth?",options:["10%","5%","25%"],answer:0}],grammar:[{en:"The study says consumer spending could rise by 2.1039 trillion won.",ko:"연구는 소비 지출이 2조1039억 원 늘 수 있다고 말합니다.",point:"조동사 could + 동사원형 (가능성·추정)",q:"Consumer spending (___) rise by about 2.1 trillion won.",options:["can","could","must"],answer:1},{en:"This means fixing some holidays to Monday, not a date.",ko:"이는 일부 공휴일을 날짜가 아니라 월요일로 고정한다는 뜻입니다.",point:"대조 표현: not A but B",q:"Fix holidays (___) Monday, not a date.",options:["for","to","on"],answer:1},{en:"It adds a day off when a holiday overlaps weekends.",ko:"공휴일이 주말과 겹치면 하루를 더 쉽니다.",point:"조건 부사절 when + 주어 + 동사 (일반현재)",q:"We get a day off (___) a holiday overlaps a weekend.",options:["when","because","although"],answer:0}]},
+  hs:{topic:"Policy",cefr:"B2–C1",headline:"Weekday-Fixed Holidays: Economic Gains and Policy Trade-offs",dek:"A government-commissioned study projects trillions in spending and output from Monday holidays.",sents:[{en:"A study commissioned by the Ministry of Economy and Finance examined weekday-fixed holidays in Korea.",ko:"기획재정부 의뢰 연구가 한국의 요일제 공휴일 도입 효과를 분석했습니다."},{en:"Under this scheme, certain holidays would be designated by weekday—typically Monday—rather than by calendar date.",ko:"이 제도에서는 특정 공휴일을 날짜가 아니라 보통 월요일 같은 요일로 지정합니다."},{en:"Candidates include Children’s Day, Memorial Day, and Hangeul Day.",ko:"어린이날, 현충일, 한글날 등이 대상 후보로 거론됩니다."},{en:"The model estimates additional consumer spending of 2,103.9 billion won.",ko:"소비지출 증가액은 2조1039억 원으로 추산됩니다."},{en:"It projects production inducement of 3,795.4 billion won.",ko:"생산유발액은 3조7954억 원입니다."},{en:"Value-added inducement is put at roughly 1,695.7 billion won.",ko:"부가가치유발액은 약 1조6957억 원입니다."},{en:"Employment inducement totals an estimated 8,416 people.",ko:"고용유발인원은 8,416명으로 추정됩니다."},{en:"The study also observes a 10% rise in credit-card outlays during long weekends.",ko:"긴 연휴 동안 신용카드 소비는 10% 증가했습니다."},{en:"Regional festivals recorded a 15.9% increase in attendance.",ko:"지역 축제는 15.9%의 관람객 증가를 보였습니다."},{en:"Suicide rates declined around extended breaks, a salient public-health correlation.",ko:"장기 연휴 기간에는 자살률이 감소하는 상관도 확인됐습니다."},{en:"However, the production figure aggregates sectoral gains and does not net out output lost from the additional day off.",ko:"다만 생산유발액은 숙박·외식업 등 증가분을 합산한 값이며, 쉬는 날로 인한 생산 감소를 차감하지는 않습니다."},{en:"Korea already mitigates overlap issues with a substitute-holiday law enacted in 2021.",ko:"한국은 2021년에 대체공휴일제를 도입해 겹침 문제를 완화하고 있습니다."},{en:"If a holiday coincides with a weekend or another holiday, the next weekday becomes a day off—for instance, May 6 after Buddha’s Birthday overlapped Children’s Day.",ko:"공휴일이 주말·다른 공휴일과 겹치면 다음 평일을 쉬며, 부처님오신날과 어린이날이 겹친 뒤 5월 6일이 쉬었던 사례가 있습니다."},{en:"Yet substitute holidays depend on overlaps and thus weaken predictability.",ko:"그러나 대체공휴일은 겹쳐야만 발생하기에 예측성이 낮습니다."},{en:"Weekday-fixed holidays would secure stable Sat–Mon three-day weekends, enabling planned domestic travel.",ko:"요일제는 토~월의 안정적 3일 연휴를 보장해 계획적 국내여행을 촉진합니다."},{en:"Combining Monday holidays with the current system yields larger gains: +5,088.6 billion won in spending,",ko:"월요일 공휴일을 현 제도와 병행하면 소비지출 5조0886억 원,"},{en:"about 8,940.1 billion won in production inducement,",ko:"생산유발액 8조9401억 원,"},{en:"and roughly 4,118.8 billion won in value-added inducement.",ko:"부가가치유발액 4조1188억 원 증가가 추정됩니다."},{en:"International precedents include the U.S. 'Monday Holiday Law' (1971) and Japan’s 'Happy Monday' (2000).",ko:"해외 사례로는 미국의 'Monday Holiday Law'(1971)와 일본의 '해피먼데이'(2000)가 있습니다."},{en:"Post-adoption evaluations in Japan report economic effects of ¥266.0–¥549.4 billion.",ko:"일본은 도입 이후 2660억~5494억 엔의 경제 효과가 있었다고 평가합니다."},{en:"Challenges remain, notably labor-cost burdens at firms with fewer than five employees that fall outside the holiday law.",ko:"다만 5인 미만 사업장의 인건비 부담 등 과제가 제기됩니다."},{en:"Proponents argue the reform enhances universal welfare by guaranteeing predictable rest, rather than simply adding holidays.",ko:"찬성 측은 단순히 휴일을 늘리기보다 예측 가능한 휴식을 보장해 보편 복지를 높인다고 봅니다."},{en:"An MOEF official said the study aimed to raise the issue and build consensus; the Ministry of Personnel Management would decide following social deliberation.",ko:"기재부는 이슈 제기와 공감대 형성을 위한 용역이라고 밝혔고, 도입 여부는 인사혁신처가 사회적 합의로 결정할 사안입니다."}],vocab:[["weekday-fixed holiday","요일제 공휴일","A holiday designated by weekday rather than date."],["production inducement","생산유발액","Estimated gains in total output."],["value-added inducement","부가가치유발액","Estimated gains in value added."],["predictability","예측 가능성","Predictability enables planned rest and travel."]],quiz:[{q:"Which statement is TRUE about the production figure?",options:["It nets out lost output","It excludes services","It aggregates gains without netting losses"],answer:2},{q:"T/F: Japan and the U.S. already use weekday-fixed holidays.",tf:true,stmt:"Japan and the U.S. already use weekday-fixed holidays.",answer:true},{q:"Which group faces a cited implementation challenge?",options:["Large exporters","Firms with <5 employees","Public schools"],answer:1}],grammar:[{en:"Certain holidays would be designated by weekday rather than by date.",ko:"일부 공휴일은 날짜가 아니라 요일로 지정될 것이다.",point:"비교/대조: rather than (~라기보다)",q:"Designated by weekday (___) by date.",options:["instead","rather than","because of"],answer:1},{en:"The production figure does not net out output lost from the day off.",ko:"생산유발액은 쉬는 날의 생산 감소를 차감하지 않는다.",point:"부정 조동사: does not + 동사원형",q:"The production figure (___) net out lost output.",options:["does","does not","did"],answer:1},{en:"Weekday-fixed holidays would secure stable three-day weekends.",ko:"요일제 공휴일은 안정적인 3일 연휴를 보장할 것이다.",point:"가정/추정: would + 동사원형",q:"They (___) secure stable three-day weekends.",options:["will","would","were"],answer:1}]}
 };
+/* ---------- UI/재생 로직 (기존 그대로) ---------- */
+const levelTabs={low:document.getElementById('tab-low'),high:document.getElementById('tab-high'),mid:document.getElementById('tab-mid'),hs:document.getElementById('tab-hs')};
+const voiceSelect=document.getElementById('voiceSelect');
+const rateRange=document.getElementById('rate');
+const rateLabel=document.getElementById('rateLabel');
+const sentencesEl=document.getElementById('sentences');
+const quizList=document.getElementById('quizList');
+const vocabEl=document.getElementById('vocab');
+const topicPill=document.getElementById('topicPill');
+const cefrPill=document.getElementById('cefrPill');
+const headlineEl=document.getElementById('headline');
+const dekEl=document.getElementById('dek');
+const grammarBox=document.getElementById('grammarBox');
+const grammarList=document.getElementById('grammarList');
+const grammarTitle=document.getElementById('grammarTitle');
+const playAllBtn=document.getElementById('playAll');
+const pauseBtn=document.getElementById('pauseBtn');
+const resumeBtn=document.getElementById('resumeBtn');
+const stopBtn=document.getElementById('stopBtn');
+const toggleAllKoBtn=document.getElementById('toggleAllKoBtn');
+let hideAllKo=false, LEVEL='mid', VOICES=[], CURRENT_INDEX=-1, PLAYING_ALL=false;
 
-// === 공통 렌더/음성 재생 ===
-const levelTabs = {
-  low: document.getElementById('tab-low'),
-  high: document.getElementById('tab-high'),
-  mid: document.getElementById('tab-mid'),
-  hs: document.getElementById('tab-hs')
-};
-const voiceSelect = document.getElementById('voiceSelect');
-const rateRange = document.getElementById('rate');
-const rateLabel = document.getElementById('rateLabel');
-const sentencesEl = document.getElementById('sentences');
-const quizList = document.getElementById('quizList');
-const vocabEl = document.getElementById('vocab');
-const topicPill = document.getElementById('topicPill');
-const cefrPill = document.getElementById('cefrPill');
-const headlineEl = document.getElementById('headline');
-const dekEl = document.getElementById('dek');
-const grammarBox = document.getElementById('grammarBox');
-const grammarList = document.getElementById('grammarList');
-const grammarTitle = document.getElementById('grammarTitle');
-
-const playAllBtn = document.getElementById('playAll');
-const pauseBtn = document.getElementById('pauseBtn');
-const resumeBtn = document.getElementById('resumeBtn');
-const stopBtn = document.getElementById('stopBtn');
-
-// 한국어 전체 토글 상태
-const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
-let hideAllKo = false;
-
-let LEVEL = 'mid';
-let VOICES = [];
-let CURRENT_INDEX = -1;
-let PLAYING_ALL = false;
-
-// 음성 목록 로딩
 function loadVoices(){
-  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
-  voiceSelect.innerHTML = '';
-  VOICES.forEach((v,i)=>{
-    const opt=document.createElement('option');
-    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
-    voiceSelect.appendChild(opt);
-  });
-  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
-  voiceSelect.value = String(preferred>=0?preferred:0);
+  VOICES=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.startsWith('en'));
+  voiceSelect.innerHTML='';
+  VOICES.forEach((v,i)=>{const opt=document.createElement('option');opt.value=i;opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');voiceSelect.appendChild(opt);});
+  const preferred=VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value=String(preferred>=0?preferred:0);
 }
-speechSynthesis.onvoiceschanged = loadVoices;
-if (speechSynthesis.getVoices().length) loadVoices();
+speechSynthesis.onvoiceschanged=loadVoices;
+if(speechSynthesis.getVoices().length) loadVoices();
 
 document.querySelectorAll('.preset').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const r=parseFloat(btn.dataset.rate);
-    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
-  });
+  btn.addEventListener('click',()=>{const r=parseFloat(btn.dataset.rate);rateRange.value=r;rateLabel.textContent=r.toFixed(2)+'×';});
 });
 rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
 
@@ -418,159 +273,57 @@ levelTabs.low.addEventListener('click',()=>switchLevel('low'));
 levelTabs.high.addEventListener('click',()=>switchLevel('high'));
 levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
 levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
-
 playAllBtn.addEventListener('click',()=>startPlayAll());
 pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
 resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
 stopBtn.addEventListener('click',stopAll);
 
-// 한국어 전체 토글 버튼
-toggleAllKoBtn.addEventListener('click', () => {
-  hideAllKo = !hideAllKo;
-  applyAllKoVisibility();
-});
-
+toggleAllKoBtn.addEventListener('click',()=>{hideAllKo=!hideAllKo;applyAllKoVisibility();});
 function applyAllKoVisibility(){
-  const kos = document.querySelectorAll('#sentences .ko');
-  kos.forEach(el => {
-    if (hideAllKo) el.classList.add('hidden');
-    else el.classList.remove('hidden');
-  });
-  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+  document.querySelectorAll('#sentences .ko').forEach(el=> hideAllKo?el.classList.add('hidden'):el.classList.remove('hidden'));
+  toggleAllKoBtn.textContent=hideAllKo?'한국어 보이기':'한국어 가리기';
 }
 
 function switchLevel(lv){
-  LEVEL=lv;
-  for(const k of Object.keys(levelTabs)){
-    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
-  }
-  const d=DATA[lv];
-  topicPill.textContent=d.topic;
-  cefrPill.textContent=d.cefr;
-  headlineEl.textContent=d.headline;
-  dekEl.textContent=d.dek;
+  LEVEL=lv; for(const k of Object.keys(levelTabs)){levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');}
+  const d=DATA[lv]; topicPill.textContent=d.topic; cefrPill.textContent=d.cefr; headlineEl.textContent=d.headline; dekEl.textContent=d.dek;
 
-  // 문장 렌더 (영문 + 한글)
   sentencesEl.innerHTML='';
-  d.sents.forEach((o,i)=>{
-    const div=document.createElement('div');
-    div.className='sent'; div.dataset.idx=i;
-    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
-    div.addEventListener('click',()=>playSentence(i,true));
-    sentencesEl.appendChild(div);
-  });
+  d.sents.forEach((o,i)=>{const div=document.createElement('div');div.className='sent';div.dataset.idx=i;div.innerHTML=`<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;div.addEventListener('click',()=>playSentence(i,true));sentencesEl.appendChild(div);});
 
-  // 단어장
   vocabEl.innerHTML='';
-  d.vocab.forEach(([en,ko,ex])=>{
-    const li=document.createElement('li');
-    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
-    vocabEl.appendChild(li);
-  });
+  d.vocab.forEach(([en,ko,ex])=>{const li=document.createElement('li');li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;vocabEl.appendChild(li);});
 
-  // 퀴즈
   quizList.innerHTML='';
-  d.quiz.forEach((q,i)=>{
-    const li=document.createElement('li');
-    if(q.tf){
-      li.innerHTML=`<div>${q.stmt}</div>
-      <div class="controls">
-        <button data-q="${i}" data-a="true">True</button>
-        <button data-q="${i}" data-a="false">False</button>
-        <span class="small" id="qfb-${i}"></span>
-      </div>`;
-    }else{
-      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
-      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
-    }
-    quizList.appendChild(li);
-  });
-  quizList.querySelectorAll('button').forEach(b=>{
-    b.addEventListener('click',(e)=>{
-      const qidx=parseInt(e.target.dataset.q,10);
-      const ansRaw=e.target.dataset.a;
-      const dataQ=DATA[LEVEL].quiz[qidx];
-      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
-      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
-    });
-  });
+  d.quiz.forEach((q,i)=>{const li=document.createElement('li');if(q.tf){li.innerHTML=`<div>${q.stmt}</div><div class="controls"><button data-q="${i}" data-a="true">True</button><button data-q="${i}" data-a="false">False</button><span class="small" id="qfb-${i}"></span></div>`;}else{const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;}quizList.appendChild(li);});
+  quizList.querySelectorAll('button').forEach(b=>b.addEventListener('click',e=>{const qidx=parseInt(e.target.dataset.q,10);const ansRaw=e.target.dataset.a;const dataQ=DATA[LEVEL].quiz[qidx];const correct=dataQ.tf?(String(dataQ.answer)===ansRaw):(dataQ.answer===parseInt(ansRaw,10));document.getElementById('qfb-'+qidx).textContent=correct?'정답!':'다시 생각해봐요';}));
 
-  // 문법(레벨별 표시)
   if(d.grammar){
-    grammarBox.style.display='';
-    const titleMap = {
-      low: "문법 포인트 (초등 저학년)",
-      high: "문법 포인트 (초등 고학년)",
-      mid: "문법 포인트 (중학생)",
-      hs:  "문법 포인트 (고등/수능)"
-    };
-    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+    grammarBox.style.display=''; const titleMap={low:"문법 포인트 (초등 저학년)",high:"문법 포인트 (초등 고학년)",mid:"문법 포인트 (중학생)",hs:"문법 포인트 (고등/수능)"}; grammarTitle.textContent=titleMap[LEVEL]||"문법 포인트";
+    grammarList.innerHTML=''; d.grammar.forEach((g,i)=>{const li=document.createElement('li');const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');li.innerHTML=`<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div><div class="controls"><span class="small">${g.q}</span></div><div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;grammarList.appendChild(li);});
+    grammarList.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',e=>{const gidx=parseInt(e.target.dataset.g,10);const ans=parseInt(e.target.dataset.a,10);const cor=DATA[LEVEL].grammar[gidx].answer;document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';}));
+  }else{ grammarBox.style.display='none'; grammarList.innerHTML=''; }
 
-    grammarList.innerHTML='';
-    d.grammar.forEach((g,i)=>{
-      const li=document.createElement('li');
-      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
-      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
-                      <div class="controls"><span class="small">${g.q}</span></div>
-                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
-      grammarList.appendChild(li);
-    });
-    grammarList.querySelectorAll('button').forEach(btn=>{
-      btn.addEventListener('click',(e)=>{
-        const gidx=parseInt(e.target.dataset.g,10);
-        const ans=parseInt(e.target.dataset.a,10);
-        const cor=DATA[LEVEL].grammar[gidx].answer;
-        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
-      });
-    });
-  }else{
-    grammarBox.style.display='none';
-    grammarList.innerHTML='';
-  }
-
-  // 현재 한국어 숨김 상태 유지 적용
-  applyAllKoVisibility();
-
-  stopAll();
+  applyAllKoVisibility(); stopAll();
 }
-// 기본 진입 레벨: 중학생
 switchLevel('mid');
 
-// 음성 재생
-function getSelectedVoice(){
-  const idx=parseInt(voiceSelect.value||'0',10);
-  return VOICES[idx]||null;
-}
-function markActive(i){
-  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{
-    el.classList.toggle('active',j===i);
-  });
-}
-function clearMarks(){
-  sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));
-}
-function stopAll(){
-  PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks();
-}
+function getSelectedVoice(){const idx=parseInt(voiceSelect.value||'0',10);return VOICES[idx]||null;}
+function markActive(i){sentencesEl.querySelectorAll('.sent').forEach((el,j)=>el.classList.toggle('active',j===i));}
+function clearMarks(){sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));}
+function stopAll(){PLAYING_ALL=false;CURRENT_INDEX=-1;speechSynthesis.cancel();clearMarks();}
 function playSentence(i,repeat=false){
-  stopAll();
-  const d=DATA[LEVEL]; const text=d.sents[i].en;
-  CURRENT_INDEX=i; markActive(i);
-  const u=new SpeechSynthesisUtterance(text);
-  const v=getSelectedVoice(); if(v) u.voice=v;
+  stopAll(); const d=DATA[LEVEL]; const text=d.sents[i].en; CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text); const v=getSelectedVoice(); if(v) u.voice=v;
   u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
   u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
   speechSynthesis.speak(u);
 }
 function startPlayAll(){
-  stopAll(); PLAYING_ALL=true;
-  const d=DATA[LEVEL]; let i=0;
-  const next=()=>{
-    if(!PLAYING_ALL) return;
-    if(i>=d.sents.length){ stopAll(); return; }
+  stopAll(); PLAYING_ALL=true; const d=DATA[LEVEL]; let i=0;
+  const next=()=>{ if(!PLAYING_ALL) return; if(i>=d.sents.length){ stopAll(); return; }
     CURRENT_INDEX=i; markActive(i);
-    const u=new SpeechSynthesisUtterance(d.sents[i].en);
-    const v=getSelectedVoice(); if(v) u.voice=v;
+    const u=new SpeechSynthesisUtterance(d.sents[i].en); const v=getSelectedVoice(); if(v) u.voice=v;
     u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
     u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 250); };
     speechSynthesis.speak(u);
