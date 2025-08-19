@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-18T13:31:39.937Z",
-  "count": 5,
+  "generatedAt": "2025-08-19T20:05:37.831Z",
+  "count": 6,
   "items": [
+    {
+      "id": "2025-08-19-ai-disaster-response",
+      "date": "2025-08-19",
+      "title": "AI to Play Bigger Role in Disaster Response | EduPod 뉴스",
+      "categories": [
+        "Policy",
+        "Science",
+        "Technology"
+      ],
+      "summary": "정부가 기후변화로 증가하는 자연재난에 대응하기 위해 AI를 사전 위험 분석과 재난 후 피해 최소화에 적극 활용하는 방안을 논의·확대합니다.",
+      "link": "/news/2025-08-19-ai-disaster-response.html"
+    },
     {
       "id": "2025-08-19-lisa-niger-donation",
       "date": "2025-08-19",
@@ -15,6 +27,17 @@
       "link": "/news/2025-08-19-lisa-niger-donation.html"
     },
     {
+      "id": "2025-8-18-test",
+      "date": "2025-08-19",
+      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "link": "/news/2025-8-18-test.html"
+    },
+    {
       "id": "2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact",
       "date": "2025-08-18",
       "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
@@ -24,17 +47,6 @@
       ],
       "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
       "link": "/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html"
-    },
-    {
-      "id": "2025-8-18-test",
-      "date": "2025-08-18",
-      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": [
-        "Policy",
-        "Economy"
-      ],
-      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
-      "link": "/news/2025-8-18-test.html"
     },
     {
       "id": "2025-08-16-holiday-debate",
