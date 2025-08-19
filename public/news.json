@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-19T20:05:37.831Z",
+  "generatedAt": "2025-08-20T00:05:00.000Z",
   "count": 6,
   "items": [
     {
@@ -7,12 +7,12 @@
       "date": "2025-08-20",
       "title": "Probe Launched into School Soccer Donation Misuse | EduPod 뉴스",
       "categories": [
-      "Education",
-      "Society",
-      "Investigation"
+        "Education",
+        "Society",
+        "Investigation"
       ],
-  "summary": "학교 축구부 후원금이 불투명하게 사용됐다는 의혹이 제기돼 교육 당국이 감사에 착수했습니다. 기부금의 사용처와 관리 책임을 둘러싼 논란이 커지고 있습니다.",
-  "link": "/news/2025-08-20-school-soccer-donation-probe.html"
+      "summary": "학교 축구부 후원금이 불투명하게 사용됐다는 의혹이 제기돼 교육 당국이 감사에 착수했습니다. 기부금의 사용처와 관리 책임을 둘러싼 논란이 커지고 있습니다.",
+      "link": "/news/2025-08-20-school-soccer-donation-probe.html"
     },
     {
       "id": "2025-08-19-ai-disaster-response",
@@ -39,17 +39,6 @@
       "link": "/news/2025-08-19-lisa-niger-donation.html"
     },
     {
-      "id": "2025-8-18-test",
-      "date": "2025-08-19",
-      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": [
-        "Policy",
-        "Economy"
-      ],
-      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
-      "link": "/news/2025-8-18-test.html"
-    },
-    {
       "id": "2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact",
       "date": "2025-08-18",
       "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
@@ -57,7 +46,7 @@
         "Policy",
         "Economy"
       ],
-      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원 규모의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
       "link": "/news/2025-08-18-Debate-Over-Monday-Holiday-System-and-Economic-Impact.html"
     },
     {
@@ -68,7 +57,7 @@
         "Policy",
         "Economy"
       ],
-      "summary": "정부는 10월 10일 임시공휴일 지정을 ",
+      "summary": "정부는 10월 10일 임시공휴일 지정을 ‘검토하지 않는다’고 밝혔습니다. 긴 연휴가 해외여행 증가로 이어져 내수 효과와 생산 일수 감소에 따른 부담이 크다는 점을 배경으로 들었습니다.",
       "link": "/news/2025-08-16-holiday-debate.html"
     },
     {
