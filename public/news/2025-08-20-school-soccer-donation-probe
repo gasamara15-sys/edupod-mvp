@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>High School Soccer Team Probed over Alleged Illegal Parent Donations | EduPod 뉴스</title>
+  <meta name="category" content="Law, Education, Sports" />
+  <meta name="description" content="인천 한 고등학교 축구부의 불법 찬조금 의혹이 수사에 들어갔습니다. 교원에게 금품 수수를 금지하는 청탁금지법(김영란법) 등 관련 법령과의 연결점을 짚었습니다." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://www.edupod.kr/news/2025-08-20-school-soccer-donation-probe.html" />
+  <style>
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --red:#ef4444; --red-600:#dc2626; --red-bg:#fff5f5;
+    }
+    html,body{margin:0;padding:0;background:#fafafa}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:#111827}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:#111827}
+    .nav a:hover{background:#f8fafc}
+
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--accent)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .sent{padding:8px 10px;border-radius:8px;margin:6px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .en{display:block}
+    .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    .ko.hidden{display:none !important;}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .small{font-size:12px;color:var(--muted)}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .headline{font-weight:700}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+
+    /* 아이콘 재생 버튼 */
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--red);border-radius:14px;background:#fff;color:var(--red);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--red-bg);border-color:var(--red-600);color:var(--red-600)}
+    .icon-btn:disabled{opacity:.5}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+    .divider{width:1px;height:28px;background:var(--border);margin:0 2px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>EduPod 뉴스 <span class="meta">— 2025-08-20 · <span class="pill">Law</span> <span class="pill">Education</span> <span class="pill">Sports</span></span></h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 10.5L12 3l9 7.5"></path><path d="M5 10v9h14v-9"></path>
+      </svg>
+      홈으로
+    </a>
+    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 6h12M4 6h.01M8 12h12M4 12h.01M8 18h12M4 18h.01"></path>
+      </svg>
+      뉴스 리스트
+    </a>
+  </nav>
+</header>
+
+<main>
+  <div class="row">
+    <div class="card" style="flex:1 1 100%">
+      <div class="level-tabs" role="tablist">
+        <button role="tab" id="tab-low" aria-selected="false">초등 저학년 (A1–A2)</button>
+        <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+        <button role="tab" id="tab-mid" aria-selected="true">중학생 (A2–B1)</button>
+        <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+      </div>
+
+      <!-- 재생 아이콘 버튼(속도바 위) -->
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <!-- 보이스/속도 컨트롤 -->
+      <div class="controls">
+        <label class="small" for="voiceSelect">음성:</label>
+        <select id="voiceSelect" aria-label="Voice"></select>
+        <span class="small">속도 프리셋:</span>
+        <button class="preset" data-rate="0.85">처음 듣기</button>
+        <button class="preset" data-rate="1.0">보통</button>
+        <button class="preset" data-rate="1.15">빠르게</button>
+        <span class="small">세부 속도</span>
+        <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
+        <span class="small" id="rateLabel">1.00×</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="articleCard">
+      <div class="meta"><span class="pill" id="topicPill">Law</span> <span class="pill" id="cefrPill">A2–B1</span></div>
+      <div class="headline" id="headline">High School Soccer Team Probed over Alleged Illegal Parent Donations</div>
+      <p class="small" id="dek">Police investigate claims that a school soccer team took parent “sponsorship money,” raising questions under Korea’s Improper Solicitation and Graft Act.</p>
+
+      <!-- 한국어 전체 토글 버튼 -->
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
+
+      <div id="sentences"></div>
+      <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+      <div class="quiz">
+        <h3>퀴즈</h3>
+        <ol id="quizList"></ol>
+      </div>
+
+      <div class="grammar" id="grammarBox" style="display:none">
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트</h3>
+        <ol id="grammarList"></ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px">단어장</h2>
+      <ul id="vocab"></ul>
+      <p class="small">영어 문장 아래에 한국어 해석이 함께 제공됩니다.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+// === 콘텐츠 데이터 (영/한 문장 페어) ===
+const DATA = {
+  // 초등 저학년 (간단 요약)
+  low: {
+    topic: "Law",
+    cefr: "A1–A2",
+    headline: "Police Check Soccer Team Money Issue",
+    dek: "Parents say the team took money. Police are checking.",
+    sents: [
+      {en:"A high school soccer team is under police check.", ko:"한 고등학교 축구부가 경찰 조사를 받고 있습니다."},
+      {en:"Some parents say they paid money for the team.", ko:"일부 학부모는 팀에 돈을 냈다고 말했습니다."},
+      {en:"Taking money from parents can break school rules.", ko:"학부모 돈을 받으면 규정을 어길 수 있습니다."},
+      {en:"Teachers must not take gifts for their work.", ko:"교사는 일과 관련해 선물을 받으면 안 됩니다."},
+      {en:"Police will learn what really happened.", ko:"경찰이 실제로 무엇이 있었는지 확인할 것입니다."},
+      {en:"The school also told the education office.", ko:"학교는 교육청에도 보고했습니다."}
+    ],
+    vocab: [
+      ["investigate","수사하다/조사하다","Police investigate the case."],
+      ["violate","위반하다","Taking money may violate rules."],
+      ["report","보고하다","The school reported it."]
+    ],
+    quiz: [
+      {q:"Who is checking the case?", options:["Police","Fans","Players"], answer:0},
+      {q:"T/F: Teachers can take money from parents for work.", tf:true, stmt:"Teachers can take money from parents for work.", answer:false},
+      {q:"Who did the school inform?", options:["Education office","Hospital","Airport"], answer:0}
+    ]
+  },
+
+  // 초등 고학년
+  high: {
+    topic: "Law",
+    cefr: "A2–B1",
+    headline: "Did the Team Take Illegal Sponsorship Money?",
+    dek: "The case may relate to a law that bans teachers from receiving money.",
+    sents: [
+      {en:"A high school reported alleged illegal parent donations to police.", ko:"한 고등학교가 불법 찬조금 의혹을 경찰에 고발했습니다."},
+      {en:"Parents said money was collected for uniforms and training trips.", ko:"학부모들은 운동복과 전지훈련 비용 명목으로 돈을 모았다고 말했습니다."},
+      {en:"If coaches received money, it could break the anti-graft law.", ko:"지도자가 돈을 받았다면 청탁금지법을 위반할 수 있습니다."},
+      {en:"Teachers and coaches at schools are covered by that law.", ko:"학교의 교사와 코치는 그 법의 적용 대상입니다."},
+      {en:"The education office was also informed.", ko:"교육청에도 이 사실이 보고됐습니다."},
+      {en:"Police are verifying facts before any decision.", ko:"경찰은 결정을 내리기 전 사실관계를 확인하고 있습니다."}
+    ],
+    vocab: [
+      ["graft (anti-graft) law","부정청탁·금품수수 금지법","The anti-graft law covers teachers."],
+      ["donation/sponsorship","찬조금/후원금","Parents mentioned a sponsorship."],
+      ["allegation","의혹/혐의","The allegation is under review."]
+    ],
+    quiz: [
+      {q:"What items were mentioned for the money?", options:["Uniforms and training trips","Tickets","Snacks"], answer:0},
+      {q:"T/F: Coaches are not covered by the law.", tf:true, stmt:"Coaches are not covered by the law.", answer:false},
+      {q:"Who is checking the facts?", options:["Police","Students","Fans"], answer:0}
+    ]
+  },
+
+  // ✅ 중학생: 15줄
+  mid: {
+    topic: "Law",
+    cefr: "A2–B1",
+    headline: "Police Probe Parent Donations to School Soccer Team and the Law Involved",
+    dek: "Case links to Korea’s Improper Solicitation and Graft Act, which bans teachers from receiving money related to their duties.",
+    sents: [
+      {en:"Police launched a probe into alleged illegal donations at a high school soccer team.", ko:"경찰이 한 고등학교 축구부의 불법 찬조금 의혹에 대한 수사에 착수했습니다."},
+      {en:"The school reported two coaches and a parent to the police on August 8.", ko:"학교는 8월 8일 지도자 2명과 학부모 1명을 경찰에 고발했습니다."},
+      {en:"Parents claimed money was collected for uniforms and training camps.", ko:"학부모들은 운동복과 전지훈련비 명목으로 돈이 모였다고 주장했습니다."},
+      {en:"The education office was also notified of the case.", ko:"이 사안은 교육청에도 보고됐습니다."},
+      {en:"Korea’s Improper Solicitation and Graft Act bans public-school teachers from receiving money related to their duties.", ko:"청탁금지법은 공립학교 교원이 직무 관련 금품을 받는 것을 금지합니다."},
+      {en:"Private-school teachers are also widely treated as covered officials under the Act.", ko:"사립학교 교원도 법 적용 대상에 포함되는 것으로 널리 해석됩니다."},
+      {en:"Team expenses must follow official school accounting and transparent processes.", ko:"팀 운영 경비는 학교 회계 등 공식·투명한 절차를 따라야 합니다."},
+      {en:"Collecting cash directly from parents can raise legal and fairness issues.", ko:"학부모로부터 직접 현금을 모금하면 법적·공정성 문제가 생길 수 있습니다."},
+      {en:"Police said they are verifying facts from the complainant.", ko:"경찰은 고발인의 진술 등을 통해 사실관계를 확인 중이라고 밝혔습니다."},
+      {en:"Whether money influenced team selection or play time could be a key question.", ko:"금품이 선발·출전 등에 영향을 줬는지도 핵심 쟁점이 될 수 있습니다."},
+      {en:"If violations are found, disciplinary and criminal steps may follow.", ko:"위반이 확인되면 징계나 형사 절차가 뒤따를 수 있습니다."},
+      {en:"Parents can donate through school foundations or official accounts, not to individuals.", ko:"학부모는 개인이 아닌 학교법인·공식 계좌를 통해 기부해야 합니다."},
+      {en:"Schools can publish how donations are used to ensure trust.", ko:"학교는 기부금 집행 내역을 공개해 신뢰를 높일 수 있습니다."},
+      {en:"The case highlights the need for clear guidance for school sports.", ko:"이번 사례는 학교 운동부 운영 지침의 명확성을 필요로 함을 보여줍니다."},
+      {en:"Authorities urge reporting suspicious requests for money.", ko:"당국은 수상한 금전 요구를 신고할 것을 당부했습니다."}
+    ],
+    vocab: [
+      ["improper solicitation","부정 청탁","Improper solicitation is banned by law."],
+      ["graft","금품수수/부패","Graft rules cover teachers and coaches."],
+      ["disciplinary action","징계","Disciplinary action may follow violations."],
+      ["transparent process","투명한 절차","Transparent processes protect fairness."]
+    ],
+    quiz: [
+      {q:"Which law is linked to this case?", options:["Improper Solicitation and Graft Act","Traffic Law","Tax Law"], answer:0},
+      {q:"T/F: Cash to individual coaches is generally acceptable.", tf:true, stmt:"Cash to individual coaches is generally acceptable.", answer:false},
+      {q:"Where should donations be directed?", options:["Official school accounts","Personal wallets","Gift cards"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"The Act bans public-school teachers from receiving money related to their duties.",
+        ko:"그 법은 공립학교 교원이 직무 관련 금품 수수를 금지한다.",
+        point:"목적어 절: ban A from ~ing",
+        q:"The Act (___) teachers (___) receiving money.",
+        options:["bans / from","prevents / to","stops / for"],
+        answer:0
+      },
+      {
+        en:"Parents claimed money was collected for training camps.",
+        ko:"학부모들은 전지훈련을 위해 돈이 모였다고 주장했다.",
+        point:"수동태 과거: was collected",
+        q:"Money (___) collected for training camps.",
+        options:["was","were","is"],
+        answer:0
+      },
+      {
+        en:"If violations are found, disciplinary steps may follow.",
+        ko:"위반이 확인되면 징계가 뒤따를 수 있다.",
+        point:"조건문: If + 현재, 조동사 + 동사원형",
+        q:"If violations (___) found, steps (___) follow.",
+        options:["are / may","is / will","were / must"],
+        answer:0
+      }
+    ]
+  },
+
+  // ✅ 고등/수능: 22줄 (법령 연결·맥락 확장)
+  hs: {
+    topic: "Law",
+    cefr: "B2–C1",
+    headline: "Alleged Illegal Parent Donations Raise Questions under Korea’s Anti-Graft Rules",
+    dek: "Case touches the Improper Solicitation and Graft Act, school-accounting compliance, and integrity standards for school sports.",
+    sents: [
+      {en:"Police are investigating allegations that a high school soccer team took parent 'sponsorship' outside official channels.", ko:"경찰은 한 고등학교 축구부가 공식 절차 밖에서 학부모 '찬조금'을 받았다는 의혹을 수사 중입니다."},
+      {en:"The school filed a complaint on August 8 against two coaches and a parent, following reports from other parents.", ko:"학교는 다른 학부모의 민원을 바탕으로 8월 8일 지도자 2명과 학부모 1명을 고발했습니다."},
+      {en:"Parents reportedly paid for uniforms and training camps, raising compliance concerns.", ko:"운동복·전지훈련 비용 명목의 모금이 이뤄졌다는 전언은 회계 준수 문제를 제기합니다."},
+      {en:"Under the Improper Solicitation and Graft Act, teachers and school staff are prohibited from receiving money related to their duties.", ko:"청탁금지법에 따르면 교직원은 직무 관련 금품 수수를 금지합니다."},
+      {en:"The Act’s coverage extends broadly to public-school teachers and is interpreted to include private-school teachers.", ko:"법 적용 범위는 공립 교원을 포함하고 사립 교원까지 폭넓게 해석됩니다."},
+      {en:"Accepting funds tied to selection, playing time, or evaluation can constitute illicit benefits.", ko:"선발·출전·평가와 관련된 금품 수수는 부당한 이익으로 간주될 수 있습니다."},
+      {en:"Even without explicit favors, repeated payments risk violating integrity and appearance-of-impropriety standards.", ko:"노골적 청탁이 없어도 반복적 금전 제공은 청렴성과 외관상 부당성 기준을 위반할 위험이 있습니다."},
+      {en:"School-team expenses are meant to flow through official accounts with itemized disclosure.", ko:"학교 운동부 경비는 공식 계좌를 통해 집행하고 항목별 공개가 원칙입니다."},
+      {en:"Direct cash pooling among parents, handled by individuals, weakens audit trails and accountability.", ko:"개인이 관리하는 학부모 현금 모금은 감사 추적성과 책무성을 약화시킵니다."},
+      {en:"Authorities will check whether the funds influenced roster decisions or created unequal opportunities.", ko:"당국은 자금이 명단·기회 배분에 영향을 미쳤는지 점검할 예정입니다."},
+      {en:"If violations are substantiated, disciplinary measures and criminal penalties may follow.", ko:"위반이 확인되면 징계와 형사 처벌이 뒤따를 수 있습니다."},
+      {en:"Whistleblowing channels and education-office oversight are key safeguards.", ko:"신고 창구와 교육청 감독은 핵심 안전장치입니다."},
+      {en:"Best practice is to route donations via school foundations with receipts and open reporting.", ko:"모범 관행은 학교법인 등을 통한 기부, 영수증 발급, 공개 보고입니다."},
+      {en:"Clear guidance for school sports can prevent 'shadow fees' and preserve fairness.", ko:"명확한 운동부 지침은 '그늘 비용'을 막고 공정성을 지킵니다."},
+      {en:"Coaches should declare conflicts and avoid private solicitations linked to team benefits.", ko:"지도자는 이해충돌을 신고하고 팀 이익과 연계된 사적 모금을 피해야 합니다."},
+      {en:"Parents should refuse personal requests and report any pressure for payments.", ko:"학부모는 개인적 금전 요구를 거부하고 압박을 받으면 신고해야 합니다."},
+      {en:"Students’ opportunities must not depend on unofficial payments or gifts.", ko:"학생의 기회는 비공식 금전·선물에 좌우되어서는 안 됩니다."},
+      {en:"Transparency builds trust and protects athletes from coercive expectations.", ko:"투명성은 신뢰를 높이고 학생선수를 강요로부터 보호합니다."},
+      {en:"The case underscores a broader debate on funding models for school athletics.", ko:"이번 사안은 학교 스포츠 재원 구조에 대한 광범위한 논쟁을 부각합니다."},
+      {en:"Policy updates could clarify permissible support and strengthen audits.", ko:"정책 보완은 허용 가능한 지원 범위를 명확히 하고 감사를 강화할 수 있습니다."},
+      {en:"For now, investigators are verifying facts before any conclusion.", ko:"현재 수사기관은 결론에 앞서 사실관계를 확인하고 있습니다."},
+      {en:"All parties are presumed innocent until proven otherwise.", ko:"모든 당사자는 유죄가 입증될 때까지 무죄로 추정됩니다."}
+    ],
+    vocab: [
+      ["improper solicitation","부정청탁","Improper solicitation undermines fairness in schools."],
+      ["appearance of impropriety","외관상 부당성","Avoid even the appearance of impropriety."],
+      ["whistleblowing","내부고발/신고","Whistleblowing channels protect students."],
+      ["accountability","책임성/책무성","Accountability requires official accounting."]
+    ],
+    quiz: [
+      {q:"Which law is central to this case?", options:["Improper Solicitation and Graft Act","Maritime Law","Patent Law"], answer:0},
+      {q:"T/F: Private pooling of cash by parents is risk-free if voluntary.", tf:true, stmt:"Private pooling of cash by parents is risk-free if voluntary.", answer:false},
+      {q:"What is the best practice for donations?", options:["School foundation & official accounts","Cash to coach","Gift cards"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Accepting funds tied to selection can constitute illicit benefits.",
+        ko:"선발과 연계된 자금 수수는 불법 이익이 될 수 있다.",
+        point:"동격/분사구문 없이 to부정사·전치사구 생략: tied to ~",
+        q:"Accepting funds (___) selection can be illicit.",
+        options:["tied to","tied for","tied at"],
+        answer:0
+      },
+      {
+        en:"Teachers and school staff are prohibited from receiving money related to their duties.",
+        ko:"교직원은 직무 관련 금품 수수가 금지된다.",
+        point:"수동태 + from ~ing (금지)",
+        q:"They are (___) from receiving money.",
+        options:["prohibit","prohibiting","prohibited"],
+        answer:2
+      },
+      {
+        en:"Donations should be routed through official accounts with disclosure.",
+        ko:"기부금은 공개와 함께 공식 계좌를 통해 처리돼야 한다.",
+        point:"수동/당위 표현: should + be + p.p.",
+        q:"Donations (___) be routed through official accounts.",
+        options:["should","should be","should have"],
+        answer:1
+      }
+    ]
+  }
+};
+
+// === 공통 렌더/음성 재생 ===
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+// 한국어 전체 토글 상태
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
+let LEVEL = 'mid';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+// 음성 목록 로딩
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v,i)=>{
+    const opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred>=0?preferred:0);
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const r=parseFloat(btn.dataset.rate);
+    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
+  });
+});
+rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
+
+levelTabs.low.addEventListener('click',()=>switchLevel('low'));
+levelTabs.high.addEventListener('click',()=>switchLevel('high'));
+levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
+levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
+
+playAllBtn.addEventListener('click',()=>startPlayAll());
+pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
+resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+stopBtn.addEventListener('click',stopAll);
+
+// 한국어 전체 토글 버튼
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => {
+    if (hideAllKo) el.classList.add('hidden');
+    else el.classList.remove('hidden');
+  });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
+
+function switchLevel(lv){
+  LEVEL=lv;
+  for(const k of Object.keys(levelTabs)){
+    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
+  }
+  const d=DATA[lv];
+  topicPill.textContent=d.topic;
+  cefrPill.textContent=d.cefr;
+  headlineEl.textContent=d.headline;
+  dekEl.textContent=d.dek;
+
+  // 문장 렌더 (영문 + 한글)
+  sentencesEl.innerHTML='';
+  d.sents.forEach((o,i)=>{
+    const div=document.createElement('div');
+    div.className='sent'; div.dataset.idx=i;
+    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
+    div.addEventListener('click',()=>playSentence(i,true));
+    sentencesEl.appendChild(div);
+  });
+
+  // 단어장
+  vocabEl.innerHTML='';
+  d.vocab.forEach(([en,ko,ex])=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // 퀴즈
+  quizList.innerHTML='';
+  d.quiz.forEach((q,i)=>{
+    const li=document.createElement('li');
+    if(q.tf){
+      li.innerHTML=`<div>${q.stmt}</div>
+      <div class="controls">
+        <button data-q="${i}" data-a="true">True</button>
+        <button data-q="${i}" data-a="false">False</button>
+        <span class="small" id="qfb-${i}"></span>
+      </div>`;
+    }else{
+      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',(e)=>{
+      const qidx=parseInt(e.target.dataset.q,10);
+      const ansRaw=e.target.dataset.a;
+      const dataQ=DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
+      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
+    });
+  });
+
+  // 문법(레벨별 표시)
+  if(d.grammar){
+    grammarBox.style.display='';
+    const titleMap = {
+      low: "문법 포인트 (초등 저학년)",
+      high: "문법 포인트 (초등 고학년)",
+      mid: "문법 포인트 (중학생)",
+      hs:  "문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+
+    grammarList.innerHTML='';
+    d.grammar.forEach((g,i)=>{
+      const li=document.createElement('li');
+      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        const gidx=parseInt(e.target.dataset.g,10);
+        const ans=parseInt(e.target.dataset.a,10);
+        const cor=DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
+      });
+    });
+  }else{
+    grammarBox.style.display='none';
+    grammarList.innerHTML='';
+  }
+
+  // 현재 한국어 숨김 상태 유지 적용
+  applyAllKoVisibility();
+
+  stopAll();
+}
+// 기본 진입 레벨: 중학생
+switchLevel('mid');
+
+// 음성 재생
+function getSelectedVoice(){
+  const idx=parseInt(voiceSelect.value||'0',10);
+  return VOICES[idx]||null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{
+    el.classList.toggle('active',j===i);
+  });
+}
+function clearMarks(){
+  sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active'));
+}
+function stopAll(){
+  PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks();
+}
+function playSentence(i,repeat=false){
+  stopAll();
+  const d=DATA[LEVEL]; const text=d.sents[i].en;
+  CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text);
+  const v=getSelectedVoice(); if(v) u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+  u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
+  speechSynthesis.speak(u);
+}
+function startPlayAll(){
+  stopAll(); PLAYING_ALL=true;
+  const d=DATA[LEVEL]; let i=0;
+  const next=()=>{
+    if(!PLAYING_ALL) return;
+    if(i>=d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX=i; markActive(i);
+    const u=new SpeechSynthesisUtterance(d.sents[i].en);
+    const v=getSelectedVoice(); if(v) u.voice=v;
+    u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+    u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 250); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){ e.preventDefault(); if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause(); else speechSynthesis.resume(); }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
