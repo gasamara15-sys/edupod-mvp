@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-22T09:32:08.538Z",
-  "count": 9,
+  "generatedAt": "2025-08-22T17:37:36.894Z",
+  "count": 10,
   "items": [
+    {
+      "id": "2025-08-23-jackson-hole-powell-speech",
+      "date": "2025-08-23",
+      "title": "Powell Signals Possible Rate Cuts at Jackson Hole | EduPod 뉴스",
+      "categories": [
+        "Economy",
+        "Finance",
+        "Policy"
+      ],
+      "summary": "잭슨홀 미팅에서 제롬 파월 연준 의장은 고용시장 하방 위험을 강조하며, 관세발 인플레이션 영향은 단기적일 수 있다고 언급했다. 시장은 비둘기적 전환으로 해석하며 주가 상승·국채금리 하락으로 반응했다.",
+      "link": "/news/2025-08-23-jackson-hole-powell-speech.html"
+    },
     {
       "id": "2025-8-18-test",
       "date": "2025-08-22",
