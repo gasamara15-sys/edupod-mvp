@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2025-08-21T12:01:53.885Z",
+  "generatedAt": "2025-08-22T09:15:04.005Z",
   "count": 9,
   "items": [
+    {
+      "id": "2025-8-18-test",
+      "date": "2025-08-22",
+      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
+      "categories": [
+        "Policy",
+        "Economy"
+      ],
+      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
+      "link": "/news/2025-8-18-test.html"
+    },
     {
       "id": "2025-08-21-japan-fireball-sky",
       "date": "2025-08-21",
@@ -13,17 +24,6 @@
       ],
       "summary": "8월 19일 밤 11시경 일본 서남부(긴키·시코쿠·규슈) 상공에서 매우 밝은 화구가 관측되었습니다. 공항·화산 관측 카메라에도 포착되었으며, 전문가들은 대기권에 진입한 소행성 조각이 연소하며 나타난 현상으로 설명합니다.",
       "link": "/news/2025-08-21-japan-fireball-sky.html"
-    },
-    {
-      "id": "2025-8-18-test",
-      "date": "2025-08-21",
-      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": [
-        "Policy",
-        "Economy"
-      ],
-      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
-      "link": "/news/2025-8-18-test.html"
     },
     {
       "id": "2025-08-20-california-boar-blue-meat",
