@@ -3,18 +3,6 @@
   "count": 11,
   "items": [
     {
-  "id": "2025-08-23-jackson-hole-powell-speech",
-  "date": "2025-08-23",
-  "title": "Powell Signals Possible Rate Cuts at Jackson Hole | EduPod 뉴스",
-  "categories": [
-    "Economy",
-    "Finance",
-    "Policy"
-  ],
-  "summary": "Fed Chair Jerome Powell hinted at potential interest rate cuts during his Jackson Hole speech, citing rising risks to the labor market and short-lived tariff-driven inflation. Markets rallied sharply on his dovish remarks.",
-  "link": "2025-08-22-jackson-hole-powell-speech.html"
-    },
-    {
       "id": "2025-08-23-jackson-hole-powell-speech",
       "date": "2025-08-23",
       "title": "Powell Signals Possible Rate Cuts at Jackson Hole | EduPod 뉴스",
@@ -25,17 +13,6 @@
       ],
       "summary": "잭슨홀 미팅에서 제롬 파월 연준 의장은 고용시장 하방 위험을 강조하며, 관세발 인플레이션 영향은 단기적일 수 있다고 언급했다. 시장은 비둘기적 전환으로 해석하며 주가 상승·국채금리 하락으로 반응했다.",
       "link": "/news/2025-08-23-jackson-hole-powell-speech.html"
-    },
-    {
-      "id": "2025-8-18-test",
-      "date": "2025-08-22",
-      "title": "Should Korea Adopt Monday Holidays? | EduPod 뉴스",
-      "categories": [
-        "Policy",
-        "Economy"
-      ],
-      "summary": "요일제(월요일 고정) 공휴일 제도를 도입하면 소비지출·생산 유발 등 수조 원의 경제 효과와 근로자 복지 개선이 기대된다는 정부 용역 연구 결과가 나왔습니다.",
-      "link": "/news/2025-8-18-test.html"
     },
     {
       "id": "2025-08-21-japan-fireball-sky",
