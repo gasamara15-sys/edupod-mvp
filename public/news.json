@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-22T17:37:36.894Z",
-  "count": 10,
+  "generatedAt": "2025-08-23T00:37:36.894Z",
+  "count": 11,
   "items": [
+    {
+  "id": "2025-08-23-jackson-hole-powell-speech",
+  "date": "2025-08-23",
+  "title": "Powell Signals Possible Rate Cuts at Jackson Hole | EduPod 뉴스",
+  "categories": [
+    "Economy",
+    "Finance",
+    "Policy"
+  ],
+  "summary": "Fed Chair Jerome Powell hinted at potential interest rate cuts during his Jackson Hole speech, citing rising risks to the labor market and short-lived tariff-driven inflation. Markets rallied sharply on his dovish remarks.",
+  "link": "2025-08-22-jackson-hole-powell-speech.html"
+    },
     {
       "id": "2025-08-23-jackson-hole-powell-speech",
       "date": "2025-08-23",
