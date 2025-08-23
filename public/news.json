@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-22T17:44:28.535Z",
-  "count": 9,
+  "generatedAt": "2025-08-23T22:47:45.587Z",
+  "count": 10,
   "items": [
     {
       "id": "2025-08-23-jackson-hole-powell-speech",
@@ -13,6 +13,18 @@
       ],
       "summary": "잭슨홀 미팅에서 제롬 파월 연준 의장은 고용시장 하방 위험을 강조하며, 관세발 인플레이션 영향은 단기적일 수 있다고 언급했다. 시장은 비둘기적 전환으로 해석하며 주가 상승·국채금리 하락으로 반응했다.",
       "link": "/news/2025-08-23-jackson-hole-powell-speech.html"
+    },
+    {
+      "id": "2025-08-23-kpop-demon-hunters-nyt-spotlight",
+      "date": "2025-08-23",
+      "title": "NYT Spotlights Viral Rise of ‘K-Pop Demon Hunters’ | EduPod 뉴스",
+      "categories": [
+        "Culture",
+        "Entertainment",
+        "Film"
+      ],
+      "summary": "넷플릭스 애니메이션 영화 ‘케이팝 데몬 헌터스’가 미국에서 입소문으로 급부상하며 뉴욕타임스의 집중 조명을 받았다. 닐슨에 따르면 시청 시간이 6월 첫 주 2억5천만 분에서 7월 넷째 주 10억 분을 넘겼고, 사운드트랙은 빌보드 차트 상위권에 진입했다.",
+      "link": "/news/2025-08-23-kpop-demon-hunters-nyt-spotlight.html"
     },
     {
       "id": "2025-08-21-japan-fireball-sky",
