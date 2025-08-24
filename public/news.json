@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-23T22:49:42.583Z",
-  "count": 10,
+  "generatedAt": "2025-08-24T15:42:27.339Z",
+  "count": 11,
   "items": [
+    {
+      "id": "2025-08-25-heat-brain-climate",
+      "date": "2025-08-25",
+      "title": "Heat and the Brain: Climate Change’s Hidden Neurology Risk | EduPod 뉴스",
+      "categories": [
+        "Health",
+        "Climate",
+        "Science"
+      ],
+      "summary": "폭염이 뇌와 신경계에 미치는 영향을 사례와 연구로 설명합니다. 드라베 증후군 아동의 이야기부터 뇌전증·치매·뇌졸중, 임신과 조산, 모기 매개 바이러스 확산까지 ‘뜨거워진 뇌’의 시대를 다룹니다.",
+      "link": "/news/2025-08-25-heat-brain-climate.html"
+    },
     {
       "id": "2025-08-24-kpop-demon-hunters-nyt-spotlight",
       "date": "2025-08-24",
