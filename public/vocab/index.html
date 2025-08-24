@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top 100 Words Viewer</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 840px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
+    h1 { font-size: 1.8em; margin-bottom: 20px; }
+    input { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; background: #fafafa; }
+    .rank { font-weight: bold; font-size: 1.1em; }
+    .muted { color: #666; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Top 100 Words</h1>
+  <input id="q" type="text" placeholder="Search word / meaning..." />
+  <div id="list"></div>
+
+  <script>
+    const list = document.getElementById("list");
+    const q = document.getElementById("q");
+    let data = [];
+
+    // JSON 불러오기 (상대경로)
+    fetch("./frequency/top100.json")
+      .then(r => r.json())
+      .then(json => { data = json; render(json); });
+
+    // 검색 이벤트
+    q.addEventListener("input", () => {
+      const v = q.value.trim().toLowerCase();
+      const filtered = !v ? data : data.filter(
+        x => x.word.toLowerCase().includes(v) ||
+             (x.meaning||"").toLowerCase().includes(v) ||
+             (x.example_en||"").toLowerCase().includes(v)
+      );
+      render(filtered);
+    });
+
+    // 화면에 렌더링
+    function render(arr){
+      list.innerHTML = arr.map(x => `
+        <div class="card">
+          <div class="rank">${x.rank}. ${x.word} <span class="muted">(${x.partOfSpeech})</span></div>
+          <div>${x.meaning || ""}</div>
+          <div class="muted">${x.example_en || ""}</div>
+          <div>${x.example_ko || ""}</div>
+        </div>
+      `).join("");
+    }
+  </script>
+</body>
+</html>
