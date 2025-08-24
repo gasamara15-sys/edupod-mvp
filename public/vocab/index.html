@@ -1,52 +1,98 @@
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const list = document.getElementById("list");
-  const q = document.getElementById("q");
-  let data = [];
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top 100 Words Viewer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 840px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
+    h1 { font-size: 2rem; margin-bottom: 20px; }
+    input { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; background: #fafafa; }
+    .rank { font-weight: bold; font-size: 1.1rem; }
+    .muted { color: #666; font-style: italic; }
+    .note { font-size: .9rem; color:#666; margin-bottom: 8px; }
+    .err { color:#c00; }
+  </style>
+</head>
+<body>
+  <h1>Top 100 Words</h1>
+  <div class="note" id="note"></div>
+  <input id="q" type="text" placeholder="Search word / meaning..." />
+  <div id="list"></div>
 
-  // 1) base path 보정: /vocab (파일처럼 보이는 경로)이면 /vocab/ 로 만들어줌
-  const basePath = location.pathname.endsWith("/")
-    ? location.pathname
-    : location.pathname + "/";
-
-  // 2) JSON 절대경로 생성 (캐시 버스팅 포함)
-  //    현재 페이지가 /vocab 또는 /vocab/ 인 상황 모두 대응 → /vocab/frequency/top100.json
-  const jsonUrl = new URL(basePath + "frequency/top100.json", location.origin);
-  jsonUrl.searchParams.set("v", Date.now());
-
-  function render(arr){
-    if (!arr.length) {
-      list.innerHTML = `<p style="color:#666">표시할 항목이 없습니다.</p>`;
-      return;
+  <script>
+    // /vocab 로 접속한 경우 /vocab/ 로 리다이렉트(상대경로 꼬임 방지)
+    if (location.pathname.endsWith('/vocab') && !location.pathname.endsWith('/vocab/')) {
+      location.replace(location.pathname + '/');
     }
-    list.innerHTML = arr.map(x => `
-      <div class="card">
-        <div class="rank">${x.rank}. ${x.word} <span class="muted">(${x.partOfSpeech||""})</span></div>
-        <div>${x.meaning || ""}</div>
-        <div class="muted">${x.example_en || ""}</div>
-        <div>${x.example_ko || ""}</div>
-      </div>
-    `).join("");
-  }
+  </script>
 
-  function showError(msg) {
-    list.innerHTML = `<p style="color:#c00">로드 오류: ${msg}</p>`;
-  }
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const list = document.getElementById("list");
+    const q = document.getElementById("q");
+    const note = document.getElementById("note");
+    let data = [];
 
-  fetch(jsonUrl.toString(), { cache: "no-store" })
-    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-    .then(json => { data = json; render(json); })
-    .catch(err => { console.error("fetch error", err); showError(err.message); });
+    // 1) 가장 확실한 절대 경로(도메인 기준) 후보들
+    const candidates = [
+      // 기대 위치: 같은 서버의 /vocab/frequency/top100.json
+      `${location.origin}/vocab/frequency/top100.json`,
+      // 현재 경로 기준 보정 (슬래시 유무 상관없이 동작)
+      `${location.origin}${(location.pathname.endsWith('/') ? location.pathname : location.pathname + '/') }frequency/top100.json`,
+      // GitHub Raw 폴백 (리포/브랜치에 맞게)
+      "https://raw.githubusercontent.com/gasamara15-sys/edupod-mvp/main/public/vocab/frequency/top100.json"
+    ];
 
-  q.addEventListener("input", () => {
-    const v = q.value.trim().toLowerCase();
-    const filtered = !v ? data : data.filter(
-      x =>
-        (x.word||"").toLowerCase().includes(v) ||
-        (x.meaning||"").toLowerCase().includes(v) ||
-        (x.example_en||"").toLowerCase().includes(v)
-    );
-    render(filtered);
+    function render(arr){
+      if (!arr.length) {
+        list.innerHTML = `<p class="note">표시할 항목이 없습니다.</p>`;
+        return;
+      }
+      list.innerHTML = arr.map(x => `
+        <div class="card">
+          <div class="rank">${x.rank}. ${x.word} <span class="muted">(${x.partOfSpeech || ""})</span></div>
+          <div>${x.meaning || ""}</div>
+          <div class="muted">${x.example_en || ""}</div>
+          <div>${x.example_ko || ""}</div>
+        </div>
+      `).join("");
+    }
+
+    function showError(msg) {
+      list.innerHTML = `<p class="err">로드 오류: ${msg}</p>`;
+    }
+
+    async function fetchFirst(urls){
+      for (const u of urls) {
+        try {
+          const r = await fetch(u, { cache: "no-store" });
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          note.textContent = `source: ${u}`;
+          return await r.json();
+        } catch (e) {
+          // 다음 후보로 넘어감
+        }
+      }
+      throw new Error("모든 소스에서 로드 실패");
+    }
+
+    fetchFirst(candidates)
+      .then(json => { data = json; render(json); })
+      .catch(err => showError(err.message));
+
+    q.addEventListener("input", () => {
+      const v = q.value.trim().toLowerCase();
+      const filtered = !v ? data : data.filter(
+        x =>
+          (x.word||"").toLowerCase().includes(v) ||
+          (x.meaning||"").toLowerCase().includes(v) ||
+          (x.example_en||"").toLowerCase().includes(v)
+      );
+      render(filtered);
+    });
   });
-});
-</script>
+  </script>
+</body>
+</html>
