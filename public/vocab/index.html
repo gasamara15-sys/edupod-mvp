@@ -1,10 +1,17 @@
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const list = document.getElementById("list");
   const q = document.getElementById("q");
   let data = [];
 
-  // 현재 페이지(/vocab/) 기준으로 안전한 상대경로 생성 + 캐시 버스팅
-  const jsonUrl = new URL("./frequency/top100.json", window.location.href);
+  // 1) base path 보정: /vocab (파일처럼 보이는 경로)이면 /vocab/ 로 만들어줌
+  const basePath = location.pathname.endsWith("/")
+    ? location.pathname
+    : location.pathname + "/";
+
+  // 2) JSON 절대경로 생성 (캐시 버스팅 포함)
+  //    현재 페이지가 /vocab 또는 /vocab/ 인 상황 모두 대응 → /vocab/frequency/top100.json
+  const jsonUrl = new URL(basePath + "frequency/top100.json", location.origin);
   jsonUrl.searchParams.set("v", Date.now());
 
   function render(arr){
@@ -22,24 +29,15 @@
     `).join("");
   }
 
-  // 오류를 화면에 보여주기
   function showError(msg) {
     list.innerHTML = `<p style="color:#c00">로드 오류: ${msg}</p>`;
   }
 
-  // JSON 로드
-  fetch(jsonUrl, { cache: "no-store" })
-    .then(r => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    })
+  fetch(jsonUrl.toString(), { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(json => { data = json; render(json); })
-    .catch(err => {
-      console.error("fetch error", err);
-      showError(err.message);
-    });
+    .catch(err => { console.error("fetch error", err); showError(err.message); });
 
-  // 검색
   q.addEventListener("input", () => {
     const v = q.value.trim().toLowerCase();
     const filtered = !v ? data : data.filter(
@@ -50,4 +48,5 @@
     );
     render(filtered);
   });
+});
 </script>
