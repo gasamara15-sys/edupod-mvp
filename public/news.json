@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-25T22:37:05.601Z",
-  "count": 12,
+  "generatedAt": "2025-08-26T15:15:58.172Z",
+  "count": 13,
   "items": [
+    {
+      "id": "2025-08-27-mabu-jakchim-li-bai",
+      "date": "2025-08-27",
+      "title": "[Culture Feature] Mabu-jakchim (磨斧作針): Li Bai’s Lesson in Perseverance | EduPod 뉴스",
+      "categories": [
+        "History",
+        "Culture",
+        "Education"
+      ],
+      "summary": "‘마부작침(磨斧作針)’—도끼를 갈아 바늘을 만든다는 뜻의 사자성어. 당나라 시인 이백과 노파의 일화를 통해 포기하지 않는 꾸준함의 힘을 전합니다.",
+      "link": "/news/2025-08-27-mabu-jakchim-li-bai.html"
+    },
     {
       "id": "2025-08-26-sunjong-legacy",
       "date": "2025-08-26",
