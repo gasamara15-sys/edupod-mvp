@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-29T15:11:59.835Z",
-  "count": 16,
+  "generatedAt": "2025-08-30T14:06:09.909Z",
+  "count": 17,
   "items": [
+    {
+      "id": "2025-08-31-why-airplanes-fly",
+      "date": "2025-08-31",
+      "title": "[Science Kids] Why Do Airplanes Fly? | EduPod 뉴스",
+      "categories": [
+        "Science",
+        "Education",
+        "Aviation"
+      ],
+      "summary": "날개 모양, 공기의 흐름, 양력과 추력, 각도와 실속까지 — 아이들이 생활 속 비유로 이해하는 ‘비행기는 왜 하늘을 날까?’",
+      "link": "/news/2025-08-31-why-airplanes-fly.html"
+    },
     {
       "id": "2025-08-30-un-staff-genocide-letter-gaza-famine",
       "date": "2025-08-30",
