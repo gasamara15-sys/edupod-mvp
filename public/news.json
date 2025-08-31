@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-30T14:06:09.909Z",
-  "count": 17,
+  "generatedAt": "2025-08-31T13:11:56.505Z",
+  "count": 18,
   "items": [
+    {
+      "id": "2025-09-01-the-secret-journey-of-light",
+      "date": "2025-09-01",
+      "title": "[Science Kids] The Secret Journey of Light | EduPod 뉴스",
+      "categories": [
+        "Science",
+        "Education",
+        "Physics"
+      ],
+      "summary": "빛은 어떻게 보이고, 왜 만질 수 없을까요? 반사·굴절·그림자·무지개의 비밀을 어린이 눈높이로 풀어낸 EduPod 과학 뉴스.",
+      "link": "/news/2025-09-01-the-secret-journey-of-light.html"
+    },
     {
       "id": "2025-08-31-why-airplanes-fly",
       "date": "2025-08-31",
