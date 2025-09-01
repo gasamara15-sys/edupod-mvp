@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-08-31T13:11:56.505Z",
-  "count": 18,
+  "generatedAt": "2025-09-01T14:59:20.862Z",
+  "count": 19,
   "items": [
+    {
+      "id": "2025-09-02-triangle-180-degrees",
+      "date": "2025-09-02",
+      "title": "[Math Kids] The 180° Secret of Triangles | EduPod 뉴스",
+      "categories": [
+        "Math",
+        "Education",
+        "Geometry"
+      ],
+      "summary": "왜 모든 삼각형의 내각 합은 항상 180도일까? 평행선, 엇각·동위각, 외각 정리까지 어린이 눈높이로 설명한 EduPod 수학 뉴스.",
+      "link": "/news/2025-09-02-triangle-180-degrees.html"
+    },
     {
       "id": "2025-09-01-the-secret-journey-of-light",
       "date": "2025-09-01",
