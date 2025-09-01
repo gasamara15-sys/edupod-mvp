@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Math Kids] The 180° Secret of Triangles | EduPod 뉴스</title>
+  <meta name="category" content="Math, Education, Geometry" />
+  <meta name="description" content="왜 모든 삼각형의 내각 합은 항상 180도일까? 평행선, 엇각·동위각, 외각 정리까지 어린이 눈높이로 설명한 EduPod 수학 뉴스." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://www.edupod.kr/news/2025-09-02-triangle-180-degrees.html" />
+  <style>
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --primary:#111827;--bg:#fafafa;--cta:#4f46e5;--cta-600:#4338ca;--cta-bg:#eef2ff;
+      --note:#0ea5e9;--note-bg:#ecfeff;
+    }
+    html,body{margin:0;padding:0;background:var(--bg)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:var(--primary)}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:var(--primary)}
+    .nav a:hover{background:#f8fafc}
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .headline{font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button,input[type="range"]{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--cta-bg);border-color:var(--cta);color:var(--cta)}
+    button.primary:hover{background:#e6e9ff;border-color:var(--cta-600);color:var(--cta-600)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .sent{padding:8px 10px;border-radius:8px;margin:6px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .en{display:block}
+    .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    .ko.hidden{display:none !important;}
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--note);border-radius:14px;background:#fff;color:var(--note);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--note-bg)}
+    .icon-btn:disabled{opacity:.5}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+  </style>
+      <!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "svtn5vtbri");
+</script>
+</head>
+<body>
+<header>
+  <h1>EduPod 뉴스
+    <span class="meta">— 2025-09-02 ·
+      <span class="pill">Math</span>
+      <span class="pill">Education</span>
+      <span class="pill">Geometry</span>
+    </span>
+  </h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">홈으로</a>
+    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">뉴스 리스트</a>
+  </nav>
+</header>
+
+<main>
+  <div class="row">
+    <div class="card" style="flex:1 1 100%">
+      <div class="level-tabs" role="tablist">
+        <button role="tab" id="tab-low" aria-selected="false">초등 저학년 (A1–A2)</button>
+        <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+        <button role="tab" id="tab-mid" aria-selected="true">중학생 (A2–B1)</button>
+        <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+      </div>
+
+      <!-- 재생 아이콘 버튼 -->
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <!-- 보이스/속도 컨트롤 -->
+      <div class="controls">
+        <label class="small" for="voiceSelect">음성:</label>
+        <select id="voiceSelect" aria-label="Voice"></select>
+        <span class="small">속도 프리셋:</span>
+        <button class="preset" data-rate="0.85">처음 듣기</button>
+        <button class="preset" data-rate="1.0">보통</button>
+        <button class="preset" data-rate="1.15">빠르게</button>
+        <span class="small">세부 속도</span>
+        <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
+        <span class="small" id="rateLabel">1.00×</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="articleCard">
+      <div class="meta"><span class="pill" id="topicPill">Math</span> <span class="pill" id="cefrPill">A2–B1</span></div>
+      <div class="headline" id="headline">The 180° Secret of Triangles: Why the Angles Always Add Up</div>
+      <p class="small" id="dek">Draw a parallel line, copy the angles, and line them up on a straight line—boom: 180° every time.</p>
+
+      <!-- 한국어 전체 토글 -->
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
+
+      <div id="sentences"></div>
+      <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+      <div class="quiz">
+        <h3>퀴즈</h3>
+        <ol id="quizList"></ol>
+      </div>
+
+      <div class="grammar" id="grammarBox" style="display:none">
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트</h3>
+        <ol id="grammarList"></ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px">단어장</h2>
+      <ul id="vocab"></ul>
+      <p class="small">영어 문장 아래에 한국어 해석이 함께 제공됩니다.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+/* =========================
+   레벨별 콘텐츠 데이터
+   ========================= */
+const DATA = {
+  /* -------- 초등 저학년 (A1–A2) 12줄 -------- */
+  low: {
+    topic: "Math",
+    cefr: "A1–A2",
+    headline: "Triangle Angles Make 180°",
+    dek: "Put the three corners together in a line—they make a straight angle.",
+    sents: [
+      {en:"A straight line is 180 degrees.", ko:"일직선은 180도예요."},
+      {en:"Draw any triangle on paper.", ko:"종이에 아무 삼각형이나 그려 보세요."},
+      {en:"Cut out the three corners.", ko:"세 꼭짓점을 오려 보세요."},
+      {en:"Place the corners side by side in a line.", ko:"세 꼭짓점을 한 줄로 붙여 보세요."},
+      {en:"They fit into a straight line—180°.", ko:"일직선이 되면서 180°가 돼요."},
+      {en:"So the three inside angles add to 180°.", ko:"그래서 삼각형의 세 내각의 합은 180°예요."},
+      {en:"You can also draw a line parallel to the base.", ko:"밑변과 평행한 선을 그려도 돼요."},
+      {en:"Angles move to the top as equal angles.", ko:"각이 위쪽에 같은 크기로 옮겨와요."},
+      {en:"Those three angles sit on a straight line.", ko:"그 세 각이 일직선 위에 놓여요."},
+      {en:"A line means 180° again.", ko:"일직선은 다시 180°를 뜻해요."},
+      {en:"Every triangle works the same way.", ko:"어떤 삼각형도 똑같이 돼요."},
+      {en:"That is the triangle angle rule.", ko:"이게 삼각형의 내각 합 규칙이에요."}
+    ],
+    vocab: [
+      ["straight angle","평각(180°)","A straight line is a straight angle."],
+      ["inside angle (interior)","내각","The three interior angles add to 180°."],
+      ["parallel line","평행선","A parallel line helps copy angles."]
+    ],
+    quiz: [
+      {q:"How many degrees is a straight line?", options:["180°","90°","360°"], answer:0},
+      {tf:true, stmt:"Any triangle’s interior angles add to 180°.", answer:true},
+      {q:"What line do we draw to copy angles?", options:["A parallel line","A curved line","A random line"], answer:0}
+    ]
+  },
+
+  /* -------- 초등 고학년 (A2–B1) 15줄 -------- */
+  high: {
+    topic: "Education",
+    cefr: "A2–B1",
+    headline: "Line Up the Angles: 180° Every Time",
+    dek: "Use parallel lines and equal angles to see why triangles sum to 180°.",
+    sents: [
+      {en:"Start with a triangle and its base.", ko:"삼각형과 그 밑변에서 시작해요."},
+      {en:"Draw a line through the top vertex parallel to the base.", ko:"꼭짓점을 지나면서 밑변과 평행한 선을 그려요."},
+      {en:"The two lower angles appear on the top line as equal angles.", ko:"아래 두 내각이 위 평행선에 같은 크기로 나타나요."},
+      {en:"These are called corresponding or alternate interior angles.", ko:"이를 동위각 또는 엇각이라고 해요."},
+      {en:"Now the three angles sit along one straight line.", ko:"이제 세 각이 일직선 위에 나란히 있어요."},
+      {en:"A straight line measures 180°, so the angles add to 180°.", ko:"일직선은 180°이므로 각의 합도 180°예요."},
+      {en:"Cut-and-paste also works: join the corners in a row.", ko:"오려 붙이는 방법도 돼요: 꼭짓점을 한 줄로 붙이세요."},
+      {en:"They fill a straight angle with no gaps.", ko:"빈틈 없이 평각을 채워요."},
+      {en:"This is the Triangle Sum Theorem.", ko:"이게 바로 삼각형 내각의 합 정리예요."},
+      {en:"It works for skinny, wide, or right triangles.", ko:"뾰족한 삼각형, 넓은 삼각형, 직각삼각형 모두 해당해요."},
+      {en:"An exterior angle equals the sum of two remote interior angles.", ko:"외각은 떨어진 두 내각의 합과 같아요."},
+      {en:"That rule also matches the 180° idea.", ko:"이 규칙도 180° 규칙과 딱 맞아요."},
+      {en:"Parallel lines help us move angles without changing size.", ko:"평행선은 각의 크기를 바꾸지 않고 위치만 옮기게 도와줘요."},
+      {en:"That’s why drawing neatly matters in geometry.", ko:"그래서 기하학에서는 반듯하게 그리는 게 중요해요."},
+      {en:"Try it with a ruler, protractor, and scissors!", ko:"자, 각도기, 가위를 써서 직접 해 보세요!"}
+    ],
+    vocab: [
+      ["corresponding angles","동위각","Equal when lines are parallel."],
+      ["alternate interior angles","엇각(내각)","Equal inside parallel lines."],
+      ["exterior angle","외각","Equals sum of two remote interior angles."]
+    ],
+    quiz: [
+      {q:"Which tool checks angle sizes?", options:["Protractor","Compass card","Thermometer"], answer:0},
+      {tf:true, stmt:"Alternate interior angles are equal for parallel lines.", answer:true},
+      {q:"What is the triangle interior angle sum?", options:["180°","90°","270°"], answer:0}
+    ]
+  },
+
+  /* -------- 중학생 (A2–B1) 22줄 -------- */
+  mid: {
+    topic: "Math",
+    cefr: "A2–B1",
+    headline: "Why ∠A + ∠B + ∠C = 180°: A Parallel-Line Proof",
+    dek: "Copy angles to a parallel through a vertex; the three angles sit on a straight line.",
+    sents: [
+      {en:"Let △ABC be any triangle with base BC.", ko:"△ABC가 임의의 삼각형이고 밑변이 BC라고 합시다."},
+      {en:"Through vertex A, draw line ℓ parallel to BC.", ko:"꼭짓점 A를 지나고 BC와 평행한 직선 ℓ을 그립니다."},
+      {en:"Angle at B equals the angle on ℓ next to A by corresponding angles.", ko:"동위각 성질로 B에서의 각이 ℓ 위 A 옆 각과 같습니다."},
+      {en:"Angle at C equals the other angle on ℓ by alternate interior angles.", ko:"엇각 성질로 C에서의 각이 ℓ 위의 다른 각과 같습니다."},
+      {en:"Now ∠B (moved) + ∠A + ∠C (moved) lie along line ℓ.", ko:"이제 옮겨진 ∠B, ∠A, 옮겨진 ∠C가 직선 ℓ 위에 나란히 있습니다."},
+      {en:"A straight line measures 180°, so the three sum to 180°.", ko:"일직선은 180°이므로 세 각의 합은 180°입니다."},
+      {en:"This is the Triangle Sum Theorem on a Euclidean plane.", ko:"이것이 유클리드 평면에서의 삼각형 내각 합 정리입니다."},
+      {en:"A quick corollary is the exterior-angle theorem.", ko:"빠른 따름정리는 외각 정리입니다."},
+      {en:"At a vertex, the exterior angle equals the sum of the two remote interior angles.", ko:"한 꼭짓점의 외각은 떨어진 두 내각의 합과 같습니다."},
+      {en:"Cut-and-fit shows the same idea physically.", ko:"오려 붙이는 활동도 같은 아이디어를 물리적으로 보여줍니다."},
+      {en:"In non-Euclidean geometry, the sum can differ from 180°.", ko:"비유클리드 기하에서는 합이 180°와 다를 수 있습니다."},
+      {en:"On a sphere, triangle sums exceed 180°.", ko:"구면에서는 삼각형 내각 합이 180°보다 큽니다."},
+      {en:"In hyperbolic geometry, the sum is less than 180°.", ko:"쌍곡기하에서는 180°보다 작습니다."},
+      {en:"But for school geometry on a flat plane, it is always 180°.", ko:"하지만 학교에서 배우는 평면에서는 항상 180°입니다."},
+      {en:"Parallel lines keep angle measures unchanged when ‘sliding’ them.", ko:"평행선은 각을 '옮길' 때 크기를 바꾸지 않습니다."},
+      {en:"Transversals create equal corresponding and alternate interior angles.", ko:"횡단선은 동위각과 엇각을 같게 만듭니다."},
+      {en:"A protractor verifies each step by measurement.", ko:"각도기는 각 단계의 측정을 확인해 줍니다."},
+      {en:"Diagrams must be neat to avoid misreading angles.", ko:"도형은 정갈해야 각을 잘못 읽지 않습니다."},
+      {en:"Once you see the straight line, the 180° total is immediate.", ko:"일직선을 보면 180° 합은 즉시 드러납니다."},
+      {en:"Practice with different shapes—acute, right, and obtuse triangles.", ko:"예각, 직각, 둔각 삼각형으로 연습해 보세요."},
+      {en:"The proof works for all of them.", ko:"모든 경우에 증명이 성립합니다."},
+      {en:"That’s the power of a general geometric argument.", ko:"이것이 일반 기하학 증명의 힘입니다."}
+    ],
+    vocab: [
+      ["transversal","횡단선","A line that cuts across two lines."],
+      ["Triangle Sum Theorem","삼각형 내각의 합 정리","∠A+∠B+∠C=180° on a plane."],
+      ["Euclidean plane","유클리드 평면","Flat geometry used in school math."]
+    ],
+    quiz: [
+      {q:"Which property is used with parallel lines?", options:["Corresponding/alternate interior angles","Pythagorean theorem","Sine rule only"], answer:0},
+      {tf:true, stmt:"Exterior angle equals the sum of the two remote interior angles.", answer:true},
+      {q:"On a sphere, the interior-angle sum is…", options:["> 180°","= 180°","< 180°"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"If a line is straight, it measures 180 degrees.",
+        ko:"직선이라면 180도이다.",
+        point:"조건문: If + 현재, 일반동사 현재",
+        q:"If a line (___) straight, it (___) 180 degrees.",
+        options:["is / measures","was / measured","were / will measure"],
+        answer:0
+      },
+      {
+        en:"Angles stay equal when lines are parallel.",
+        ko:"선들이 평행하면 각은 동일하게 유지된다.",
+        point:"일반 현재(보편적 사실)",
+        q:"Angles (___) equal when lines (___) parallel.",
+        options:["stay / are","stayed / were","stays / is"],
+        answer:0
+      }
+    ]
+  },
+
+  /* -------- 고등/수능 (B2–C1) 26줄 -------- */
+  hs: {
+    topic: "Geometry",
+    cefr: "B2–C1",
+    headline: "Triangle Interior Angles: A Parallel-Line Proof and Its Corollaries",
+    dek: "Using a line through a vertex parallel to the base, corresponding/alternate interior angles place ∠A, ∠B, ∠C on a straight line.",
+    sents: [
+      {en:"Let △ABC be arbitrary; draw line ℓ through A with ℓ ∥ BC.", ko:"△ABC를 임의로 두고, A를 지나며 BC와 평행한 ℓ을 그립니다."},
+      {en:"By corresponding angles, ∠ABℓ equals interior angle at B.", ko:"동위각에 따라 ∠ABℓ은 B의 내각과 같습니다."},
+      {en:"By alternate interior angles, ∠ℓAC equals interior angle at C.", ko:"엇각에 따라 ∠ℓAC는 C의 내각과 같습니다."},
+      {en:"Thus ∠ABℓ + ∠BAC + ∠ℓAC form a straight angle along ℓ.", ko:"따라서 ∠ABℓ + ∠BAC + ∠ℓAC는 ℓ 위의 평각을 이룹니다."},
+      {en:"A straight angle is 180°, so ∠A + ∠B + ∠C = 180°.", ko:"평각은 180°이므로 ∠A+∠B+∠C=180°입니다."},
+      {en:"Corollary: the exterior angle at a vertex equals the sum of the two non-adjacent interior angles.", ko:"따름정리: 한 꼭짓점의 외각은 이웃하지 않은 두 내각의 합과 같습니다."},
+      {en:"This proof assumes Euclidean parallel postulate on a flat plane.", ko:"이 증명은 평면 유클리드 평행 공리를 가정합니다."},
+      {en:"On curved spaces the sum differs: spherical (>180°), hyperbolic (<180°).", ko:"곡면에서는 합이 달라집니다: 구면(>180°), 쌍곡(<180°)."},
+      {en:"Equivalently, tiling the vertex angles along a straight line demonstrates the same result physically.", ko:"동등하게, 꼭짓점 각을 일직선에 이어 붙이면 물리적으로 같은 결과를 보입니다."},
+      {en:"A transversal preserves angle measures under parallelism.", ko:"평행일 때 횡단선은 각의 크기를 보존합니다."},
+      {en:"Hence diagram accuracy (parallelism) is crucial to avoid measurement bias.", ko:"따라서 평행성 유지 등 도형 정확성이 중요합니다."},
+      {en:"The theorem extends to polygon interior sums via triangulation.", ko:"이 정리는 삼각분할을 통해 다각형 내각 합으로 확장됩니다."},
+      {en:"An n-gon’s interior sum is (n−2)·180°.", ko:"n각형의 내각 합은 (n−2)·180°입니다."},
+      {en:"For right triangles, the acute-angle pair must sum to 90°.", ko:"직각삼각형에서는 두 예각의 합이 90°여야 합니다."},
+      {en:"In coordinate proofs, slopes certify parallelism before angle transfer.", ko:"좌표기하는 기울기로 평행을 확인한 뒤 각 이전을 합니다."},
+      {en:"Vector proofs use dot products to relate angle measures.", ko:"벡터 증명은 내적으로 각을 연결합니다."},
+      {en:"Trigonometric forms (law of cosines) are consistent with 180° totals.", ko:"코사인 법칙 등 삼각법도 180° 합과 일치합니다."}
+    ],
+    vocab: [
+      ["corollary","따름정리","A result that follows from a theorem."],
+      ["parallel postulate","평행 공리","Euclid’s assumption about parallels."],
+      ["triangulation","삼각분할","Splitting polygons into triangles."]
+    ],
+    quiz: [
+      {q:"Which geometries break the 180° sum?", options:["Spherical & hyperbolic","Affine & projective","Cylindrical & conic"], answer:0},
+      {tf:true, stmt:"The exterior angle equals the sum of the two remote interior angles.", answer:true},
+      {q:"What is an n-gon’s interior-angle sum?", options:["(n−2)·180°","n·90°","(n+2)·90°"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Because the angles lie on a straight line, they sum to 180 degrees.",
+        ko:"각들이 일직선 위에 있으므로 그 합은 180도이다.",
+        point:"이유 부사절 because",
+        q:"(___) the angles lie on a straight line, they (___) to 180 degrees.",
+        options:["Because / sum","Although / sum","Unless / summed"],
+        answer:0
+      },
+      {
+        en:"Had the space been curved, the sum would not have been 180 degrees.",
+        ko:"공간이 굽어 있었다면 합은 180도가 아니었을 것이다.",
+        point:"가정법 과거완료 도치",
+        q:"(___) the space been curved, the sum (___) not have been 180 degrees.",
+        options:["Had / would","If / must","Were / will"],
+        answer:0
+      },
+      {
+        en:"Angles remain equal as long as the lines are parallel.",
+        ko:"선들이 평행인 한 각은 동일하게 유지된다.",
+        point:"as long as 조건 부사절",
+        q:"Angles remain equal (___) the lines are parallel.",
+        options:["as long as","though","unless"],
+        answer:0
+      }
+    ]
+  }
+};
+
+/* =========================
+   공통 DOM 참조
+   ========================= */
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
+let LEVEL = 'mid';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+/* =========================
+   음성 목록 로딩
+   ========================= */
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v,i)=>{
+    const opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred>=0?preferred:0);
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+/* =========================
+   속도 프리셋/표시
+   ========================= */
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const r=parseFloat(btn.dataset.rate);
+    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
+  });
+});
+rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
+
+/* =========================
+   레벨 전환
+   ========================= */
+levelTabs.low.addEventListener('click',()=>switchLevel('low'));
+levelTabs.high.addEventListener('click',()=>switchLevel('high'));
+levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
+levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
+
+/* =========================
+   재생 컨트롤
+   ========================= */
+playAllBtn.addEventListener('click',()=>startPlayAll());
+pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
+resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+stopBtn.addEventListener('click',stopAll);
+
+/* =========================
+   한국어 전체 토글
+   ========================= */
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => { hideAllKo ? el.classList.add('hidden') : el.classList.remove('hidden'); });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
+
+/* =========================
+   레벨 렌더링
+   ========================= */
+function switchLevel(lv){
+  LEVEL=lv;
+  for(const k of Object.keys(levelTabs)){
+    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
+  }
+  const d=DATA[lv];
+  topicPill.textContent=d.topic;
+  cefrPill.textContent=d.cefr;
+  headlineEl.textContent=d.headline;
+  dekEl.textContent=d.dek;
+
+  // 문장 렌더 (영/한)
+  sentencesEl.innerHTML='';
+  d.sents.forEach((o,i)=>{
+    const div=document.createElement('div');
+    div.className='sent'; div.dataset.idx=i;
+    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
+    div.addEventListener('click',()=>playSentence(i,true));
+    sentencesEl.appendChild(div);
+  });
+
+  // 단어장
+  vocabEl.innerHTML='';
+  (d.vocab||[]).forEach(([en,ko,ex])=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // 퀴즈
+  quizList.innerHTML='';
+  (d.quiz||[]).forEach((q,i)=>{
+    const li=document.createElement('li');
+    if(q.tf){
+      li.innerHTML=`<div>${q.stmt}</div>
+      <div class="controls">
+        <button data-q="${i}" data-a="true">True</button>
+        <button data-q="${i}" data-a="false">False</button>
+        <span class="small" id="qfb-${i}"></span>
+      </div>`;
+    }else{
+      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',(e)=>{
+      const qidx=parseInt(e.target.dataset.q,10);
+      const ansRaw=e.target.dataset.a;
+      const dataQ=DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
+      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
+    });
+  });
+
+  // 문법(있을 때만 표시)
+  if(d.grammar){
+    grammarBox.style.display='';
+    const titleMap = {
+      low:"문법 포인트 (초등 저학년)",
+      high:"문법 포인트 (초등 고학년)",
+      mid:"문법 포인트 (중학생)",
+      hs:"문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+    grammarList.innerHTML='';
+    d.grammar.forEach((g,i)=>{
+      const li=document.createElement('li');
+      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        const gidx=parseInt(e.target.dataset.g,10);
+        const ans=parseInt(e.target.dataset.a,10);
+        const cor=DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
+      });
+    });
+  }else{
+    grammarBox.style.display='none';
+    grammarList.innerHTML='';
+  }
+
+  applyAllKoVisibility();
+  stopAll();
+}
+
+// 초기 렌더: 중학생
+switchLevel('mid');
+
+/* =========================
+   음성 합성 재생
+   ========================= */
+function getSelectedVoice(){
+  const idx=parseInt(voiceSelect.value||'0',10);
+  return VOICES[idx]||null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{ el.classList.toggle('active',j===i); });
+}
+function clearMarks(){ sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active')); }
+function stopAll(){ PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks(); }
+
+function playSentence(i,repeat=false){
+  stopAll();
+  const d=DATA[LEVEL]; const text=d.sents[i].en;
+  CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text);
+  const v=getSelectedVoice(); if(v) u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+  u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
+  speechSynthesis.speak(u);
+}
+
+function startPlayAll(){
+  stopAll(); PLAYING_ALL=true;
+  const d=DATA[LEVEL]; let i=0;
+  const next=()=>{
+    if(!PLAYING_ALL) return;
+    if(i>=d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX=i; markActive(i);
+    const u=new SpeechSynthesisUtterance(d.sents[i].en);
+    const v=getSelectedVoice(); if(v) u.voice=v;
+    u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+    u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 250); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+
+/* =========================
+   키보드 단축키
+   ========================= */
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){
+    e.preventDefault();
+    if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause();
+    else speechSynthesis.resume();
+  }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
