@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-01T14:59:20.862Z",
-  "count": 19,
+  "generatedAt": "2025-09-02T11:49:39.532Z",
+  "count": 20,
   "items": [
+    {
+      "id": "2025-09-03-esports-skill-training-planB",
+      "date": "2025-09-03",
+      "title": "[eSports & Career] “실력이 먼저, 연습은 체계적으로, 인생은 플랜 B와 함께” | EduPod 뉴스",
+      "categories": [
+        "eSports",
+        "Career",
+        "Education"
+      ],
+      "summary": "프로게이머의 핵심은 실력. 무작정 연습이 아닌 체계적 훈련이 필요하며, 공부와 병행해 플랜 B를 갖추는 것이 삶에 이롭다는 메시지.",
+      "link": "/news/2025-09-03-esports-skill-training-planB.html"
+    },
     {
       "id": "2025-09-02-triangle-180-degrees",
       "date": "2025-09-02",
