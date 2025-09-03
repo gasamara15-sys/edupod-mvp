@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-02T11:49:39.532Z",
-  "count": 20,
+  "generatedAt": "2025-09-03T13:46:37.349Z",
+  "count": 21,
   "items": [
+    {
+      "id": "2025-09-04-nyt-editor-residence-vandalism",
+      "date": "2025-09-04",
+      "title": "[World & Media] Vandalism at NYT Editor’s Residence Spurs Debate over Gaza Coverage | EduPod 뉴스",
+      "categories": [
+        "World",
+        "Media",
+        "Society"
+      ],
+      "summary": "Activists splashed red paint at New York Times editor Joseph Kahn’s residence amid anger over Gaza coverage; NYPD is investigating, and debates over bias and accountability continue.",
+      "link": "/news/2025-09-04-nyt-editor-residence-vandalism.html"
+    },
     {
       "id": "2025-09-03-esports-skill-training-planB",
       "date": "2025-09-03",
