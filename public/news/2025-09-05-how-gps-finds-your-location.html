@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[STEM] How Does GPS Know Where You Are? | EduPod 뉴스</title>
+  <meta name="category" content="Science, Technology, Education" />
+  <meta name="description" content="위성 신호의 시간차로 거리를 계산하고, 4개 이상 위성의 교차점으로 좌표를 정하는 GPS의 원리를 알아봅시다." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://www.edupod.kr/news/2025-09-05-how-gps-finds-your-location.html" />
+  <style>
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --primary:#111827;--bg:#fafafa;--cta:#4f46e5;--cta-600:#4338ca;--cta-bg:#eef2ff;
+      --note:#0ea5e9;--note-bg:#ecfeff;
+    }
+    html,body{margin:0;padding:0;background:var(--bg)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:var(--primary)}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:var(--primary)}
+    .nav a:hover{background:#f8fafc}
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .headline{font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button,input[type="range"]{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--cta-bg);border-color:var(--cta);color:var(--cta)}
+    button.primary:hover{background:#e6e9ff;border-color:var(--cta-600);color:var(--cta-600)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .sent{padding:8px 10px;border-radius:8px;margin:6px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .en{display:block}
+    .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    .ko.hidden{display:none !important;}
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--note);border-radius:14px;background:#fff;color:var(--note);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--note-bg)}
+    .icon-btn:disabled{opacity:.5}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+  </style>
+      <!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "svtn5vtbri");
+</script>
+</head>
+<body>
+<header>
+  <h1>EduPod 뉴스
+    <span class="meta">— 2025-09-05 ·
+      <span class="pill">Science</span>
+      <span class="pill">Technology</span>
+      <span class="pill">Education</span>
+    </span>
+  </h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">홈으로</a>
+    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">뉴스 리스트</a>
+  </nav>
+</header>
+
+<main>
+  <div class="row">
+    <div class="card" style="flex:1 1 100%">
+      <div class="level-tabs" role="tablist">
+        <button role="tab" id="tab-low" aria-selected="false">초등 저학년 (A1–A2)</button>
+        <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+        <button role="tab" id="tab-mid" aria-selected="true">중학생 (A2–B1)</button>
+        <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+      </div>
+
+      <!-- 재생 아이콘 버튼 -->
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <div class="controls">
+        <label class="small" for="voiceSelect">음성:</label>
+        <select id="voiceSelect" aria-label="Voice"></select>
+        <span class="small">속도 프리셋:</span>
+        <button class="preset" data-rate="0.9">처음 듣기</button>
+        <button class="preset" data-rate="1.0">보통</button>
+        <button class="preset" data-rate="1.15">빠르게</button>
+        <span class="small">세부 속도</span>
+        <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
+        <span class="small" id="rateLabel">1.00×</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="articleCard">
+      <div class="meta"><span class="pill" id="topicPill">Science</span> <span class="pill" id="cefrPill">A2–B1</span></div>
+      <div class="headline" id="headline">How GPS Finds You: Clocks in Space, Math on Earth</div>
+      <p class="small" id="dek">위성·시간·빛의 속도로 거리를 계산하고, 4개 이상 위성의 교차점으로 좌표를 정하는 GPS. 보정 시스템과 다중 위성항법으로 더 정확해집니다.</p>
+
+      <!-- 한국어 전체 토글 -->
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
+
+      <div id="sentences"></div>
+      <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+      <div class="quiz">
+        <h3>퀴즈</h3>
+        <ol id="quizList"></ol>
+      </div>
+
+      <div class="grammar" id="grammarBox" style="display:none">
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트</h3>
+        <ol id="grammarList"></ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px">단어장</h2>
+      <ul id="vocab"></ul>
+      <p class="small">영어 문장 아래에 한국어 해석이 함께 제공됩니다.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+/* =========================
+   레벨별 콘텐츠 데이터
+   ========================= */
+const DATA = {
+  /* -------- 초등 저학년 (A1–A2) 14줄 -------- */
+  low: {
+    topic: "Science",
+    cefr: "A1–A2",
+    headline: "GPS: Signals from Space Tell Us Where We Are",
+    dek: "위성이 시간 신호를 보내고, 우리는 그 시간을 이용해 거리를 재요.",
+    sents: [
+      {en:"Many GPS satellites fly high above Earth.", ko:"많은 GPS 인공위성이 지구 위를 날고 있어요."},
+      {en:"Each satellite says, “I am here at this time.”", ko:"각 위성은 “나는 지금 여기 있어!”라고 시간과 위치를 알려요."},
+      {en:"Your phone listens to those signals.", ko:"우리 휴대폰이 그 신호를 들어요."},
+      {en:"It uses time to measure distance.", ko:"휴대폰은 시간을 이용해 거리를 재요."},
+      {en:"Light travels very fast, so time tells distance.", ko:"빛은 아주 빨리 움직여서, 시간으로 거리를 알 수 있어요."},
+      {en:"One satellite gives a big “maybe” place.", ko:"위성 하나만 있으면 “어딘가 여기쯤” 정도만 알아요."},
+      {en:"Two satellites make the place smaller.", ko:"위성 두 개면 범위가 더 줄어요."},
+      {en:"Three satellites narrow it to two spots.", ko:"세 개면 두 지점으로 줄어들어요."},
+      {en:"Four satellites find one exact spot.", ko:"네 개면 정확히 한 점을 찾을 수 있어요."},
+      {en:"Buildings and clouds can slow signals a little.", ko:"건물이나 구름이 신호를 조금 느리게 만들 수 있어요."},
+      {en:"Helpers on the ground fix those errors.", ko:"지상 기지국이 이런 오류를 고쳐줘요."},
+      {en:"Phones also use other systems like GLONASS and Galileo.", ko:"휴대폰은 글로나스, 갈릴레오 같은 다른 시스템도 함께 써요."},
+      {en:"More systems mean better accuracy.", ko:"여러 시스템을 쓰면 더 정확해져요."},
+      {en:"That is how GPS knows where you are.", ko:"이렇게 해서 GPS는 네가 어디 있는지 알아요."}
+    ],
+    vocab: [
+      ["satellite","인공위성","Satellites circle Earth and send signals."],
+      ["signal","신호","Your phone listens to GPS signals."],
+      ["accuracy","정확도","More satellites increase accuracy."]
+    ],
+    quiz: [
+      {q:"How many satellites are usually needed for exact location?", options:["Four","One","Two"], answer:0},
+      {tf:true, stmt:"Time helps GPS measure distance.", answer:true},
+      {q:"What improves accuracy?", options:["More systems","Random guessing","Turning off phone"], answer:0}
+    ]
+  },
+
+  /* -------- 초등 고학년 (A2–B1) 18줄 -------- */
+  high: {
+    topic: "Technology",
+    cefr: "A2–B1",
+    headline: "Clocks in Space: The GPS Trick",
+    dek: "전파 도달 시간 × 빛의 속도 = 거리. 위성 4개 이상으로 내 좌표를 확정해요.",
+    sents: [
+      {en:"GPS satellites constantly broadcast their position and time.", ko:"GPS 위성은 자신의 위치와 시간을 계속 방송합니다."},
+      {en:"Your phone compares send-time and receive-time.", ko:"휴대폰은 보내는 시간과 받는 시간을 비교합니다."},
+      {en:"Distance equals time difference times the speed of light.", ko:"거리 = 시간 차 × 빛의 속도입니다."},
+      {en:"One satellite gives a sphere of possible locations.", ko:"위성 한 개는 가능한 위치의 구(球)를 줍니다."},
+      {en:"Two spheres intersect in a circle.", ko:"두 개의 구가 만나면 원이 됩니다."},
+      {en:"A third satellite narrows it to two points.", ko:"세 번째 위성은 두 점으로 좁힙니다."},
+      {en:"A fourth satellite chooses the single correct point.", ko:"네 번째 위성이 정확한 한 점을 선택합니다."},
+      {en:"This process is called trilateration.", ko:"이 과정을 ‘삼변측량(Trilateration)’이라 부릅니다."},
+      {en:"Air, clouds, and buildings delay signals slightly.", ko:"공기, 구름, 건물은 신호를 약간 지연시킵니다."},
+      {en:"Ground stations provide corrections for better accuracy.", ko:"지상국이 보정값을 제공해 정확도를 높입니다."},
+      {en:"Phones also read GLONASS, Galileo, and more.", ko:"휴대폰은 글로나스, 갈릴레오 등도 함께 읽습니다."},
+      {en:"Using multiple systems is called multi-GNSS.", ko:"여러 시스템을 쓰는 것을 ‘멀티 GNSS’라고 합니다."},
+      {en:"With good sky view, accuracy improves.", ko:"하늘이 잘 보이면 정확도가 좋아집니다."},
+      {en:"Indoors, accuracy can drop due to reflections.", ko:"실내에서는 반사 때문에 정확도가 떨어질 수 있습니다."},
+      {en:"Maps and sensors help stabilize the position.", ko:"지도와 각종 센서가 위치를 안정화하는 데 도움을 줍니다."},
+      {en:"That’s how your phone finds you on the map.", ko:"이렇게 휴대폰은 지도에서 당신을 찾아냅니다."},
+      {en:"It’s fast math powered by precise clocks.", ko:"정밀한 시계가 가능케 하는 빠른 수학입니다."},
+      {en:"Space and Earth work together to guide us.", ko:"우리를 안내하기 위해 우주와 지상이 함께 일합니다."}
+    ],
+    vocab: [
+      ["trilateration","삼변측량","Finding a point by distances to known points."],
+      ["correction","보정값/보정","Corrections reduce signal delays."],
+      ["multi-GNSS","다중 위성항법","Using GPS, GLONASS, Galileo, etc."]
+    ],
+    quiz: [
+      {q:"What math idea does GPS use?", options:["Trilateration","Teleportation","Triangulation with angles only"], answer:0},
+      {tf:true, stmt:"Buildings can delay signals and hurt accuracy.", answer:true},
+      {q:"What improves outdoor accuracy?", options:["Clear sky view","Turning off sensors","Standing under metal roof"], answer:0}
+    ]
+  },
+
+  /* -------- 중학생 (A2–B1) 22줄 -------- */
+  mid: {
+    topic: "STEM",
+    cefr: "A2–B1",
+    headline: "From Time to Distance: GPS in Four Satellites",
+    dek: "시간차×빛의 속도=거리, 4개 위성 교차점=좌표. 지상 보정과 다중 GNSS로 오차를 줄입니다.",
+    sents: [
+      {en:"GPS works by measuring how long signals take to reach your phone.", ko:"GPS는 신호가 휴대폰에 도달하는 데 걸린 시간을 재는 방식으로 작동합니다."},
+      {en:"Because radio waves travel at light speed, time turns into distance.", ko:"전파가 빛의 속도로 이동하기 때문에, 시간은 곧 거리로 바뀝니다."},
+      {en:"Each satellite adds a distance constraint—a sphere around it.", ko:"각 위성은 자신의 주위에 하나의 거리 제약, 즉 구(球)를 더합니다."},
+      {en:"With four satellites, those spheres intersect at one point.", ko:"네 개 위성이면 그 구들이 한 점에서 만납니다."},
+      {en:"Your phone also solves for clock error during this step.", ko:"이 과정에서 휴대폰은 자체 시계 오차도 함께 보정합니다."},
+      {en:"This distance-based method is called trilateration.", ko:"이 거리 기반 방법을 삼변측량이라고 부릅니다."},
+      {en:"However, signals can slow down in the atmosphere or reflect off buildings.", ko:"하지만 대기에서 신호가 느려지거나 건물에서 반사될 수 있습니다."},
+      {en:"So we use corrections from ground stations to reduce errors.", ko:"그래서 지상국 보정값으로 오차를 줄입니다."},
+      {en:"Today’s phones read multiple systems—GPS, GLONASS, Galileo, BeiDou—and even regional ones.", ko:"요즘 휴대폰은 GPS, 글로나스, 갈릴레오, 베이더우 등 여러 시스템을 함께 읽습니다."},
+      {en:"This multi-GNSS approach boosts availability and accuracy.", ko:"이 멀티 GNSS 접근은 가용성과 정확도를 높입니다."},
+      {en:"Indoors or in urban canyons, accuracy may drop due to reflections.", ko:"실내나 높은 건물이 많은 곳에서는 반사 때문에 정확도가 낮아질 수 있습니다."},
+      {en:"Phones blend map data and motion sensors to stabilize location.", ko:"휴대폰은 지도 데이터와 동작 센서를 섞어 위치를 안정화합니다."},
+      {en:"If a signal takes 0.01 seconds, that’s about 3,000 km of travel.", ko:"신호가 0.01초 걸리면, 약 3,000km를 이동한 것입니다."},
+      {en:"The math repeats across satellites until one coordinate fits all distances.", ko:"여러 위성에 대해 그 계산을 반복해 모든 거리에 맞는 좌표를 찾습니다."},
+      {en:"A clear sky view usually means faster and more accurate fixes.", ko:"하늘이 잘 보이면 보통 더 빠르고 정확하게 위치를 잡습니다."},
+      {en:"That is why phones ask to go near a window when indoors.", ko:"그래서 실내에서는 창가로 가라고 안내하기도 합니다."},
+      {en:"Navigation apps then turn coordinates into turn-by-turn directions.", ko:"내비 앱은 좌표를 길안내로 바꿔줍니다."},
+      {en:"It feels like magic, but it’s just precise timing and geometry.", ko:"마법 같지만, 사실 정밀한 시간과 기하학일 뿐입니다."},
+      {en:"Space clocks plus ground corrections keep your blue dot honest.", ko:"우주의 시계와 지상의 보정이 지도 속 파란 점을 정확하게 지켜줍니다."},
+      {en:"Now you know why four satellites are the sweet spot.", ko:"이제 왜 네 개 위성이 핵심인지 알겠죠."},
+      {en:"Next time your map locks on, remember the math behind it.", ko:"다음에 지도가 잡히면, 그 뒤의 수학을 떠올려 보세요."},
+      {en:"Science is the compass that points us home.", ko:"과학은 우리를 집으로 이끄는 나침반입니다."}
+    ],
+    vocab: [
+      ["clock error","시계 오차","Phones solve clock error during positioning."],
+      ["urban canyon","도심 협곡(고층 빌딩 지역)","Urban canyons cause multipath reflections."],
+      ["availability","가용성","More satellites increase availability."]
+    ],
+    quiz: [
+      {q:"What converts time into distance in GPS?", options:["Speed of light","Speed limit","Wind speed"], answer:0},
+      {tf:true, stmt:"Four satellites help fix both position and clock error.", answer:true},
+      {q:"Which can hurt GPS accuracy indoors?", options:["Signal reflections","Fresh air","Loud music"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"If the signal is delayed, the calculated distance increases.",
+        ko:"신호가 지연되면 계산된 거리는 증가한다.",
+        point:"조건문 If + 현재, 주절 현재",
+        q:"If the signal (___) delayed, the distance (___).",
+        options:["is / increases","was / increase","is / increased"],
+        answer:0
+      },
+      {
+        en:"GPS finds you by measuring time rather than angles.",
+        ko:"GPS는 각도보다 시간을 측정해 당신을 찾는다.",
+        point:"비교/대조 rather than",
+        q:"GPS finds you by measuring (___) rather (___) angles.",
+        options:["time / than","times / then","timing / that"],
+        answer:0
+      }
+    ]
+  },
+
+  /* -------- 고등/수능 (B2–C1) 26줄 -------- */
+  hs: {
+    topic: "Engineering",
+    cefr: "B2–C1",
+    headline: "Timing Is Everything: The Engineering of GPS Positioning",
+    dek: "정밀 시계·삼변측량·지상 보정·다중 위성항법으로 ‘파란 점’을 만드는 공학.",
+    sents: [
+      {en:"GPS resolves location by converting time-of-flight into range and intersecting ranges from multiple satellites.", ko:"GPS는 비행 시간을 거리로 바꾼 뒤 여러 위성으로부터의 거리 교차로 위치를 구합니다."},
+      {en:"Each satellite broadcasts ephemeris, time, and status; your receiver solves for x, y, z, and clock bias.", ko:"각 위성은 궤도력, 시간, 상태를 방송하고, 수신기는 x·y·z와 시계 바이어스를 풉니다."},
+      {en:"One range yields a sphere; two, a circle; three, two points; four, a unique solution.", ko:"거리 하나는 구, 둘은 원, 셋은 두 점, 넷은 유일해를 만듭니다."},
+      {en:"Receiver clock bias is treated as an extra unknown, hence the fourth satellite.", ko:"수신기 시계 바이어스가 추가 미지수이므로 네 번째 위성이 필요합니다."},
+      {en:"Atmospheric delays (ionosphere/troposphere) and multipath add errors.", ko:"전리층·대류권 지연과 다중경로가 오차를 유발합니다."},
+      {en:"Differential and SBAS corrections mitigate those biases.", ko:"DGPS와 SBAS 보정이 이러한 편향을 완화합니다."},
+      {en:"Multi-GNSS (GPS, GLONASS, Galileo, BeiDou, QZSS, etc.) increases geometry strength and availability.", ko:"멀티 GNSS는 기하학적 강건성과 가용성을 높입니다."},
+      {en:"In urban canyons, NLOS and reflections degrade fixes; sensor fusion helps stabilize tracks.", ko:"도심 협곡에서는 NLOS와 반사가 위치를 악화시키며, 센서 융합이 경로를 안정화합니다."},
+      {en:"A clear sky view reduces dilution of precision (DOP).", ko:"시야가 트이면 정밀도 희석(DOP)이 감소합니다."},
+      {en:"Modern phones fuse barometer, gyro, and map constraints for reliability.", ko:"현대 휴대폰은 기압계, 자이로, 지도 제약을 융합해 신뢰도를 높입니다."},
+      {en:"The result is the familiar blue dot that snaps onto roads and trails.", ko:"그 결과 도로와 산책로에 착 달라붙는 파란 점이 나타납니다."},
+      {en:"Behind the scenes, precise timing turns space into coordinates.", ko:"무대 뒤에서는 정밀한 시간이 우주를 좌표로 바꿉니다."}
+    ],
+    vocab: [
+      ["ephemeris","궤도력(위성 궤도 정보)","Receivers use ephemeris to compute satellite positions."],
+      ["clock bias","시계 바이어스(오차)","The receiver solves for clock bias as an unknown."],
+      ["multipath","다중경로(신호 반사)","Multipath reflections distort timing estimates."]
+    ],
+    quiz: [
+      {q:"Why is a fourth satellite needed?", options:["To solve clock bias","For fashion","To play music"], answer:0},
+      {tf:true, stmt:"Multi-GNSS improves geometry and availability.", answer:true},
+      {q:"Which phenomenon harms urban accuracy?", options:["Multipath","Sunshine","Bluetooth"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Were the receiver’s clock perfect, fewer satellites would suffice.",
+        ko:"수신기 시계가 완벽하다면 더 적은 위성으로도 충분했을 것이다.",
+        point:"가정법 도치(If 생략, Were ~)",
+        q:"(___) the receiver’s clock perfect, (___) satellites would suffice.",
+        options:["Were / fewer","Was / few","Had / less"],
+        answer:0
+      },
+      {
+        en:"Precision depends more on geometry than on raw signal strength.",
+        ko:"정밀도는 신호 세기보다 기하학적 배치에 더 좌우된다.",
+        point:"비교 구문 more A than B",
+        q:"Precision depends more on (___) than on raw (___).",
+        options:["geometry / strength","geology / strings","geography / length"],
+        answer:0
+      }
+    ]
+  }
+};
+
+/* =========================
+   공통 DOM 참조
+   ========================= */
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
+let LEVEL = 'mid';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+/* =========================
+   음성 목록 로딩
+   ========================= */
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v,i)=>{
+    const opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred>=0?preferred:0);
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+/* =========================
+   속도 프리셋/표시
+   ========================= */
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const r=parseFloat(btn.dataset.rate);
+    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
+  });
+});
+rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
+
+/* =========================
+   레벨 전환
+   ========================= */
+levelTabs.low.addEventListener('click',()=>switchLevel('low'));
+levelTabs.high.addEventListener('click',()=>switchLevel('high'));
+levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
+levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
+
+/* =========================
+   재생 컨트롤
+   ========================= */
+playAllBtn.addEventListener('click',()=>startPlayAll());
+pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
+resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+stopBtn.addEventListener('click',stopAll);
+
+/* =========================
+   한국어 전체 토글
+   ========================= */
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => { hideAllKo ? el.classList.add('hidden') : el.classList.remove('hidden'); });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
+
+/* =========================
+   레벨 렌더링
+   ========================= */
+function switchLevel(lv){
+  LEVEL=lv;
+  for(const k of Object.keys(levelTabs)){
+    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
+  }
+  const d=DATA[lv];
+  topicPill.textContent=d.topic;
+  cefrPill.textContent=d.cefr;
+  headlineEl.textContent=d.headline;
+  dekEl.textContent=d.dek;
+
+  // 문장 렌더
+  sentencesEl.innerHTML='';
+  d.sents.forEach((o,i)=>{
+    const div=document.createElement('div');
+    div.className='sent'; div.dataset.idx=i;
+    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
+    div.addEventListener('click',()=>playSentence(i,true));
+    sentencesEl.appendChild(div);
+  });
+
+  // 단어장
+  vocabEl.innerHTML='';
+  (d.vocab||[]).forEach(([en,ko,ex])=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // 퀴즈
+  quizList.innerHTML='';
+  (d.quiz||[]).forEach((q,i)=>{
+    const li=document.createElement('li');
+    if(q.tf){
+      li.innerHTML=`<div>${q.stmt}</div>
+      <div class="controls">
+        <button data-q="${i}" data-a="true">True</button>
+        <button data-q="${i}" data-a="false">False</button>
+        <span class="small" id="qfb-${i}"></span>
+      </div>`;
+    }else{
+      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',(e)=>{
+      const qidx=parseInt(e.target.dataset.q,10);
+      const ansRaw=e.target.dataset.a;
+      const dataQ=DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
+      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
+    });
+  });
+
+  // 문법
+  if(d.grammar){
+    grammarBox.style.display='';
+    const titleMap = {
+      low:"문법 포인트 (초등 저학년)",
+      high:"문법 포인트 (초등 고학년)",
+      mid:"문법 포인트 (중학생)",
+      hs:"문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+    grammarList.innerHTML='';
+    d.grammar.forEach((g,i)=>{
+      const li=document.createElement('li');
+      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        const gidx=parseInt(e.target.dataset.g,10);
+        const ans=parseInt(e.target.dataset.a,10);
+        const cor=DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
+      });
+    });
+  }else{
+    grammarBox.style.display='none';
+    grammarList.innerHTML='';
+  }
+
+  applyAllKoVisibility();
+  stopAll();
+}
+
+// 초기 레벨: 중학생
+switchLevel('mid');
+
+/* =========================
+   음성 합성
+   ========================= */
+function getSelectedVoice(){
+  const idx=parseInt(voiceSelect.value||'0',10);
+  return VOICES[idx]||null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{ el.classList.toggle('active',j===i); });
+}
+function clearMarks(){ sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active')); }
+function stopAll(){ PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks(); }
+
+function playSentence(i,repeat=false){
+  stopAll();
+  const d=DATA[LEVEL]; const text=d.sents[i].en;
+  CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text);
+  const v=getSelectedVoice(); if(v) u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+  u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
+  speechSynthesis.speak(u);
+}
+
+function startPlayAll(){
+  stopAll(); PLAYING_ALL=true;
+  const d=DATA[LEVEL]; let i=0;
+  const next=()=>{
+    if(!PLAYING_ALL) return;
+    if(i>=d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX=i; markActive(i);
+    const u=new SpeechSynthesisUtterance(d.sents[i].en);
+    const v=getSelectedVoice(); if(v) u.voice=v;
+    u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+    u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 220); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+
+/* =========================
+   키보드 단축키
+   ========================= */
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){
+    e.preventDefault();
+    if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause();
+    else speechSynthesis.resume();
+  }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
