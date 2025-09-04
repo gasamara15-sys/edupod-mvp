@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-03T13:46:37.349Z",
-  "count": 21,
+  "generatedAt": "2025-09-04T13:54:37.874Z",
+  "count": 22,
   "items": [
+    {
+      "id": "2025-09-05-how-gps-finds-your-location",
+      "date": "2025-09-05",
+      "title": "[STEM] How Does GPS Know Where You Are? | EduPod 뉴스",
+      "categories": [
+        "Science",
+        "Technology",
+        "Education"
+      ],
+      "summary": "위성 신호의 시간차로 거리를 계산하고, 4개 이상 위성의 교차점으로 좌표를 정하는 GPS의 원리를 알아봅시다.",
+      "link": "/news/2025-09-05-how-gps-finds-your-location.html"
+    },
     {
       "id": "2025-09-04-nyt-editor-residence-vandalism",
       "date": "2025-09-04",
