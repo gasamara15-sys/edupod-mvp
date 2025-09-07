@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-06T23:00:16.175Z",
-  "count": 24,
+  "generatedAt": "2025-09-07T11:50:26.323Z",
+  "count": 25,
   "items": [
+    {
+      "id": "2025-09-08-matrices-in-modern-life",
+      "date": "2025-09-08",
+      "title": "[STEM] The Hidden Language of Tech: How Matrices Power Modern Life | EduPod 뉴스",
+      "categories": [
+        "STEM",
+        "Math",
+        "Technology"
+      ],
+      "summary": "행렬은 3D 그래픽스와 AI부터 의료 영상과 공급망에 이르기까지 오늘날의 디지털 세계를 움직이는 조용한 엔진입니다.",
+      "link": "/news/2025-09-08-matrices-in-modern-life.html"
+    },
     {
       "id": "2025-09-07-dc-delivery-drivers-ice-crackdown",
       "date": "2025-09-07",
