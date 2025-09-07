@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[STEM] The Hidden Language of Tech: How Matrices Power Modern Life | EduPod 뉴스</title>
+  <meta name="category" content="STEM, Math, Technology" />
+  <meta name="description" content="행렬은 3D 그래픽스와 AI부터 의료 영상과 공급망에 이르기까지 오늘날의 디지털 세계를 움직이는 조용한 엔진입니다." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://www.edupod.kr/news/2025-09-08-matrices-in-modern-life.html" />
+  <style>
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --primary:#111827;--bg:#fafafa;--cta:#4f46e5;--cta-600:#4338ca;--cta-bg:#eef2ff;
+      --note:#0ea5e9;--note-bg:#ecfeff;
+    }
+    html,body{margin:0;padding:0;background:var(--bg)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:var(--primary)}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:var(--primary)}
+    .nav a:hover{background:#f8fafc}
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .headline{font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button,input[type="range"]{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--cta-bg);border-color:var(--cta);color:var(--cta)}
+    button.primary:hover{background:#e6e9ff;border-color:var(--cta-600);color:var(--cta-600)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .sent{padding:8px 10px;border-radius:8px;margin:6px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .en{display:block}
+    .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    .ko.hidden{display:none !important;}
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--note);border-radius:14px;background:#fff;color:var(--note);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--note-bg)}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+    .callout{background:#fffdf0;border:1px dashed #f59e0b;border-radius:10px;padding:10px;margin-top:8px;font-size:12px}
+  </style>
+      <!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "svtn5vtbri");
+</script>
+</head>
+<body>
+<header>
+  <h1>EduPod 뉴스
+    <span class="meta">— 2025-09-08 ·
+      <span class="pill">STEM</span>
+      <span class="pill">Math</span>
+      <span class="pill">Technology</span>
+    </span>
+  </h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">홈으로</a>
+    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">뉴스 리스트</a>
+  </nav>
+</header>
+
+<main>
+  <div class="row">
+    <div class="card" style="flex:1 1 100%">
+      <div class="level-tabs" role="tablist">
+        <button role="tab" id="tab-low" aria-selected="false">초등 저학년 (A1–A2)</button>
+        <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+        <button role="tab" id="tab-mid" aria-selected="true">중학생 (A2–B1)</button>
+        <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+      </div>
+
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <div class="controls">
+        <label class="small" for="voiceSelect">음성:</label>
+        <select id="voiceSelect" aria-label="Voice"></select>
+        <span class="small">속도 프리셋:</span>
+        <button class="preset" data-rate="0.9">처음 듣기</button>
+        <button class="preset" data-rate="1.0">보통</button>
+        <button class="preset" data-rate="1.15">빠르게</button>
+        <span class="small">세부 속도</span>
+        <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
+        <span class="small" id="rateLabel">1.00×</span>
+      </div>
+
+      <div class="callout">※ 학습 팁: ‘행렬 곱셈 → 변환’ 흐름을 머릿속으로 그리며 읽어 보세요. 게임 캐릭터가 회전·이동하는 장면을 떠올리면 이해가 쉬워져요.</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="articleCard">
+      <div class="meta"><span class="pill" id="topicPill">STEM</span> <span class="pill" id="cefrPill">A2–B1</span></div>
+      <div class="headline" id="headline">The Hidden Language of Tech: How Matrices Power Modern Life</div>
+      <p class="small" id="dek">From 3D graphics and AI to medicine and markets, matrices quietly move today’s world—turning data into decisions and pixels into places.</p>
+
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
+
+      <div id="sentences"></div>
+      <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+      <div class="quiz">
+        <h3>퀴즈</h3>
+        <ol id="quizList"></ol>
+      </div>
+
+      <div class="grammar" id="grammarBox" style="display:none">
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트</h3>
+        <ol id="grammarList"></ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px">단어장</h2>
+      <ul id="vocab"></ul>
+      <p class="small">영어 문장 아래에 한국어 해석이 함께 제공됩니다.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+/* =========================
+   레벨별 콘텐츠 데이터
+   ========================= */
+const DATA = {
+  /* -------- 초등 저학년 (A1–A2) ~15문장 -------- */
+  low: {
+    topic: "STEM",
+    cefr: "A1–A2",
+    headline: "Matrices: The Secret Math Behind Our Screens",
+    dek: "행렬은 화면 속 세상을 움직이는 보이지 않는 도구예요.",
+    sents: [
+      {en:"A matrix is a table of numbers.", ko:"행렬은 숫자를 표처럼 모아 놓은 것이에요."},
+      {en:"It looks simple, but it is powerful.", ko:"겉보기엔 단순하지만 아주 강력해요."},
+      {en:"Video games use matrices to move characters.", ko:"비디오 게임은 행렬로 캐릭터를 움직여요."},
+      {en:"Rotate, slide, and resize are all matrix actions.", ko:"회전, 이동, 크기 조절이 모두 행렬 동작이에요."},
+      {en:"Movies use matrices for special effects.", ko:"영화 특수효과에도 행렬이 쓰여요."},
+      {en:"AI also runs on matrices of numbers.", ko:"인공지능도 숫자 행렬로 작동해요."},
+      {en:"A camera photo can be a matrix of pixels.", ko:"카메라 사진은 픽셀 행렬로 볼 수 있어요."},
+      {en:"Hospitals use matrices to rebuild body images.", ko:"병원에서는 행렬로 몸의 이미지를 다시 만들어요."},
+      {en:"Maps and routes use matrices to find best paths.", ko:"지도와 길찾기도 행렬로 최적 경로를 찾아요."},
+      {en:"Stores plan shipping with matrices.", ko:"가게들은 행렬로 배송을 계획해요."},
+      {en:"Matrices help us choose faster and better.", ko:"행렬은 더 빠르고 나은 선택을 도와줘요."},
+      {en:"They turn data into decisions.", ko:"행렬은 데이터를 결정으로 바꿔요."},
+      {en:"We cannot see them, but they work everywhere.", ko:"눈에 보이지 않지만 어디에나 있어요."},
+      {en:"That is why matrices matter.", ko:"그래서 행렬이 중요해요."},
+      {en:"Math powers our daily life!", ko:"수학은 우리의 일상을 움직여요!"}
+    ],
+    vocab: [
+      ["matrix","행렬","A matrix is a table of numbers."],
+      ["pixel","픽셀","A photo is many pixels."],
+      ["route","경로","The best route saves time."]
+    ],
+    quiz: [
+      {q:"What do games use to move characters?", options:["Matrices","Magnets","Monsters"], answer:0},
+      {tf:true, stmt:"Hospitals use matrices for images.", answer:true},
+      {q:"A photo can be seen as a ____ of pixels.", options:["matrix","box","river"], answer:0}
+    ]
+  },
+
+  /* -------- 초등 고학년 (A2–B1) ~20문장 -------- */
+  high: {
+    topic: "Math",
+    cefr: "A2–B1",
+    headline: "From Games to Hospitals: Matrices at Work",
+    dek: "행렬은 화면 그래픽, 인공지능, 의학 이미지 재구성 등에서 큰 역할을 합니다.",
+    sents: [
+      {en:"A matrix arranges numbers in rows and columns.", ko:"행렬은 숫자를 행과 열에 배열합니다."},
+      {en:"In 3D graphics, each point is a small column of numbers.", ko:"3D 그래픽에서 각 점은 작은 숫자 열벡터예요."},
+      {en:"Multiplying by a rotation matrix turns an object around.", ko:"회전 행렬을 곱하면 물체를 회전시킬 수 있어요."},
+      {en:"A translation matrix moves it across the screen.", ko:"이동 행렬은 화면에서 물체를 옮겨요."},
+      {en:"Scaling matrices make things bigger or smaller.", ko:"스케일 행렬은 크기를 키우거나 줄여요."},
+      {en:"AI stores model weights as giant matrices.", ko:"AI는 모델 가중치를 큰 행렬로 저장합니다."},
+      {en:"During training, matrix math finds better weights.", ko:"학습 동안 행렬 계산이 더 좋은 가중치를 찾아요."},
+      {en:"Photos and sounds can be processed as matrices.", ko:"사진과 소리도 행렬로 처리할 수 있어요."},
+      {en:"In hospitals, CT and MRI data form big matrices of signals.", ko:"병원에서는 CT·MRI 데이터가 거대한 신호 행렬을 이룹니다."},
+      {en:"Computers rebuild images by solving matrix problems.", ko:"컴퓨터는 행렬 문제를 풀어 이미지를 재구성합니다."},
+      {en:"Businesses use matrices to deliver goods cheaply.", ko:"기업은 행렬로 물건을 더 저렴하게 배송해요."},
+      {en:"This is called optimization.", ko:"이를 최적화라고 해요."},
+      {en:"Maps and transit systems also rely on matrix models.", ko:"지도와 대중교통 시스템도 행렬 모델에 의존합니다."},
+      {en:"Matrices help us test many choices at once.", ko:"행렬은 여러 선택을 한 번에 시험하게 도와줘요."},
+      {en:"They are like a control panel for data.", ko:"행렬은 데이터의 제어판과 같아요."},
+      {en:"Even your phone camera uses matrix filters.", ko:"휴대폰 카메라도 행렬 필터를 사용해요."},
+      {en:"So, matrices quietly power daily life.", ko:"이처럼 행렬은 조용히 일상을 움직입니다."},
+      {en:"Learning them opens doors to tech careers.", ko:"행렬을 배우면 기술 분야의 문이 열립니다."},
+      {en:"Small tables—big impact.", ko:"작은 표—큰 영향력."},
+      {en:"That’s the magic of matrices.", ko:"그게 바로 행렬의 마법이에요."}
+    ],
+    vocab: [
+      ["rotation","회전","Rotation turns an object around."],
+      ["optimization","최적화","Optimization finds the best plan."],
+      ["filter","필터","Cameras use filters to improve images."]
+    ],
+    quiz: [
+      {q:"Which matrix changes size?", options:["Scaling matrix","Rotation matrix","Identity"], answer:0},
+      {tf:true, stmt:"AI models store weights as matrices.", answer:true},
+      {q:"CT and MRI data are processed as ____.", options:["matrices","maps","poems"], answer:0}
+    ]
+  },
+
+  /* -------- 중학생 (A2–B1) 22~24문장 -------- */
+  mid: {
+    topic: "Technology",
+    cefr: "A2–B1",
+    headline: "The Matrix Mindset: Turning Data into Motion, Images, and Choices",
+    dek: "행렬은 3D 변환, 딥러닝 연산, 의료 영상 복원, 공급망 최적화 등에서 핵심 도구입니다.",
+    sents: [
+      {en:"A matrix is a compact way to handle many numbers at once.", ko:"행렬은 많은 숫자를 한 번에 다루는 간단한 방법입니다."},
+      {en:"In graphics, points become vectors and transforms become matrices.", ko:"그래픽스에서는 점이 벡터가 되고 변환이 행렬이 됩니다."},
+      {en:"One multiplication can rotate millions of points together.", ko:"한 번의 곱셈으로 수백만 개의 점을 함께 회전시킬 수 있습니다."},
+      {en:"That is how games and movies feel smooth and realistic.", ko:"그래서 게임과 영화가 부드럽고 사실적으로 보입니다."},
+      {en:"Deep learning stacks matrix multiplications layer by layer.", ko:"딥러닝은 층마다 행렬 곱셈을 쌓아 올립니다."},
+      {en:"Images are arrays of pixels; models learn patterns in those arrays.", ko:"이미지는 픽셀 배열이며, 모델은 그 배열에서 패턴을 학습합니다."},
+      {en:"Hardware like GPUs speeds up massive matrix math.", ko:"GPU 같은 하드웨어는 대규모 행렬 연산을 가속합니다."},
+      {en:"In hospitals, scanners collect signals that form data matrices.", ko:"병원 스캐너는 데이터 행렬을 이루는 신호를 수집합니다."},
+      {en:"Algorithms solve matrix equations to reconstruct clear images.", ko:"알고리즘은 행렬 방정식을 풀어 선명한 이미지를 재구성합니다."},
+      {en:"Economics uses matrices to plan production and shipping.", ko:"경제학은 행렬로 생산과 배송을 계획합니다."},
+      {en:"This reduces cost while meeting demand.", ko:"이는 수요를 맞추면서 비용을 줄입니다."},
+      {en:"Navigation apps use matrix models to estimate travel time.", ko:"길찾기 앱은 행렬 모델로 이동 시간을 추정합니다."},
+      {en:"Recommendation systems compare user-item matrices to suggest content.", ko:"추천 시스템은 사용자-아이템 행렬을 비교해 콘텐츠를 제안합니다."},
+      {en:"Even encryption and error-correcting codes use linear algebra.", ko:"암호화와 오류 정정 코드에도 선형대수가 쓰입니다."},
+      {en:"At school, matrix skills connect algebra, geometry, and computing.", ko:"학교에서의 행렬 학습은 대수, 기하, 컴퓨팅을 연결합니다."},
+      {en:"They help you model problems and simulate solutions.", ko:"행렬은 문제를 모델링하고 해법을 모의실험하게 해줍니다."},
+      {en:"Start with small 2×2 matrices for rotation and scaling.", ko:"회전과 스케일을 작은 2×2 행렬로 시작해 보세요."},
+      {en:"Then explore 3×3 for 2D transforms and 4×4 for 3D.", ko:"그다음 2D 변환은 3×3, 3D는 4×4를 탐구하세요."},
+      {en:"Practice makes the rules feel natural.", ko:"연습할수록 규칙이 자연스러워집니다."},
+      {en:"Soon you will ‘see’ matrices behind every app and image.", ko:"곧 모든 앱과 이미지 뒤에 행렬이 보일 거예요."},
+      {en:"Small grids, big systems.", ko:"작은 격자, 거대한 시스템."},
+      {en:"That’s the matrix mindset.", ko:"그것이 ‘행렬 마인드셋’입니다."},
+      {en:"Math is a toolkit; matrices are one of its strongest tools.", ko:"수학은 도구 상자이고, 행렬은 그중 가장 강력한 도구입니다."}
+    ],
+    vocab: [
+      ["vector","벡터","A point can be stored as a vector."],
+      ["reconstruct","재구성하다","Algorithms reconstruct images from data."],
+      ["demand","수요","Plans must satisfy demand."]
+    ],
+    quiz: [
+      {q:"Which hardware speeds up matrix math?", options:["GPU","Printer","Router"], answer:0},
+      {tf:true, stmt:"Recommendation systems can use user–item matrices.", answer:true},
+      {q:"What size is common for 3D transforms?", options:["4×4","2×1","10×10"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Matrices let us process many numbers at once.",
+        ko:"행렬은 많은 숫자를 한 번에 처리하게 해 준다.",
+        point:"사역동사 let + 목적어 + 동사원형",
+        q:"Matrices (___) us process many numbers.",
+        options:["let","lets","letting"],
+        answer:0
+      },
+      {
+        en:"If you practice regularly, the rules become natural.",
+        ko:"규칙적으로 연습하면 규칙이 자연스러워진다.",
+        point:"조건문 If + 현재, 현재",
+        q:"If you (___) regularly, the rules (___) natural.",
+        options:["practice / become","practiced / became","practice / becomes"],
+        answer:0
+      }
+    ]
+  },
+
+  /* -------- 고등/수능 (B2–C1) 30~34문장 -------- */
+  hs: {
+    topic: "Technology",
+    cefr: "B2–C1",
+    headline: "Matrices as a Universal Interface: Geometry, Data, and Decisions",
+    dek: "행렬은 기하 변환의 공통 언어이자 데이터 연산의 표준 형식, 그리고 의사결정의 계산 엔진입니다.",
+    sents: [
+      {en:"Matrices provide a universal interface between geometry and computation.", ko:"행렬은 기하와 계산을 잇는 보편적 인터페이스를 제공합니다."},
+      {en:"In graphics, affine transforms—scale, rotate, translate—compose cleanly via matrix multiplication.", ko:"그래픽스에서 스케일·회전·이동 같은 아핀 변환은 행렬 곱셈으로 깔끔하게 합성됩니다."},
+      {en:"Homogeneous coordinates lift 3D motion into 4×4 matrices, unifying transforms.", ko:"동차 좌표는 3D 운동을 4×4 행렬로 끌어올려 변환을 통일합니다."},
+      {en:"Pipelines map world space → camera space → clip space using successive matrices.", ko:"파이프라인은 연속된 행렬로 세계 공간→카메라 공간→클립 공간을 사상합니다."},
+      {en:"In machine learning, tensors generalize matrices; yet core kernels remain matrix multiplies.", ko:"머신러닝에서 텐서는 행렬을 일반화하지만, 핵심 커널은 여전히 행렬 곱셈입니다."},
+      {en:"Backpropagation is essentially structured matrix calculus with sparsity and sharing.", ko:"역전파는 희소성과 공유 구조를 지닌 체계적 행렬 미적분입니다."},
+      {en:"GPUs and TPUs exploit data-parallel blocks to accelerate GEMM operations.", ko:"GPU·TPU는 데이터 병렬 블록으로 GEMM 연산을 가속화합니다."},
+      {en:"In tomography, inversion problems turn raw signals into images via linear operators.", ko:"단층촬영에서 선형 연산자의 역문제가 원시 신호를 이미지로 바꿉니다."},
+      {en:"Regularization stabilizes ill-posed matrix systems against noise.", ko:"정규화는 잡음에 취약한 비정방 행렬계를 안정화합니다."},
+      {en:"Optimization frames logistics as costs and constraints within matrix form.", ko:"최적화는 물류를 비용과 제약의 행렬 형식으로 정식화합니다."},
+      {en:"Linear programs pick solutions at polytope corners—another geometric link.", ko:"선형계획은 다포체의 꼭짓점에서 해를 선택하며, 이는 또 다른 기하적 연결입니다."},
+      {en:"Recommendations factorize user–item matrices to uncover latent features.", ko:"추천 시스템은 사용자–아이템 행렬을 분해해 잠재 특성을 찾습니다."},
+      {en:"Spectral methods analyze graphs through eigenvalues of matrix representations.", ko:"스펙트럼 기법은 행렬 표현의 고유값으로 그래프를 분석합니다."},
+      {en:"Coding theory designs generator and parity-check matrices to combat errors.", ko:"부호 이론은 오류에 대응하려 생성·패리티 검사 행렬을 설계합니다."},
+      {en:"Even quantum mechanics encodes observables as matrices (operators) on state vectors.", ko:"양자역학도 상태벡터 위에서 관측량을 행렬(연산자)로 표현합니다."},
+      {en:"Practically, numerical stability matters: conditioning, pivoting, and normalization.", ko:"실무에서는 수치 안정성이 중요합니다: 컨디셔닝, 피벗팅, 정규화."},
+      {en:"Low-rank structure enables compression and faster inference.", ko:"저랭크 구조는 압축과 빠른 추론을 가능하게 합니다."},
+      {en:"SVD reveals principal directions; PCA rides on it.", ko:"SVD는 주된 방향을 드러내며, PCA는 이를 토대로 합니다."},
+      {en:"Graph Laplacians guide clustering and diffusion on networks.", ko:"그래프 라플라시안은 네트워크상의 군집화와 확산을 이끕니다."},
+      {en:"Kalman filters update state estimates via matrix recurrences.", ko:"칼만 필터는 행렬 점화식으로 상태 추정을 갱신합니다."},
+      {en:"Control systems solve Riccati equations to stabilize dynamics.", ko:"제어 시스템은 리카티 방정식을 풀어 동역학을 안정화합니다."},
+      {en:"In short, matrices turn structure into solvable computation.", ko:"요컨대 행렬은 구조를 풀 수 있는 계산으로 바꿉니다."},
+      {en:"To get fluent: master bases, projections, eigen-decomposition, and norms.", ko:"유창해지려면 기저, 사영, 고유분해, 놈을 익히세요."},
+      {en:"Then study conditioning and algorithmic complexity to scale up.", ko:"그다음 컨디셔닝과 알고리즘 복잡도를 익혀 규모를 키우세요."},
+      {en:"With that toolkit, you can move from classroom problems to real systems.", ko:"그 도구 상자로 교실의 문제에서 실제 시스템으로 나아갈 수 있습니다."},
+      {en:"Behind every smooth animation or accurate diagnosis sits matrix math.", ko:"매끄러운 애니메이션과 정확한 진단 뒤에는 행렬 계산이 있습니다."},
+      {en:"It is the quiet language that modern technology speaks.", ko:"그것은 현대 기술이 구사하는 조용한 언어입니다."}
+    ],
+    vocab: [
+      ["homogeneous coordinates","동차 좌표","They unify 3D transforms in 4×4 form."],
+      ["conditioning","컨디셔닝(조건수 관련 안정성)","Poor conditioning destabilizes solutions."],
+      ["eigen-decomposition","고유분해","Spectral methods rely on eigen-decomposition."]
+    ],
+    quiz: [
+      {q:"Which operation composes transforms cleanly?", options:["Matrix multiplication","Matrix addition","Scalar division"], answer:0},
+      {tf:true, stmt:"SVD underlies PCA by revealing principal directions.", answer:true},
+      {q:"Kalman filters update state estimates via ____.", options:["matrix recurrences","random guessing","manual tuning only"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Had the system been well-conditioned, the solution would have been stable.",
+        ko:"그 시스템의 조건수가 좋았더라면 해는 안정적이었을 것이다.",
+        point:"가정법 과거완료 도치 (Had + 주어 + p.p.)",
+        q:"(___) the system been well-conditioned, the solution (___) have been stable.",
+        options:["Had / would","If / will","Were / can"],
+        answer:0
+      },
+      {
+        en:"Matrices are so fundamental that we barely notice them in everyday tech.",
+        ko:"행렬은 너무 근본적이라 우리가 일상 기술에서 거의 알아차리지 못한다.",
+        point:"so ~ that 결과절",
+        q:"Matrices are (___) fundamental (___) we barely notice them.",
+        options:["so / that","such / than","as / as"],
+        answer:0
+      }
+    ]
+  }
+};
+
+/* =========================
+   공통 DOM 참조
+   ========================= */
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
+let LEVEL = 'mid';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+/* =========================
+   음성 목록 로딩
+   ========================= */
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v,i)=>{
+    const opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred>=0?preferred:0);
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+/* =========================
+   속도 프리셋/표시
+   ========================= */
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const r=parseFloat(btn.dataset.rate);
+    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
+  });
+});
+rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
+
+/* =========================
+   레벨 전환
+   ========================= */
+levelTabs.low.addEventListener('click',()=>switchLevel('low'));
+levelTabs.high.addEventListener('click',()=>switchLevel('high'));
+levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
+levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
+
+/* =========================
+   재생 컨트롤
+   ========================= */
+playAllBtn.addEventListener('click',()=>startPlayAll());
+pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
+resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+stopBtn.addEventListener('click',stopAll);
+
+/* =========================
+   한국어 전체 토글
+   ========================= */
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => { hideAllKo ? el.classList.add('hidden') : el.classList.remove('hidden'); });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
+
+/* =========================
+   레벨 렌더링
+   ========================= */
+function switchLevel(lv){
+  LEVEL=lv;
+  for(const k of Object.keys(levelTabs)){
+    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
+  }
+  const d=DATA[lv];
+  topicPill.textContent=d.topic;
+  cefrPill.textContent=d.cefr;
+  headlineEl.textContent=d.headline;
+  dekEl.textContent=d.dek;
+
+  // 문장 렌더
+  sentencesEl.innerHTML='';
+  d.sents.forEach((o,i)=>{
+    const div=document.createElement('div');
+    div.className='sent'; div.dataset.idx=i;
+    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
+    div.addEventListener('click',()=>playSentence(i,true));
+    sentencesEl.appendChild(div);
+  });
+
+  // 단어장
+  vocabEl.innerHTML='';
+  (d.vocab||[]).forEach(([en,ko,ex])=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // 퀴즈
+  quizList.innerHTML='';
+  (d.quiz||[]).forEach((q,i)=>{
+    const li=document.createElement('li');
+    if(q.tf){
+      li.innerHTML=`<div>${q.stmt}</div>
+      <div class="controls">
+        <button data-q="${i}" data-a="true">True</button>
+        <button data-q="${i}" data-a="false">False</button>
+        <span class="small" id="qfb-${i}"></span>
+      </div>`;
+    }else{
+      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',(e)=>{
+      const qidx=parseInt(e.target.dataset.q,10);
+      const ansRaw=e.target.dataset.a;
+      const dataQ=DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
+      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
+    });
+  });
+
+  // 문법
+  if(d.grammar){
+    grammarBox.style.display='';
+    const titleMap = {
+      low:"문법 포인트 (초등 저학년)",
+      high:"문법 포인트 (초등 고학년)",
+      mid:"문법 포인트 (중학생)",
+      hs:"문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+    grammarList.innerHTML='';
+    d.grammar.forEach((g,i)=>{
+      const li=document.createElement('li');
+      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        const gidx=parseInt(e.target.dataset.g,10);
+        const ans=parseInt(e.target.dataset.a,10);
+        const cor=DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
+      });
+    });
+  }else{
+    grammarBox.style.display='none';
+    grammarList.innerHTML='';
+  }
+
+  applyAllKoVisibility();
+  stopAll();
+}
+
+// 초기 레벨: 중학생
+switchLevel('mid');
+
+/* =========================
+   음성 합성
+   ========================= */
+function getSelectedVoice(){
+  const idx=parseInt(voiceSelect.value||'0',10);
+  return VOICES[idx]||null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{ el.classList.toggle('active',j===i); });
+}
+function clearMarks(){ sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active')); }
+function stopAll(){ PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks(); }
+
+function playSentence(i,repeat=false){
+  stopAll();
+  const d=DATA[LEVEL]; const text=d.sents[i].en;
+  CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text);
+  const v=getSelectedVoice(); if(v) u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+  u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
+  speechSynthesis.speak(u);
+}
+
+function startPlayAll(){
+  stopAll(); PLAYING_ALL=true;
+  const d=DATA[LEVEL]; let i=0;
+  const next=()=>{
+    if(!PLAYING_ALL) return;
+    if(i>=d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX=i; markActive(i);
+    const u=new SpeechSynthesisUtterance(d.sents[i].en);
+    const v=getSelectedVoice(); if(v) u.voice=v;
+    u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+    u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 220); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+
+/* =========================
+   키보드 단축키
+   ========================= */
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){
+    e.preventDefault();
+    if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause();
+    else speechSynthesis.resume();
+  }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
