@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-09-08T13:27:57.641Z",
-  "count": 26,
+  "generatedAt": "2025-09-08T13:29:50.922Z",
+  "count": 27,
   "items": [
     {
       "id": "2025-09-09-fathers-letter-dreams",
@@ -13,6 +13,18 @@
       ],
       "summary": "되고 싶던게 많던 남자아이에서 한 아이의 아빠가 된 지금 엄마와 너라는 빛나는 별을 만나 새로운 꿈을 이어가는 아빠의 이야기",
       "link": "/news/2025-09-09-fathers-letter-dreams.html"
+    },
+    {
+      "id": "2025-09-09-mothers-letter-dreams",
+      "date": "2025-09-09",
+      "title": "[Feature] A Mother’s Letter: Dreams Before You, Dreams With You | EduPod 뉴스",
+      "categories": [
+        "Life",
+        "Family",
+        "Inspiration"
+      ],
+      "summary": "엄마도 꿈많은 소녀였단다, 그리고 너가 새로운 꿈이되었지. 사랑한다. 나에 새로운 꿈이여.",
+      "link": "/news/2025-09-09-mothers-letter-dreams.html"
     },
     {
       "id": "2025-09-08-matrices-in-modern-life",
