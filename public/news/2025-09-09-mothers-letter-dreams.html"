@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Feature] A Mother’s Letter: Dreams Before You, Dreams With You | EduPod 뉴스</title>
+  <meta name="category" content="Life, Family, Inspiration" />
+  <meta name="description" content="엄마도 꿈많은 소녀였단다, 그리고 너가 새로운 꿈이되었지. 사랑한다. 나에 새로운 꿈이여." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://www.edupod.kr/news/2025-09-09-mothers-letter-dreams.html" />
+  <style>
+    :root{
+      --border:#e5e7eb;--muted:#6b7280;--accent:#eef2ff;--active:#fff4cc;
+      --primary:#111827;--bg:#fafafa;--cta:#4f46e5;--cta-600:#4338ca;--cta-bg:#eef2ff;
+      --note:#0ea5e9;--note-bg:#ecfeff;--rose:#f43f5e;--rose-bg:#fff1f2;
+    }
+    html,body{margin:0;padding:0;background:var(--bg)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;color:var(--primary)}
+    header{padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+    h1{font-size:18px;margin:0;flex:1}
+    .nav{display:flex;gap:8px}
+    .nav a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:#fff;text-decoration:none;font-size:13px;color:var(--primary)}
+    .nav a:hover{background:#f8fafc}
+    main{padding:20px;max-width:980px;margin:0 auto}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;flex:1 1 360px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .meta{font-size:12px;color:var(--muted)}
+    .pill{font-size:12px;border:1px solid var(--border);padding:2px 8px;border-radius:999px;background:#fff}
+    .headline{font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+    select,button,input[type="range"]{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:#fff;cursor:pointer}
+    button.primary{background:var(--cta-bg);border-color:var(--cta);color:var(--cta)}
+    button.primary:hover{background:#e6e9ff;border-color:var(--cta-600);color:var(--cta-600)}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    .level-tabs{display:flex;gap:8px;margin:8px 0 12px;flex-wrap:wrap}
+    .level-tabs button{padding:6px 10px}
+    .level-tabs button[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .sent{padding:8px 10px;border-radius:8px;margin:6px 0;border:1px dashed transparent}
+    .sent:hover{background:#f8fafc}
+    .sent.active{background:var(--active);border-color:#fcd34d}
+    .en{display:block}
+    .ko{display:block;color:#374151;font-size:13px;margin-top:4px}
+    .ko.hidden{display:none !important;}
+    .quiz{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .quiz h3{font-size:14px;margin:0 0 6px}
+    .footer{font-size:12px;color:var(--muted);margin-top:16px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--border);border-bottom-width:2px;padding:2px 6px;border-radius:6px;background:#fff}
+    .grammar{border-top:1px dashed var(--border);margin-top:12px;padding-top:12px}
+    .iconbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    .icon-btn{
+      width:52px;height:52px;display:grid;place-items:center;
+      border:2px solid var(--rose);border-radius:14px;background:#fff;color:var(--rose);
+      box-shadow:0 1px 0 rgba(0,0,0,.03)
+    }
+    .icon-btn:hover{background:var(--rose-bg)}
+    .icon-btn svg{width:26px;height:26px;display:block}
+    .icon-label{font-size:12px;color:var(--muted);margin-left:2px}
+    .callout{background:#fffdf0;border:1px dashed #f59e0b;border-radius:10px;padding:10px;margin-top:8px;font-size:12px}
+  </style>
+    <!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "svtn5vtbri");
+</script>
+</head>
+<body>
+<header>
+  <h1>EduPod 뉴스
+    <span class="meta">— 2025-09-09 ·
+      <span class="pill">Life</span>
+      <span class="pill">Family</span>
+      <span class="pill">Inspiration</span>
+    </span>
+  </h1>
+  <nav class="nav" aria-label="주요 이동">
+    <a href="/" id="homeLink" title="홈으로">홈으로</a>
+    <a href="/news.html/" id="newsListLink" title="뉴스 리스트">뉴스 리스트</a>
+  </nav>
+</header>
+
+<main>
+  <div class="row">
+    <div class="card" style="flex:1 1 100%">
+      <div class="level-tabs" role="tablist">
+        <button role="tab" id="tab-low" aria-selected="false">초등 저학년 (A1–A2)</button>
+        <button role="tab" id="tab-high" aria-selected="false">초등 고학년 (A2–B1)</button>
+        <button role="tab" id="tab-mid" aria-selected="true">중학생 (A2–B1)</button>
+        <button role="tab" id="tab-hs" aria-selected="false">고등/수능 (B2–C1)</button>
+      </div>
+
+      <div class="iconbar" aria-label="재생 컨트롤">
+        <button id="playAll" class="icon-btn" title="전체 재생" aria-label="전체 재생">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="pauseBtn" class="icon-btn" title="일시정지" aria-label="일시정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="resumeBtn" class="icon-btn" title="재개" aria-label="재개">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" title="정지" aria-label="정지">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+        </button>
+        <span class="icon-label">문장 클릭: 해당 문장만 반복</span>
+      </div>
+
+      <div class="controls">
+        <label class="small" for="voiceSelect">음성:</label>
+        <select id="voiceSelect" aria-label="Voice"></select>
+        <span class="small">속도 프리셋:</span>
+        <button class="preset" data-rate="0.9">처음 듣기</button>
+        <button class="preset" data-rate="1.0">보통</button>
+        <button class="preset" data-rate="1.15">빠르게</button>
+        <span class="small">세부 속도</span>
+        <input id="rate" type="range" min="0.7" max="1.4" step="0.05" value="1.0" />
+        <span class="small" id="rateLabel">1.00×</span>
+      </div>
+
+      <div class="callout">※ 읽기 팁: “before you”와 “with you”의 대비(이전의 꿈 vs. 아이와 함께 다시 태어나는 꿈)를 생각하며 읽어 보세요.</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="articleCard">
+      <div class="meta"><span class="pill" id="topicPill">Life</span> <span class="pill" id="cefrPill">A2–B1</span></div>
+      <div class="headline" id="headline">A Mother’s Letter: Dreams Before You, Dreams With You</div>
+      <p class="small" id="dek">A gentle feature about a mom who once dreamed of art and science—and how those dreams found a new shape in the love of raising her child.</p>
+
+      <div class="controls" id="koToggleControls">
+        <button id="toggleAllKoBtn" class="primary">한국어 가리기</button>
+        <span class="small">각 레벨 지문의 한국어 해석을 전체 가립니다.</span>
+      </div>
+
+      <div id="sentences"></div>
+      <div class="footer">문장을 클릭하면 해당 부분만 <span class="kbd">반복</span> 재생합니다. 전체 재생 중 <span class="kbd">일시정지/재개</span> 가능.</div>
+
+      <div class="quiz">
+        <h3>퀴즈</h3>
+        <ol id="quizList"></ol>
+      </div>
+
+      <div class="grammar" id="grammarBox" style="display:none">
+        <h3 id="grammarTitle" style="margin:0 0 6px">문법 포인트</h3>
+        <ol id="grammarList"></ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px">단어장</h2>
+      <ul id="vocab"></ul>
+      <p class="small">영어 문장 아래에 한국어 해석이 함께 제공됩니다.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+/* =========================
+   레벨별 콘텐츠 데이터
+   ========================= */
+const DATA = {
+  /* -------- 초등 저학년 (A1–A2) ~15문장 -------- */
+  low: {
+    topic: "Life",
+    cefr: "A1–A2",
+    headline: "A Mom’s Letter About Dreams",
+    dek: "엄마가 들려주는 꿈 이야기: 예전의 꿈, 그리고 너와 함께 자라는 꿈.",
+    sents: [
+      {en:"Mom once had many dreams.", ko:"엄마에게도 많은 꿈이 있었어요."},
+      {en:"She drew pictures and wrote little poems.", ko:"엄마는 그림을 그리고 작은 시를 썼어요."},
+      {en:"She wanted to be a photographer.", ko:"엄마는 사진작가가 되고 싶었지요."},
+      {en:"She also dreamed of being a writer and a scientist.", ko:"작가와 과학자도 꿈꿨어요."},
+      {en:"Now she holds your hand every morning.", ko:"지금은 매일 아침 너의 손을 잡고 있어요."},
+      {en:"She cooks dinner and reads bedtime stories.", ko:"저녁을 만들고 잠자리 동화를 읽어 주지요."},
+      {en:"Her old dreams live in a drawer.", ko:"그 옛 꿈들은 서랍 속에 남아 있어요."},
+      {en:"There are sketches and poems inside.", ko:"그 안에는 그림과 시가 있어요."},
+      {en:"But dreams can change shape.", ko:"하지만 꿈은 모양을 바꿀 수 있어요."},
+      {en:"You became her most beautiful picture.", ko:"너는 엄마의 가장 아름다운 그림이 되었어요."},
+      {en:"Your laughter is her music.", ko:"너의 웃음은 엄마의 음악이에요."},
+      {en:"Your walk is her greatest adventure.", ko:"너와 걷는 길은 엄마의 가장 큰 모험이에요."},
+      {en:"What is your dream today?", ko:"오늘 너의 꿈은 무엇일까요?"},
+      {en:"It is okay if it changes.", ko:"바뀌어도 괜찮아요."},
+      {en:"Mom will always cheer for you.", ko:"엄마는 언제나 너를 응원할 거예요."}
+    ],
+    vocab: [
+      ["dream","꿈","Dreams can change shape."],
+      ["adventure","모험","Walking together is an adventure."],
+      ["cheer for","응원하다","Mom will cheer for you."]
+    ],
+    quiz: [
+      {q:"Where do Mom’s old dreams live?", options:["In a drawer","In a box under the bed","In the garden"], answer:0},
+      {tf:true, stmt:"It is okay if a dream changes.", answer:true},
+      {q:"What became Mom’s most beautiful picture?", options:["You","The moon","A book"], answer:0}
+    ]
+  },
+
+  /* -------- 초등 고학년 (A2–B1) ~18–20문장 -------- */
+  high: {
+    topic: "Family",
+    cefr: "A2–B1",
+    headline: "Before You and With You: A Mother’s Evolving Dreams",
+    dek: "엄마의 꿈은 멈춘 것이 아니라, 너와 함께 새로운 모습으로 자랍니다.",
+    sents: [
+      {en:"As a girl, Mom filled big sketchbooks with drawings.", ko:"어린 시절, 엄마는 큰 스케치북을 그림으로 가득 채웠어요."},
+      {en:"She kept tiny poems on small slips of paper.", ko:"작은 종이에 작은 시들도 써 두었지요."},
+      {en:"She imagined capturing the world with a camera.", ko:"카메라로 세상을 담아내는 모습을 상상했어요."},
+      {en:"She wanted stories that warmed people’s hearts.", ko:"사람들의 마음을 따뜻하게 하는 이야기를 쓰고 싶었어요."},
+      {en:"Sometimes she looked up at the stars and wondered about the universe.", ko:"가끔 별을 올려다보며 우주를 궁금해했지요."},
+      {en:"Years later, mornings began with your small hand in hers.", ko:"세월이 흐른 뒤, 아침은 너의 작은 손을 잡는 것으로 시작됐어요."},
+      {en:"Evenings turned into dinners and bedtime tales.", ko:"저녁은 밥을 차리고 동화를 읽어주는 시간으로 바뀌었지요."},
+      {en:"Her drawer still holds faded journals and uneven handwriting.", ko:"서랍엔 빛바랜 일기장과 삐뚤빼뚤한 글씨가 남아 있어요."},
+      {en:"Those dreams did not disappear; they learned to breathe quietly.", ko:"그 꿈들은 사라지지 않았어요. 다만 조용히 숨 쉬는 법을 배웠답니다."},
+      {en:"Then you arrived, and her dreams found a new canvas.", ko:"그리고 네가 오자, 엄마의 꿈은 새 캔버스를 만났지요."},
+      {en:"You became the story she writes every day.", ko:"너는 엄마가 매일 써 내려가는 이야기가 되었어요."},
+      {en:"Your laughter became a song, your steps a bright journey.", ko:"너의 웃음은 노래가, 너의 발걸음은 빛나는 여정이 되었지요."},
+      {en:"What is your dream now and tomorrow?", ko:"지금 그리고 내일, 너의 꿈은 무엇일까요?"},
+      {en:"Dreams can change and still be true.", ko:"꿈은 바뀌어도 여전히 진실일 수 있어요."},
+      {en:"Mom will steady you when the world feels shaky.", ko:"세상이 흔들릴 때, 엄마는 너를 단단히 지탱해 줄 거예요."},
+      {en:"And when your dream grows, it may inspire someone else.", ko:"그리고 너의 꿈이 자라면, 또 다른 누군가를 꿈꾸게 할 거예요."},
+      {en:"Keep dreaming with courage and kindness.", ko:"용기와 다정함으로 계속 꿈꾸렴."},
+      {en:"Mom will be your closest witness and biggest fan.", ko:"엄마는 가장 가까운 증인이자 가장 큰 팬이 될 거예요."}
+    ],
+    vocab: [
+      ["canvas","캔버스, 도화지","Her dreams found a new canvas."],
+      ["steady","지탱하다, 안정시키다","Mom will steady you when life is shaky."],
+      ["witness","목격자, 증인","Mom is your closest witness."]
+    ],
+    quiz: [
+      {q:"What did Mom keep in her drawer?", options:["Journals and poems","Old tickets","Pinecones"], answer:0},
+      {tf:true, stmt:"Dreams can change shape and still be true.", answer:true},
+      {q:"What became a song for Mom?", options:["The child's laughter","The city traffic","The rain"], answer:0}
+    ]
+  },
+
+  /* -------- 중학생 (A2–B1) 22–24문장 -------- */
+  mid: {
+    topic: "Inspiration",
+    cefr: "A2–B1",
+    headline: "A Letter About Dreams: From Aspiration to Everyday Love",
+    dek: "옛 꿈은 사라지지 않았습니다. 사랑 속에서 다른 형태로 계속 자랍니다.",
+    sents: [
+      {en:"Mom once chased many paths: images, words, and stars.", ko:"엄마는 한때 사진, 글, 별을 따라 여러 길을 쫓았어요."},
+      {en:"She dreamed of framing beauty as a photographer.", ko:"사진가로서 아름다움을 담는 꿈을 꾸었지요."},
+      {en:"She hoped to warm strangers with stories as a writer.", ko:"작가로서 낯선 이들의 마음을 데우길 바랐어요."},
+      {en:"She even wondered if science could reveal quiet secrets.", ko:"과학이 조용한 비밀을 밝혀 줄지 궁금해하기도 했지요."},
+      {en:"In a drawer rest journals, poems, and careful sketches.", ko:"서랍엔 일기와 시, 정성스런 스케치가 쉬고 있어요."},
+      {en:"They are not lost; they are resting and waiting.", ko:"그것들은 사라진 게 아니라 쉬며 기다리고 있어요."},
+      {en:"Then you arrived, and life changed its rhythm.", ko:"그리고 네가 오고, 삶의 리듬이 바뀌었지요."},
+      {en:"Morning buses, evening dinners, and stories at night.", ko:"아침 버스, 저녁 식사, 밤의 이야기 시간이 이어졌어요."},
+      {en:"Love turned her schedule into a different kind of art.", ko:"사랑은 엄마의 일정을 다른 종류의 예술로 바꾸었어요."},
+      {en:"Your laughter scored the music; your steps drew the map.", ko:"너의 웃음이 음악이 되고, 발걸음이 지도를 그렸지요."},
+      {en:"Dreams do not always end; sometimes they change jobs.", ko:"꿈은 끝나지 않아요. 때로는 ‘일’을 바꿀 뿐이지요."},
+      {en:"They can become a home where new dreams grow.", ko:"그 꿈들은 새 꿈이 자라는 집이 될 수 있어요."},
+      {en:"What do you hope for—today, next month, or years ahead?", ko:"오늘, 다음 달, 그리고 몇 년 뒤에 너는 무엇을 바랄까요?"},
+      {en:"It is fine if your answers move like the clouds.", ko:"그 답이 구름처럼 바뀌어도 괜찮아요."},
+      {en:"Set your goals, and forgive your detours.", ko:"목표를 세우고, 돌아가는 길을 스스로 용서하렴."},
+      {en:"Keep a small notebook for the sparks that visit you.", ko:"문득 떠오르는 번쩍임을 위해 작은 노트를 간직하렴."},
+      {en:"Share your effort as kindly as your success.", ko:"성공만큼 노력도 다정하게 나누렴."},
+      {en:"When fear arrives, breathe and take the next step.", ko:"두려움이 오면 숨을 고르고 다음 발을 디디렴."},
+      {en:"Dreams grow best in patience and play.", ko:"꿈은 인내와 놀이 속에서 가장 잘 자라요."},
+      {en:"And remember: love is a quiet mentor beside you.", ko:"그리고 기억하세요. 사랑은 곁의 조용한 멘토예요."},
+      {en:"Mom will watch closely, cheer loudly, and guide gently.", ko:"엄마는 가까이에서 보고, 크게 응원하고, 부드럽게 이끌 거예요."},
+      {en:"Your story is already beautiful—keep writing it.", ko:"너의 이야기는 이미 아름다워요. 계속 써 내려가렴."},
+      {en:"One day, your dream may light another person’s path.", ko:"언젠가 너의 꿈이 누군가의 길을 비출 거예요."}
+    ],
+    vocab: [
+      ["detour","우회, 돌아가는 길","Forgive your detours."],
+      ["mentor","멘토, 조언자","Love is a quiet mentor."],
+      ["rhythm","리듬, 흐름","Life changed its rhythm."]
+    ],
+    quiz: [
+      {q:"According to the story, what did love turn into art?", options:["Her schedule","A museum","A stadium"], answer:0},
+      {tf:true, stmt:"Dreams can change jobs rather than end.", answer:true},
+      {q:"What should you keep for sudden ideas?", options:["A small notebook","A whistle","A ticket"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Dreams do not end; they often change shape.",
+        ko:"꿈은 끝나지 않는다. 종종 모양을 바꾼다.",
+        point:"병렬 구조 with semicolon",
+        q:"Dreams do not end; they (___) change shape.",
+        options:["often","always","never"],
+        answer:0
+      },
+      {
+        en:"When fear arrives, take a breath and keep going.",
+        ko:"두려움이 오면 숨을 고르고 계속 나아가라.",
+        point:"시간의 부사절(When) + 명령문",
+        q:"(___) fear arrives, (___) a breath and keep going.",
+        options:["When / take","If / took","Because / taking"],
+        answer:0
+      }
+    ]
+  },
+
+  /* -------- 고등/수능 (B2–C1) 30–34문장 -------- */
+  hs: {
+    topic: "Inspiration",
+    cefr: "B2–C1",
+    headline: "On Inheritance and Becoming: A Mother’s Dreams, Reimagined",
+    dek: "개인의 꿈은 삶의 국면을 거치며 전이되고 재해석된다. 사랑은 그 변주를 가능하게 하는 가장 강한 매개다.",
+    sents: [
+      {en:"Once, a girl sketched horizons that could not fit the page.", ko:"한때 소녀는 종이에 다 담기지 않는 지평선을 그려 넣었다."},
+      {en:"She wrote brief poems that tried to hold a season in a line.", ko:"그녀는 한 줄에 계절을 담아보려는 짧은 시를 썼다."},
+      {en:"A lens felt like an honest instrument for catching beauty.", ko:"렌즈는 아름다움을 붙잡는 정직한 도구처럼 느껴졌다."},
+      {en:"Stories, she believed, could keep strangers warm in winter.", ko:"이야기는 낯선 이들을 겨울에도 따뜻하게 해 줄 수 있다고 믿었다."},
+      {en:"Some nights, the night sky invited her to study its quiet code.", ko:"어떤 밤에는 밤하늘이 그 조용한 암호를 공부하라며 그녀를 초대했다."},
+      {en:"Years gathered; life re-wrote itself around small hands and bus stops.", ko:"세월이 쌓였고, 삶은 작은 손과 버스 정류장을 중심으로 다시 쓰였다."},
+      {en:"Routines grew—a choreography of breakfast, work, and bedtime tales.", ko:"아침·일·잠자리 동화가 얽힌 일상의 안무가 자랐다."},
+      {en:"In a drawer, earlier drafts of self waited without complaint.", ko:"서랍 속 자아의 초기 원고들이 말없이 기다렸다."},
+      {en:"Dreams, it turned out, are not a door that closes but a hallway that bends.", ko:"알고 보니 꿈은 닫히는 문이 아니라 굽어지는 복도였다."},
+      {en:"They keep going—sometimes renamed, sometimes reprioritized.", ko:"그 꿈은 계속 간다. 이름을 바꾸거나, 우선순위를 바꾸면서."},
+      {en:"A child arrived; the old canvases learned a fresh grammar.", ko:"아이의 도착과 함께 오래된 캔버스는 새로운 문법을 배웠다."},
+      {en:"Love revised the thesis: make one life vivid, beginning at home.", ko:"사랑이 논지를 고쳤다. 집에서 시작해 한 사람의 삶을 선명하게 하라고."},
+      {en:"Her photographs became mornings, not museums.", ko:"그녀의 사진은 박물관이 아니라 아침들로 바뀌었다."},
+      {en:"Her novels became daily chapters read aloud at 8 p.m.", ko:"그녀의 소설은 밤 8시에 소리 내 읽는 일상의 장들로 변했다."},
+      {en:"Her science became the patient method of listening.", ko:"그녀의 과학은 인내로 듣는 방식이 되었다."},
+      {en:"Ambition did not vanish; it widened—to include another heartbeat.", ko:"야망은 사라지지 않았다. 또 다른 심장박동을 품도록 넓어졌을 뿐."},
+      {en:"What, then, should the child learn about dreaming?", ko:"그렇다면 아이는 꿈에 대해 무엇을 배워야 할까?"},
+      {en:"That change is not failure; it is a form of growth.", ko:"변화는 실패가 아니라 한 형태의 성장이라는 것."},
+      {en:"That detours can tutor us in patience and perspective.", ko:"우회로가 인내와 시야를 가르칠 수 있다는 것."},
+      {en:"That keeping a small notebook honors the arrival of ideas.", ko:"작은 노트가 아이디어의 방문을 예우한다는 것."},
+      {en:"That discipline makes space where talent may take root.", ko:"훈련이 재능이 뿌리내릴 공간을 만든다는 것."},
+      {en:"That love is the silent mentor who steadies the hands.", ko:"사랑은 손을 단단히 잡아 주는 침묵의 멘토라는 것."},
+      {en:"One day, your voice may steady someone else’s hands.", ko:"언젠가 너의 목소리가 누군가의 손을 잡아 줄 것이다."},
+      {en:"Dream as if plans can change—and still be yours.", ko:"계획이 바뀌어도 여전히 너의 것일 수 있음을 믿고 꿈꾸라."},
+      {en:"Work as if kindness is part of the craft.", ko:"다정함이 기량의 일부임을 믿고 일하라."},
+      {en:"Keep a witness to your days; call it a journal.", ko:"네 날들의 증인을 두어라. 일기라 부르면 된다."},
+      {en:"And when doubt arrives, read this letter aloud.", ko:"의심이 찾아오면, 이 편지를 소리 내어 읽어라."},
+      {en:"You were the dream, and you are also the dreamer.", ko:"너는 꿈이었고, 동시에 꿈꾸는 이이기도 하다."},
+      {en:"Both truths can be held in the same pair of hands.", ko:"두 진실은 같은 두 손 안에 함께 놓일 수 있다."},
+      {en:"Begin again tomorrow; there is room on the page.", ko:"내일 다시 시작하라. 아직 페이지에 여백이 있다."}
+    ],
+    vocab: [
+      ["reprioritize","우선순위를 다시 매기다","Dreams are sometimes reprioritized."],
+      ["thesis","주장, 논지","Love revised the thesis."],
+      ["perspective","관점, 시야","Detours teach perspective."]
+    ],
+    quiz: [
+      {q:"In the feature, dreams are compared to what?", options:["A hallway that bends","A locked vault","A mountain peak"], answer:0},
+      {tf:true, stmt:"Ambition widens to include another heartbeat.", answer:true},
+      {q:"What replaces museums and novels in the mother’s reimagined life?", options:["Mornings and daily chapters","Awards and prizes","Silence and rest"], answer:0}
+    ],
+    grammar: [
+      {
+        en:"Had her dreams closed like a door, she would have missed this new life.",
+        ko:"그녀의 꿈이 문처럼 닫혔더라면, 이 새로운 삶을 놓쳤을 것이다.",
+        point:"가정법 과거완료 도치 (Had + 주어 + p.p.)",
+        q:"(___) her dreams closed like a door, she (___) have missed this new life.",
+        options:["Had / would","If / will","Were / can"],
+        answer:0
+      },
+      {
+        en:"Change is not failure; it is the way growth often arrives.",
+        ko:"변화는 실패가 아니다. 성장은 종종 그런 방식으로 찾아온다.",
+        point:"동격 구조(주어 = 보어)와 강조",
+        q:"Change is not failure; it (___) the way growth often arrives.",
+        options:["is","was","has been"],
+        answer:0
+      }
+    ]
+  }
+};
+
+/* =========================
+   공통 DOM 참조
+   ========================= */
+const levelTabs = {
+  low: document.getElementById('tab-low'),
+  high: document.getElementById('tab-high'),
+  mid: document.getElementById('tab-mid'),
+  hs: document.getElementById('tab-hs')
+};
+const voiceSelect = document.getElementById('voiceSelect');
+const rateRange = document.getElementById('rate');
+const rateLabel = document.getElementById('rateLabel');
+const sentencesEl = document.getElementById('sentences');
+const quizList = document.getElementById('quizList');
+const vocabEl = document.getElementById('vocab');
+const topicPill = document.getElementById('topicPill');
+const cefrPill = document.getElementById('cefrPill');
+const headlineEl = document.getElementById('headline');
+const dekEl = document.getElementById('dek');
+const grammarBox = document.getElementById('grammarBox');
+const grammarList = document.getElementById('grammarList');
+const grammarTitle = document.getElementById('grammarTitle');
+
+const playAllBtn = document.getElementById('playAll');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+const toggleAllKoBtn = document.getElementById('toggleAllKoBtn');
+let hideAllKo = false;
+
+let LEVEL = 'mid';
+let VOICES = [];
+let CURRENT_INDEX = -1;
+let PLAYING_ALL = false;
+
+/* =========================
+   음성 목록 로딩
+   ========================= */
+function loadVoices(){
+  VOICES = speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+  voiceSelect.innerHTML = '';
+  VOICES.forEach((v,i)=>{
+    const opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang})`+(v.default?' • default':'');
+    voiceSelect.appendChild(opt);
+  });
+  const preferred = VOICES.findIndex(v=>/en-US/i.test(v.lang)&&/Female|Jenny|Aria|Salli|female/i.test(v.name));
+  voiceSelect.value = String(preferred>=0?preferred:0);
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+if (speechSynthesis.getVoices().length) loadVoices();
+
+/* =========================
+   속도 프리셋/표시
+   ========================= */
+document.querySelectorAll('.preset').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const r=parseFloat(btn.dataset.rate);
+    rateRange.value=r; rateLabel.textContent=r.toFixed(2)+'×';
+  });
+});
+rateRange.addEventListener('input',()=> rateLabel.textContent=parseFloat(rateRange.value).toFixed(2)+'×');
+
+/* =========================
+   레벨 전환
+   ========================= */
+levelTabs.low.addEventListener('click',()=>switchLevel('low'));
+levelTabs.high.addEventListener('click',()=>switchLevel('high'));
+levelTabs.mid.addEventListener('click',()=>switchLevel('mid'));
+levelTabs.hs.addEventListener('click',()=>switchLevel('hs'));
+
+/* =========================
+   재생 컨트롤
+   ========================= */
+playAllBtn.addEventListener('click',()=>startPlayAll());
+pauseBtn.addEventListener('click',()=>speechSynthesis.pause());
+resumeBtn.addEventListener('click',()=>speechSynthesis.resume());
+stopBtn.addEventListener('click',stopAll);
+
+/* =========================
+   한국어 전체 토글
+   ========================= */
+toggleAllKoBtn.addEventListener('click', () => {
+  hideAllKo = !hideAllKo;
+  applyAllKoVisibility();
+});
+function applyAllKoVisibility(){
+  const kos = document.querySelectorAll('#sentences .ko');
+  kos.forEach(el => { hideAllKo ? el.classList.add('hidden') : el.classList.remove('hidden'); });
+  toggleAllKoBtn.textContent = hideAllKo ? '한국어 보이기' : '한국어 가리기';
+}
+
+/* =========================
+   레벨 렌더링
+   ========================= */
+function switchLevel(lv){
+  LEVEL=lv;
+  for(const k of Object.keys(levelTabs)){
+    levelTabs[k].setAttribute('aria-selected',k===lv?'true':'false');
+  }
+  const d=DATA[lv];
+  topicPill.textContent=d.topic;
+  cefrPill.textContent=d.cefr;
+  headlineEl.textContent=d.headline;
+  dekEl.textContent=d.dek;
+
+  // 문장 렌더
+  sentencesEl.innerHTML='';
+  d.sents.forEach((o,i)=>{
+    const div=document.createElement('div');
+    div.className='sent'; div.dataset.idx=i;
+    div.innerHTML = `<span class="en">${o.en}</span><span class="ko">${o.ko}</span>`;
+    div.addEventListener('click',()=>playSentence(i,true));
+    sentencesEl.appendChild(div);
+  });
+
+  // 단어장
+  vocabEl.innerHTML='';
+  (d.vocab||[]).forEach(([en,ko,ex])=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<b>${en}</b> — ${ko}<br><span class="small">${ex}</span>`;
+    vocabEl.appendChild(li);
+  });
+
+  // 퀴즈
+  quizList.innerHTML='';
+  (d.quiz||[]).forEach((q,i)=>{
+    const li=document.createElement('li');
+    if(q.tf){
+      li.innerHTML=`<div>${q.stmt}</div>
+      <div class="controls">
+        <button data-q="${i}" data-a="true">True</button>
+        <button data-q="${i}" data-a="false">False</button>
+        <span class="small" id="qfb-${i}"></span>
+      </div>`;
+    }else{
+      const opts=q.options.map((o,oi)=>`<button data-q="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML=`<div>${q.q}</div><div class="controls">${opts}<span class="small" id="qfb-${i}"></span></div>`;
+    }
+    quizList.appendChild(li);
+  });
+  quizList.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',(e)=>{
+      const qidx=parseInt(e.target.dataset.q,10);
+      const ansRaw=e.target.dataset.a;
+      const dataQ=DATA[LEVEL].quiz[qidx];
+      const correct = dataQ.tf ? (String(dataQ.answer)===ansRaw) : (dataQ.answer===parseInt(ansRaw,10));
+      document.getElementById('qfb-'+qidx).textContent = correct?'정답!':'다시 생각해봐요';
+    });
+  });
+
+  // 문법
+  if(d.grammar){
+    grammarBox.style.display='';
+    const titleMap = {
+      low:"문법 포인트 (초등 저학년)",
+      high:"문법 포인트 (초등 고학년)",
+      mid:"문법 포인트 (중학생)",
+      hs:"문법 포인트 (고등/수능)"
+    };
+    grammarTitle.textContent = titleMap[LEVEL] || "문법 포인트";
+    grammarList.innerHTML='';
+    d.grammar.forEach((g,i)=>{
+      const li=document.createElement('li');
+      const opts=g.options.map((o,oi)=>`<button data-g="${i}" data-a="${oi}">${o}</button>`).join(' ');
+      li.innerHTML = `<div><b>${g.en}</b><br><span class="small">${g.ko}</span><br><span class="small">포인트: ${g.point}</span></div>
+                      <div class="controls"><span class="small">${g.q}</span></div>
+                      <div class="controls">${opts}<span class="small" id="gfb-${i}"></span></div>`;
+      grammarList.appendChild(li);
+    });
+    grammarList.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        const gidx=parseInt(e.target.dataset.g,10);
+        const ans=parseInt(e.target.dataset.a,10);
+        const cor=DATA[LEVEL].grammar[gidx].answer;
+        document.getElementById('gfb-'+gidx).textContent=(ans===cor)?'정답!':'다시 시도해보세요';
+      });
+    });
+  }else{
+    grammarBox.style.display='none';
+    grammarList.innerHTML='';
+  }
+
+  applyAllKoVisibility();
+  stopAll();
+}
+
+// 초기 레벨: 중학생
+switchLevel('mid');
+
+/* =========================
+   음성 합성
+   ========================= */
+function getSelectedVoice(){
+  const idx=parseInt(voiceSelect.value||'0',10);
+  return VOICES[idx]||null;
+}
+function markActive(i){
+  sentencesEl.querySelectorAll('.sent').forEach((el,j)=>{ el.classList.toggle('active',j===i); });
+}
+function clearMarks(){ sentencesEl.querySelectorAll('.sent').forEach(el=>el.classList.remove('active')); }
+function stopAll(){ PLAYING_ALL=false; CURRENT_INDEX=-1; speechSynthesis.cancel(); clearMarks(); }
+
+function playSentence(i,repeat=false){
+  stopAll();
+  const d=DATA[LEVEL]; const text=d.sents[i].en;
+  CURRENT_INDEX=i; markActive(i);
+  const u=new SpeechSynthesisUtterance(text);
+  const v=getSelectedVoice(); if(v) u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+  u.onend=()=>{ if(repeat){ setTimeout(()=>playSentence(i,true),250);} else { CURRENT_INDEX=-1; clearMarks(); } };
+  speechSynthesis.speak(u);
+}
+
+function startPlayAll(){
+  stopAll(); PLAYING_ALL=true;
+  const d=DATA[LEVEL]; let i=0;
+  const next=()=>{
+    if(!PLAYING_ALL) return;
+    if(i>=d.sents.length){ stopAll(); return; }
+    CURRENT_INDEX=i; markActive(i);
+    const u=new SpeechSynthesisUtterance(d.sents[i].en);
+    const v=getSelectedVoice(); if(v) u.voice=v;
+    u.lang=(v&&v.lang)||'en-US'; u.rate=parseFloat(rateRange.value); u.pitch=1.0;
+    u.onend=()=>{ setTimeout(()=>{ i++; next(); }, 220); };
+    speechSynthesis.speak(u);
+  };
+  next();
+}
+
+/* =========================
+   키보드 단축키
+   ========================= */
+window.addEventListener('keydown',(e)=>{
+  if(e.code==='Space'){
+    e.preventDefault();
+    if(speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause();
+    else speechSynthesis.resume();
+  }
+  if(e.code==='Digit1'){ switchLevel('low'); }
+  if(e.code==='Digit2'){ switchLevel('high'); }
+  if(e.code==='Digit3'){ switchLevel('mid'); }
+  if(e.code==='Digit4'){ switchLevel('hs'); }
+});
+</script>
+</body>
+</html>
