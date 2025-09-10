@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-09T14:52:11.487Z",
-  "count": 28,
+  "generatedAt": "2025-09-10T12:05:52.258Z",
+  "count": 29,
   "items": [
+    {
+      "id": "2025-09-11-garnet-fire-sequoias",
+      "date": "2025-09-11",
+      "title": "[Climate] Lightning-Sparked Garnet Fire Reaches Giant Sequoias | EduPod 뉴스",
+      "categories": [
+        "Climate",
+        "Environment",
+        "Wildfire"
+      ],
+      "summary": "캘리포니아 시에라 국유림에서 번개로 인해 발생한 화재가 매킨리 그로브의 자이언트 세쿼이아 숲까지 번졌습니다. 소방대원들은 고대의 나무들을 보호하기 위해 캐노피 등반가, 스프링클러, 내화성 보호막을 배치했습니다.",
+      "link": "/news/2025-09-11-garnet-fire-sequoias.html"
+    },
     {
       "id": "2025-09-10-heat-sugar-intake",
       "date": "2025-09-10",
