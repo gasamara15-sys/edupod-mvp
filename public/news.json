@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-10T12:05:52.258Z",
-  "count": 29,
+  "generatedAt": "2025-09-11T13:24:59.399Z",
+  "count": 30,
   "items": [
+    {
+      "id": "2025-09-12-banksy-royal-courts",
+      "date": "2025-09-12",
+      "title": "[Arts] Banksy Mural Scrubbed from London Court | EduPod 뉴스",
+      "categories": [
+        "Arts",
+        "Society",
+        "UK"
+      ],
+      "summary": "런던 왕립 사법 재판소에 그려진, 판사가 시위자를 공격하는 모습을 담은 뱅크시 벽화가 빠르게 덮이고 제거되었습니다. 재판소 측은 유적 보존을 이유로 들었으며, 경찰은 재물 손괴 혐의에 대한 수사에 착수했습니다.",
+      "link": "/news/2025-09-12-banksy-royal-courts.html"
+    },
     {
       "id": "2025-09-11-garnet-fire-sequoias",
       "date": "2025-09-11",
