@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-12T16:59:21.183Z",
-  "count": 31,
+  "generatedAt": "2025-09-13T14:20:43.912Z",
+  "count": 32,
   "items": [
+    {
+      "id": "025-09-14-f-equals-ma",
+      "date": "2025-09-13",
+      "title": "[Science] Why F = ma Still Matters | EduPod 뉴스 (2025-09-14)",
+      "categories": [
+        "Science",
+        "Education",
+        "Physics"
+      ],
+      "summary": "오늘의 과학 브리핑에서 뉴턴의 제2법칙인 F = ma를 다시 살펴보며, 힘, 질량, 가속도가 놀이터 그네부터 로켓 발사에 이르기까지 모든 것을 어떻게 형성하는지 알아보겠습니다.",
+      "link": "/news/025-09-14-f-equals-ma.html"
+    },
     {
       "id": "2025-09-13-korean-workers-ice-raid",
       "date": "2025-09-13",
