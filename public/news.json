@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-13T14:21:15.427Z",
-  "count": 32,
+  "generatedAt": "2025-09-14T22:08:41.214Z",
+  "count": 33,
   "items": [
+    {
+      "id": "2025-09-15-france-fitch-downgrade",
+      "date": "2025-09-15",
+      "title": "[World] Fitch Downgrades France to A+ | EduPod 뉴스 (2025-09-15)",
+      "categories": [
+        "World",
+        "Europe",
+        "Economy"
+      ],
+      "summary": "지속적인 재정 적자, 높은 부채, 정치적 혼란으로 인해 피치가 프랑스의 국가 신용 등급을 A+로 강등했습니다. 이로 인해 차입 비용 및 예산 갈등에 대한 우려가 커지고 있습니다.",
+      "link": "/news/2025-09-15-france-fitch-downgrade.html"
+    },
     {
       "id": "2025-09-14-f-equals-ma",
       "date": "2025-09-14",
