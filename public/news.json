@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-14T22:08:41.214Z",
-  "count": 33,
+  "generatedAt": "2025-09-17T14:32:22.874Z",
+  "count": 34,
   "items": [
+    {
+      "id": "2025-09-18-japan-hs-hiring",
+      "date": "2025-09-18",
+      "title": "[World] Japan’s Hiring Shift: Big Offers for High School Grads | EduPod 뉴스 (2025-09-18)",
+      "categories": [
+        "World",
+        "Asia",
+        "Labor Market"
+      ],
+      "summary": "일본 기업들이 인력난에 직면하면서 고등학교 졸업생들을 유치하기 위해 파격적인 조건을 내걸고 있습니다.",
+      "link": "/news/2025-09-18-japan-hs-hiring.html"
+    },
     {
       "id": "2025-09-15-france-fitch-downgrade",
       "date": "2025-09-15",
