@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-18T22:40:44.690Z",
-  "count": 35,
+  "generatedAt": "2025-09-19T15:02:37.598Z",
+  "count": 36,
   "items": [
+    {
+      "id": "2025-09-20-clone-robotics-water-muscles",
+      "date": "2025-09-20",
+      "title": "[Tech] A Robot with 1,000 “Water Muscles” | EduPod 뉴스 (2025-09-20)",
+      "categories": [
+        "Technology",
+        "Robotics",
+        "AI Hardware"
+      ],
+      "summary": "폴란드 스타트업 ‘클론 로보틱스’가 물의 압력으로 수축하는 유체 근육 1,000개와 인체 206개 뼈 구조를 모사한 로봇을 공개. 3g 마이오파이버가 1kg+을 들어 올리고 0.05초에 수축. 젯슨 기반 두뇌, 4대 카메라·320 압력·70 관성 센서, 500W 전기 유압 펌프로 제어. ‘프로토클론 V1’과 전신 휴머노이드 ‘클론 알파’에서 200+ 자유도 구현. 촉각 피부·표정 추가 계획.",
+      "link": "/news/2025-09-20-clone-robotics-water-muscles.html"
+    },
     {
       "id": "2025-09-19-working-class-designers-uk",
       "date": "2025-09-19",
