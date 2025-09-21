@@ -1,7 +1,19 @@
 {
-  "generatedAt": "2025-09-19T15:06:24.219Z",
-  "count": 36,
+  "generatedAt": "2025-09-21T01:24:05.555Z",
+  "count": 37,
   "items": [
+    {
+      "id": "2025-09-21-nh-country-club-shooting",
+      "date": "2025-09-21",
+      "title": "[US] Multiple Shot at New Hampshire Country Club | EduPod 뉴스 (2025-09-21)",
+      "categories": [
+        "US",
+        "Public Safety",
+        "Breaking News"
+      ],
+      "summary": "뉴햄프셔주 내슈아의 스카이 메도 컨트리클럽에서 총격 사건이 발생해 다수가 피격되었습니다. 경찰에 따르면 무장한 용의자 2명이 도주했고, 이 중 1명은 체포되었으며 다른 1명은 여전히 도주 중으로 시민 안전에 위협이 되고 있습니다. 해당 장소는 결혼식 등 각종 이벤트가 열리는 사설 클럽이며, 사건 당일에도 결혼식이 예정되어 있었습니다. 본 사건은 진행 중인 상황입니다.",
+      "link": "/news/2025-09-21-nh-country-club-shooting.html"
+    },
     {
       "id": "2025-09-20-clone-robotics-water-muscles",
       "date": "2025-09-20",
