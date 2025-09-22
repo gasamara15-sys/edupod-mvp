@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2025-09-21T16:36:38.851Z",
-  "count": 38,
+  "generatedAt": "2025-09-22T21:54:02.396Z",
+  "count": 39,
   "items": [
+    {
+      "id": "2025-09-23-kiw-space-economy",
+      "date": "2025-09-23",
+      "title": "[KIW] Space-as-Economy: Microgravity, Cryo & Satellites | EduPod 뉴스 (2025-09-23)",
+      "categories": [
+        "Korea Investment Week",
+        "Space Economy",
+        "Aerospace",
+        "Biotech",
+        "Semiconductors",
+        "Satellites"
+      ],
+      "summary": "코리아 인베스트먼트 위크 2025 우주항공 세션에서 스페이스린텍·텔레픽스·스피어코퍼레이션 등이 우주경제 비전을 제시했습니다. 미세중력·극저온을 활용한 신약·반도체 생산, 위성×AI를 통한 실시간 정보 분석, 민간 협업 기반의 탐사·자원채굴·관광 가능성 등 핵심 내용을 CEFR 레벨별 영어뉴스·듣기·퀴즈로 정리했습니다.",
+      "link": "/news/2025-09-23-kiw-space-economy.html"
+    },
     {
       "id": "2025-09-22-japan-heat-aging-double-crisis",
       "date": "2025-09-22",
