@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2025-09-22T21:54:02.396Z",
-  "count": 39,
+  "generatedAt": "2025-09-23T21:52:06.216Z",
+  "count": 40,
   "items": [
+    {
+      "id": "2025-09-24-nasa-astronaut-class",
+      "date": "2025-09-24",
+      "title": "[Space] NASA Picks 10 New Astronauts for Moon & Mars Era | EduPod 뉴스 (2025-09-24)",
+      "categories": [
+        "Science",
+        "Space",
+        "NASA",
+        "Astronauts",
+        "Artemis",
+        "Mars"
+      ],
+      "summary": "NASA가 존슨우주센터에서 신규 우주인 10명을 발표했습니다. 여성 다수가 포함된 최초 기수이며, 아르테미스 달 복귀와 장차 화성 유인탐사를 목표로 2년간 집중훈련(지질학·수중 생존·우주 건강·제트기 훈련 등)을 거쳐 ISS·달 궤도·심우주 임무에 투입될 수 있습니다. 안나 메논은 폴라리스 던 임무 경험이 있는 특별한 케이스로 소개되었습니다.",
+      "link": "/news/2025-09-24-nasa-astronaut-class.html"
+    },
     {
       "id": "2025-09-23-kiw-space-economy",
       "date": "2025-09-23",
