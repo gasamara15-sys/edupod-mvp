@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2025-09-23T21:52:06.216Z",
-  "count": 40,
+  "generatedAt": "2025-09-24T22:37:57.178Z",
+  "count": 41,
   "items": [
+    {
+      "id": "025-09-25-morning-brief",
+      "date": "2025-09-24",
+      "title": "[Morning Brief] UNSC AI Debate & US 15% EU Auto Tariff | EduPod 뉴스 (2025-09-25)",
+      "categories": [
+        "World",
+        "Economy",
+        "Politics",
+        "Markets"
+      ],
+      "summary": "이재명 대통령이 유엔 안보리 공개토의를 주재(의제: AI와 국제평화·안보). 뉴욕서 미 재무장관과 관세 협의. 미국, 유럽산 車·부품 관세 15% 확정(8월 1일 소급). 국회 본회의서 정부조직법 등 처리 시도·필리버스터 예고. 김건희 여사, 특가법상 뇌물 피의자 신분으로 특검 출석 예정. 뉴욕 증시 3대 지수 하락, 파월 의장 ‘고평가’ 발언·AI주 약세.",
+      "link": "/news/025-09-25-morning-brief.html"
+    },
     {
       "id": "2025-09-24-nasa-astronaut-class",
       "date": "2025-09-24",
