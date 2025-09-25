@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2025-09-24T22:38:16.096Z",
-  "count": 41,
+  "generatedAt": "2025-09-25T21:17:18.065Z",
+  "count": 42,
   "items": [
+    {
+      "id": "2025-09-26-korea-power-equip",
+      "date": "2025-09-26",
+      "title": "[Biz & Energy] US–EU Grid Replacement Sparks Korea Power-Equip Boom | EduPod 뉴스 (2025-09-26)",
+      "categories": [
+        "Business",
+        "Energy",
+        "Infrastructure",
+        "Markets"
+      ],
+      "summary": "미·EU 노후 전력망 교체 슈퍼사이클로 국내 전력기기 3사(효성중공업·HD현대일렉트릭·LS일렉트릭) 수주·증설 가속. 북미·유럽 초고압 변압기 수요 급증, 현지 관세 영향 제한. 데이터센터·AI 전력 수요가 성장세 견인.",
+      "link": "/news/2025-09-26-korea-power-equip.html"
+    },
     {
       "id": "2025-09-25-morning-brief",
       "date": "2025-09-25",
