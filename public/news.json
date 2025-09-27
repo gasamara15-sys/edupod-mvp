@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2025-09-25T21:17:18.065Z",
-  "count": 42,
+  "generatedAt": "2025-09-27T01:59:05.485Z",
+  "count": 43,
   "items": [
+    {
+      "id": "2025-09-27-korea-gov-it-hub-fire",
+      "date": "2025-09-27",
+      "title": "[Tech & Gov] National IT Hub Fire Disrupts 70 Gov Services | EduPod 뉴스 (2025-09-27)",
+      "categories": [
+        "Technology",
+        "Government",
+        "Incident",
+        "Korea"
+      ],
+      "summary": "행정안전부 산하 국가정보자원관리원(옛 정부통합전산센터)에서 9월 26일 리튬배터리 화재 발생. UPS 교체 중 추정, 전산실 전원 다운으로 정부24·모바일신분증·국민신문고 등 70개 서비스 장애. 복구 시점 미정, 인명 피해는 경상 1명 보고.",
+      "link": "/news/2025-09-27-korea-gov-it-hub-fire.html"
+    },
     {
       "id": "2025-09-26-korea-power-equip",
       "date": "2025-09-26",
